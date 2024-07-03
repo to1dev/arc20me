@@ -1,3 +1,39 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+
+    html {
+        font-family: "Playwrite DE Grund", "ZCOOL XiaoWei", sans-serif;
+        font-optical-sizing: auto;
+    }
+}
+
+.hero-title {
+    font-family: "Berkshire Swash", "ZCOOL XiaoWei", serif;
+    font-optical-sizing: auto;
+}
+
+.playwrite-fr-moderne {
+    font-family: "Playwrite FR Moderne", "ZCOOL XiaoWei", cursive;
+    font-optical-sizing: auto;
+}
+
+.playwrite-us-modern {
+    font-family: "Playwrite US Modern", "ZCOOL XiaoWei", cursive;
+    font-optical-sizing: auto;
+}
+
+.playwrite-nz {
+    font-family: "Playwrite NZ", "ZCOOL XiaoWei", cursive;
+    font-optical-sizing: auto;
+}
+
+.emoji {
+    font-family: "Noto Color Emoji", sans-serif;
+}
+
+.runic {
+    font-family: "Noto Sans Runic", sans-serif;
+}
