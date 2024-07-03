@@ -4,7 +4,8 @@
 
     $: realm = get(page).params.realm;
 
-    let debug = import.meta.env.MODE === "development";
+    //let debug = import.meta.env.MODE === "development";
+    let debug = true;
 
     import Realm from "$lib/components/Realm.svelte";
     import Wallet from "$lib/components/Wallet.svelte";

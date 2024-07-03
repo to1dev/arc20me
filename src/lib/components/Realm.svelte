@@ -20,6 +20,23 @@
     let realmData: Realm;
     let profile: Content;
 
+    let corsResult: string | null = null;
+
+    // 获取数据的函数
+    async function fetchData(): Promise<string | null> {
+        try {
+            const response = await fetch("http://127.0.0.1:9999/cors");
+            if (!response.ok) {
+                throw new Error("Network response was not ok");
+            }
+            const data = await response.text();
+            return data;
+        } catch (error) {
+            console.error("Error fetching data:", error);
+            return null;
+        }
+    }
+
     onMount(async () => {
         try {
             random = Math.floor(Math.random() * 50) + 1;
@@ -30,6 +47,10 @@
             }
             if (result.realm) {
                 realmData = result.realm;
+            }
+
+            if (debug) {
+                corsResult = await fetchData();
             }
             error = null;
         } catch (e) {
@@ -485,14 +506,20 @@
                 ></a
             >
         </div>
-        {#if debug && realmData}
-            <div class="flex justify-center items-center p-4 bg-white border-t">
-                <div
-                    class="text-sm mt-2 font-light leading-relaxed break-words"
-                >
+        {#if debug}
+        <div class="flex flex-col justify-center items-center p-4 bg-white border-t">
+            {#if realmData}
+                <div class="text-sm mt-2 font-light leading-relaxed break-all">
                     {JSON.stringify(realmData, null, 4)}
                 </div>
-            </div>
+            {/if}
+
+            {#if corsResult}
+                <div class="text-sm mt-2 font-light leading-relaxed break-words">
+                    {corsResult}
+                </div>
+            {/if}
+        </div>
         {/if}
     </div>
 </div>
