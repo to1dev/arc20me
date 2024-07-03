@@ -53,7 +53,7 @@
                 Realm
             </h1>
 
-            <p class="mt-3 text-neutral-400">
+            <p class="mt-8 text-neutral-400 text-lg lg:min-h-8 min-h-14">
                 {#if desc}{desc}{/if}
             </p>
 

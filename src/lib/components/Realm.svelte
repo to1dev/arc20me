@@ -25,7 +25,7 @@
     // 获取数据的函数
     async function fetchData(): Promise<string | null> {
         try {
-            const response = await fetch("http://127.0.0.1:9999/cors");
+            const response = await fetch("http://127.0.0.1:9999");
             if (!response.ok) {
                 throw new Error("Network response was not ok");
             }
@@ -67,7 +67,7 @@
 
 <div class="flex items-center justify-center min-h-screen">
     <div
-        class="container m-4 lg:w-2/6 xl:w-2/7 sm:w-full md:w-2/3 shadow-2xl transform duration-100 easy-in-out border-2 border-white rounded-t-xl"
+        class="container m-4 lg:w-2/6 xl:w-2/7 sm:w-full md:w-2/3 shadow-2xl transform border-2 border-white rounded-t-xl"
     >
         <div class="h-48 overflow-hidden rounded-t-xl">
             {#if profile}
