@@ -40,6 +40,10 @@
     });
 </script>
 
+<svelte:head>
+    <title>{realm} | A Humble Explorer for Atomicals Realm</title>
+</svelte:head>
+
 <div class="flex items-center justify-center min-h-screen">
     <div
         class="container m-4 lg:w-2/6 xl:w-2/7 sm:w-full md:w-2/3 shadow-2xl transform duration-100 easy-in-out border-2 border-white rounded-t-xl"

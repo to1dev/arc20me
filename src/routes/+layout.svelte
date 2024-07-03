@@ -24,12 +24,24 @@
         }
     }
 
+    const metaSettings = {
+        title: "A Humble Explorer for Atomicals Realm - Let the party begin!",
+        description: "",
+        image: "",
+    };
+
     $: onHomepage =
         getPageType($page.url.pathname) == PageType.Homepage ? true : false;
 </script>
 
+<svelte:head>
+    <title>{metaSettings.title}</title>
+</svelte:head>
+
 <div
-    class="flex flex-col lg:flex-row flex-auto {!onHomepage ? 'background' : ''}"
+    class="flex flex-col lg:flex-row flex-auto {!onHomepage
+        ? 'background'
+        : ''}"
 >
     <div class="flex-auto">
         <div class="mx-auto w-full">
