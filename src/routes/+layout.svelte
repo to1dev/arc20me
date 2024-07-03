@@ -1,8 +1,36 @@
-<script>
+<script lang="ts">
     import "../app.css";
+    import { page } from "$app/stores";
+
+    enum PageType {
+        Homepage,
+        BlogPage,
+        AboutPage,
+        ContactPage,
+        OtherPage,
+    }
+
+    function getPageType(pageUrlPath: string): PageType {
+        if (pageUrlPath === "/") {
+            return PageType.Homepage;
+        } else if (pageUrlPath.startsWith("/blog")) {
+            return PageType.BlogPage;
+        } else if (pageUrlPath.startsWith("/about")) {
+            return PageType.AboutPage;
+        } else if (pageUrlPath.startsWith("/contact")) {
+            return PageType.ContactPage;
+        } else {
+            return PageType.OtherPage;
+        }
+    }
+
+    $: onHomepage =
+        getPageType($page.url.pathname) == PageType.Homepage ? true : false;
 </script>
 
-<div class="flex flex-col lg:flex-row flex-auto background">
+<div
+    class="flex flex-col lg:flex-row flex-auto {!onHomepage ? 'background' : ''}"
+>
     <div class="flex-auto">
         <div class="mx-auto w-full">
             <div class="space-y-5">
