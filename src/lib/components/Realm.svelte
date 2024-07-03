@@ -40,9 +40,7 @@
     });
 </script>
 
-<div
-    class="flex items-center justify-center min-h-screen bg-gray-200 dark:bg-gray-800 background"
->
+<div class="flex items-center justify-center min-h-screen">
     <div
         class="container m-4 lg:w-2/6 xl:w-2/7 sm:w-full md:w-2/3 shadow-2xl transform duration-100 easy-in-out border-2 border-white rounded-t-xl"
     >
@@ -63,7 +61,9 @@
             {:else}
                 <img
                     class="h-32 w-32 bg-white p-2 rounded-full"
-                    src="/images/profile.svg"
+                    src={isLoading
+                        ? "/images/loading/sloth.gif"
+                        : "/images/loading/s/sloth.svg"}
                     alt=""
                 />
             {/if}
@@ -471,7 +471,10 @@
             <a href="https://x.com/to1dev" target="_blank" class="ml-1"
                 >@to1dev</a
             >
-            <a href="https://github.com/to1dev/arc20me" target="_blank" class="ml-2"
+            <a
+                href="https://github.com/to1dev/arc20me"
+                target="_blank"
+                class="ml-2"
                 ><svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 496 512"
