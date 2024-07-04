@@ -8,9 +8,11 @@
 
     import Realm from "$lib/components/Realm.svelte";
     import Wallet from "$lib/components/Wallet.svelte";
+    import LocalServer from "$lib/components/LocalServer.svelte";
 </script>
 
 <Realm {realm} {debug} />
 {#if debug}
+    <LocalServer />
     <Wallet />
 {/if}

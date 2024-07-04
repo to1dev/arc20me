@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { fetchResult } from "$lib/api";
+    import { fetchResult } from "$lib/protocols/btc/dk/api";
     import { onMount } from "svelte";
     import DOMPurify from "dompurify";
     import type { Content, Realm } from "$lib/types/Result";
@@ -20,23 +20,6 @@
     let realmData: Realm;
     let profile: Content;
 
-    let corsResult: string | null = null;
-
-    // 获取数据的函数
-    async function fetchData(): Promise<string | null> {
-        try {
-            const response = await fetch("http://127.0.0.1:9999");
-            if (!response.ok) {
-                throw new Error("Network response was not ok");
-            }
-            const data = await response.text();
-            return data;
-        } catch (error) {
-            console.error("Error fetching data:", error);
-            return null;
-        }
-    }
-
     onMount(async () => {
         try {
             random = Math.floor(Math.random() * 50) + 1;
@@ -49,9 +32,6 @@
                 realmData = result.realm;
             }
 
-            if (debug) {
-                corsResult = await fetchData();
-            }
             error = null;
         } catch (e) {
             error = (e as Error).message;
@@ -507,19 +487,17 @@
             >
         </div>
         {#if debug}
-        <div class="flex flex-col justify-center items-center p-4 bg-white border-t">
-            {#if realmData}
-                <div class="text-sm mt-2 font-light leading-relaxed break-all">
-                    {JSON.stringify(realmData, null, 4)}
-                </div>
-            {/if}
-
-            {#if corsResult}
-                <div class="text-sm mt-2 font-light leading-relaxed break-words">
-                    {corsResult}
-                </div>
-            {/if}
-        </div>
+            <div
+                class="flex flex-col justify-center items-center p-4 bg-white border-t"
+            >
+                {#if realmData}
+                    <div
+                        class="text-sm mt-2 font-light leading-relaxed break-all"
+                    >
+                        {JSON.stringify(realmData, null, 4)}
+                    </div>
+                {/if}
+            </div>
         {/if}
     </div>
 </div>

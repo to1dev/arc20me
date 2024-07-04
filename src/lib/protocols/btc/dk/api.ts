@@ -1,5 +1,4 @@
-import { mintData } from "./stores/Realm";
-import type { ResponseResult, Info, Content, Realm } from "./types/Result";
+import type { ResponseResult, Info, Content, Realm } from "$lib/types/Result";
 import {
     PUBLIC_ELECTRUMX_BASE_URL,
     PUBLIC_ELECTRUMX_ENDPOINT1,

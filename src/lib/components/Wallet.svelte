@@ -65,7 +65,7 @@
     }
 </script>
 
-<div class="flex flex-col justify-center items-center p-4 bg-white">
+<div class="flex flex-col justify-center items-center p-4 bg-white border-t">
     <h1 class="mb-4">
         IndexedDB Example
         {#if exists}
