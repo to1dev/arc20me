@@ -36,8 +36,11 @@ interface Links {
     g: string;
 }
 
-export interface Content {
+export interface ContentBase {
     v: string;
+}
+
+export interface Content extends ContentBase {
     n: string;
     i: string;
     b: string;
@@ -49,7 +52,7 @@ export interface Content {
     l: Links;
 }
 
-export interface Realm {
+export interface RealmData {
     id: string;
     name: string;
     pid: string;

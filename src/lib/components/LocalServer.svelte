@@ -3,12 +3,12 @@
 
     async function fetchData(): Promise<string | null> {
         try {
-            const response = await fetch("http://127.0.0.1:9999");
+            const response = await fetch("http://127.0.0.1:9999/json");
             if (!response.ok) {
                 throw new Error("Network response was not ok");
             }
-            const data = await response.text();
-            return data;
+            const data = await response.json();
+            return JSON.stringify(data, null, 4);
         } catch (error) {
             console.error("Error fetching data:", error);
             return null;
