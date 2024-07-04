@@ -4,7 +4,7 @@
     import { onMount } from "svelte";
 
     import { fetchResult } from "$lib/protocols/atomicals/vanilla";
-    import type { ContentBase, Meta, RealmData } from "$lib/types/Result";
+    import type { ProfileBase, Meta, RealmData } from "$lib/interfaces/Result";
 
     $: realm = get(page).params.realm;
 
@@ -14,7 +14,7 @@
     let isLoading: boolean = false;
     let realmData: RealmData | null;
     let meta: Meta | null;
-    let profile: ContentBase | null;
+    let profile: ProfileBase | null;
     let isDk: boolean = false;
 
     onMount(async () => {

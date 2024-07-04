@@ -1,5 +1,4 @@
 <script lang="ts">
-    import { fetchResult } from "$lib/protocols/atomicals/vanilla";
     import { onMount } from "svelte";
     import DOMPurify from "dompurify";
 
@@ -192,10 +191,20 @@
                         <span class="emoji">🍕</span>
                     </h2>
                 {:else}
-                    <h2 class="text-gray-800 text-3xl font-bold mb-2">
-                        <span>{profile?.n ? profile.n : `+${realm}`}</span>
+                    <h2
+                        class="text-gray-800 text-3xl font-bold mb-2 min-h-[1rem]"
+                    >
+                        <span
+                            >{profile?.n
+                                ? profile.n
+                                : realmData?.realm
+                                  ? `+${realmData?.realm}`
+                                  : ""}</span
+                        >
                     </h2>
-                    <span>+{realm}</span>
+                    {#if realmData?.realm}
+                        <span>+{realmData.realm}</span>
+                    {/if}
                 {/if}
                 <p class="mt-2 text-gray-500 font-light leading-relaxed">
                     {#if profile?.d?.enUS}

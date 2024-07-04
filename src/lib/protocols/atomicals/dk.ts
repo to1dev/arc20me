@@ -1,9 +1,9 @@
 import type {
     ResponseResult,
     Info,
-    ContentBase,
+    ProfileBase,
     RealmData,
-} from "$lib/types/Result";
+} from "$lib/interfaces/Result";
 import {
     fetchRealmAtomicalId,
     fetchRealmInfo,
