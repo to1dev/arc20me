@@ -36,7 +36,7 @@
 
 <div class="flex items-center justify-center min-h-screen">
     <div
-        class="container m-4 lg:w-2/6 xl:w-2/7 sm:w-full md:w-2/3 shadow-2xl transform border-2 border-white rounded-t-xl"
+        class="container m-4 sm:w-full md:w-2/3 2xl:w-2/5 xl:w-3/5 lg:w-1/2 shadow-2xl transform border-2 border-white rounded-t-xl"
     >
         <div class="h-48 overflow-hidden rounded-t-xl">
             <img
@@ -184,7 +184,9 @@
                 {:else}
                     <Title name={profile?.n} realm={realmData?.realm} />
                 {/if}
-                <p class="mt-2 text-gray-500 font-light leading-relaxed">
+                <p
+                    class="mt-2 text-gray-500 font-light leading-relaxed sm:text-xl text-lg"
+                >
                     {#if profile?.d?.enUS}
                         {DOMPurify.sanitize(profile.d.enUS)}
                     {/if}
@@ -429,7 +431,7 @@
         </div>
 
         <div
-            class="flex justify-center items-center p-4 bg-white border-t text-sm"
+            class="flex justify-center items-center p-4 bg-white border-t"
         >
             Bring to you with <span class="text-red-500 mx-1 emoji">❤️</span>
             by

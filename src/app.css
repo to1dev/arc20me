@@ -5,14 +5,9 @@
 @layer base {
 
     html {
-        font-family: "Playwrite DE Grund", "ZCOOL XiaoWei", sans-serif;
+        font-family: "Alkatra", "ZCOOL XiaoWei", sans-serif;
         font-optical-sizing: auto;
     }
-}
-
-.hero-title {
-    font-family: "Berkshire Swash", "ZCOOL XiaoWei", serif;
-    font-optical-sizing: auto;
 }
 
 .playwrite-fr-moderne {

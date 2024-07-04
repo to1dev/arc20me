@@ -49,11 +49,9 @@
 <div class="relative overflow-hidden min-h-screen">
     <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-24">
         <div class="text-center">
-            <h1 class="text-4xl sm:text-6xl font-bold text-neutral-200">
-                Realm
-            </h1>
+            <h1 class="text-4xl sm:text-6xl font-bold text-info">Realm</h1>
 
-            <p class="mt-8 text-neutral-400 lg:min-h-8 min-h-14">
+            <p class="mt-8 text-neutral-400 text-xl lg:min-h-8 min-h-14">
                 {#if desc}{desc}{/if}
             </p>
 
@@ -159,66 +157,68 @@
                 </div>
             </div>
 
-            <div class="mt-10 sm:mt-20">
-                <button
-                    class="transition-colors duration-300 m-1 py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border shadow-sm disabled:opacity-50 disabled:pointer-events-none bg-neutral-900 border-neutral-700 text-white hover:bg-neutral-800"
-                >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="icon icon-tabler icons-tabler-outline icon-tabler-report"
-                        ><path
-                            stroke="none"
-                            d="M0 0h24v24H0z"
+            {#if false}
+                <div class="mt-10 sm:mt-20">
+                    <button
+                        class="transition-colors duration-300 m-1 py-3 px-4 inline-flex items-center gap-x-2 font-medium rounded-lg border shadow-sm disabled:opacity-50 disabled:pointer-events-none bg-neutral-900 border-neutral-700 text-secondary hover:bg-neutral-800"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
                             fill="none"
-                        /><path
-                            d="M8 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h5.697"
-                        /><path d="M18 14v4h4" /><path
-                            d="M18 11v-4a2 2 0 0 0 -2 -2h-2"
-                        /><path
-                            d="M8 3m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z"
-                        /><path
-                            d="M18 18m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"
-                        /><path d="M8 11h4" /><path d="M8 15h3" /></svg
-                    >Business
-                </button>
-                <button
-                    class="transition-colors duration-300 m-1 py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border shadow-sm disabled:opacity-50 disabled:pointer-events-none bg-neutral-900 border-neutral-700 text-white hover:bg-neutral-800"
-                >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="icon icon-tabler icons-tabler-outline icon-tabler-report"
-                        ><path
-                            stroke="none"
-                            d="M0 0h24v24H0z"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="icon icon-tabler icons-tabler-outline icon-tabler-report"
+                            ><path
+                                stroke="none"
+                                d="M0 0h24v24H0z"
+                                fill="none"
+                            /><path
+                                d="M8 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h5.697"
+                            /><path d="M18 14v4h4" /><path
+                                d="M18 11v-4a2 2 0 0 0 -2 -2h-2"
+                            /><path
+                                d="M8 3m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z"
+                            /><path
+                                d="M18 18m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"
+                            /><path d="M8 11h4" /><path d="M8 15h3" /></svg
+                        >Business
+                    </button>
+                    <button
+                        class="transition-colors duration-300 m-1 py-3 px-4 inline-flex items-center gap-x-2 font-medium rounded-lg border shadow-sm disabled:opacity-50 disabled:pointer-events-none bg-neutral-900 border-neutral-700 text-secondary hover:bg-neutral-800"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
                             fill="none"
-                        /><path
-                            d="M8 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h5.697"
-                        /><path d="M18 14v4h4" /><path
-                            d="M18 11v-4a2 2 0 0 0 -2 -2h-2"
-                        /><path
-                            d="M8 3m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z"
-                        /><path
-                            d="M18 18m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"
-                        /><path d="M8 11h4" /><path d="M8 15h3" /></svg
-                    >Business
-                </button>
-            </div>
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="icon icon-tabler icons-tabler-outline icon-tabler-report"
+                            ><path
+                                stroke="none"
+                                d="M0 0h24v24H0z"
+                                fill="none"
+                            /><path
+                                d="M8 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h5.697"
+                            /><path d="M18 14v4h4" /><path
+                                d="M18 11v-4a2 2 0 0 0 -2 -2h-2"
+                            /><path
+                                d="M8 3m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z"
+                            /><path
+                                d="M18 18m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"
+                            /><path d="M8 11h4" /><path d="M8 15h3" /></svg
+                        >Business
+                    </button>
+                </div>
+            {/if}
         </div>
     </div>
 </div>

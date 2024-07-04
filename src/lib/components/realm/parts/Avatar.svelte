@@ -3,11 +3,11 @@
 
     export let image;
 
-    let random: number | null = null;
+    /*let random: number | null = null;
 
     onMount(async () => {
         random = Math.floor(Math.random() * 30) + 1;
-    });
+    });*/
 </script>
 
 <img
