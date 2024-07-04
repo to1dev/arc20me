@@ -22,8 +22,7 @@
 
     onMount(async () => {
         try {
-            random = Math.floor(Math.random() * 50) + 1;
-
+            random = Math.floor(Math.random() * 30) + 1;
             error = null;
         } catch (e) {
             error = (e as Error).message;
@@ -53,8 +52,8 @@
                 src={profile?.i
                     ? profile.i
                     : isLoading
-                      ? "/images/loading/animals/sloth.gif"
-                      : "/images/loading/animals/s/sloth.svg"}
+                      ? "/images/loading/animals/24.gif"
+                      : "/images/loading/animals/s/24.svg"}
                 alt=""
             />
         </div>
@@ -193,14 +192,14 @@
                     <h2
                         class="text-gray-800 text-3xl font-bold mb-2 animate-spin"
                     >
-                        <span>➕</span>
+                        <span class="emoji">🍕</span>
                     </h2>
                 {:else}
                     <h2 class="text-gray-800 text-3xl font-bold mb-2">
                         <span>{profile?.n ? profile.n : `+${realm}`}</span>
                     </h2>
+                    <span>+{realm}</span>
                 {/if}
-                <span>+{realm}</span>
                 <p class="mt-2 text-gray-500 font-light leading-relaxed">
                     {#if profile?.d?.enUS}
                         {DOMPurify.sanitize(profile.d.enUS)}

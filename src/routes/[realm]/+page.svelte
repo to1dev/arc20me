@@ -1,6 +1,4 @@
 <script lang="ts">
-    import { SemVer } from "semver";
-
     import { page } from "$app/stores";
     import { get } from "svelte/store";
     import { onMount } from "svelte";
