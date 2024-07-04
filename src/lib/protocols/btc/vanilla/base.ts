@@ -1,7 +1,8 @@
 import type {
     ResponseResult,
     Info,
-    Content,
+    ContentBase,
+    Meta,
     RealmData,
 } from "$lib/types/Result";
 import {
@@ -82,7 +83,7 @@ export async function fetchRealmInfo(
 
 export async function fetchRealmProfile(
     id: string
-): Promise<{ profile: Content | null }> {
+): Promise<{ profile: ContentBase | null }> {
     const baseUrl = PUBLIC_ELECTRUMX_BASE_URL;
     const endpoint = PUBLIC_ELECTRUMX_ENDPOINT3;
     const url: string = `${baseUrl}${endpoint}?params=["${id}"]`;
@@ -101,32 +102,48 @@ export async function fetchRealmProfile(
         };
     } catch (error) {
         console.error("Failed to fetch realm info:", error);
-        throw error;
+        return {
+            profile: null,
+        };
     }
 }
 
-export async function fetchResult(
-    realm: string
-): Promise<{ realm: RealmData | null | null; profile: Content | null }> {
-    let _profileId: string;
-
+export async function fetchResult(realm: string): Promise<{
+    meta: Meta | null;
+    realm: RealmData | null | null;
+    profile: ContentBase | null;
+}> {
     const _id = await fetchRealmAtomicalId(realm);
-    if (_id.id) {
-        const _info = await fetchRealmInfo(_id.id);
-        if (_info.info) {
-            _profileId = _info.info.payload.d;
-            const _profile = await fetchRealmProfile(_profileId);
-            if (_profile.profile) {
-                return {
-                    realm: { id: _id.id, name: realm, pid: _profileId },
-                    profile: _profile.profile,
-                };
-            }
-        }
+    if (!_id.id) {
+        return {
+            meta: null,
+            realm: null,
+            profile: null,
+        };
+    }
+
+    const _info = await fetchRealmInfo(_id.id);
+    if (!_info.info) {
+        return {
+            meta: null,
+            realm: null,
+            profile: null,
+        };
+    }
+
+    let _profileId = _info.info.payload.d;
+    const _profile = await fetchRealmProfile(_profileId);
+    if (!_profile.profile) {
+        return {
+            meta: null,
+            realm: null,
+            profile: null,
+        };
     }
 
     return {
-        realm: null,
-        profile: null,
+        meta: { v: _profile.profile.v },
+        realm: { id: _id.id, name: realm, pid: _profileId },
+        profile: _profile.profile,
     };
 }

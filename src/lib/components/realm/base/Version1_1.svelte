@@ -2,12 +2,12 @@
     import { fetchResult } from "$lib/protocols/btc/vanilla/base";
     import { onMount } from "svelte";
     import DOMPurify from "dompurify";
-    import type { Content, RealmData } from "$lib/types/Result";
 
     export let realm;
     export let debug;
     export let isLoading;
     export let realmData;
+    export let meta;
     export let profile;
 
     function closeMenu(): void {
@@ -17,12 +17,10 @@
         }
     }
 
-    let random: number;
     let error: string | null = null;
 
     onMount(async () => {
         try {
-            random = Math.floor(Math.random() * 30) + 1;
             error = null;
         } catch (e) {
             error = (e as Error).message;
@@ -473,6 +471,11 @@
                 {#if realmData}
                     <div class="mt-2 font-light leading-relaxed break-all">
                         {JSON.stringify(realmData, null, 4)}
+                    </div>
+                {/if}
+                {#if meta?.v}
+                    <div class="mt-2 font-light leading-relaxed break-all">
+                        {meta?.v}
                     </div>
                 {/if}
             </div>

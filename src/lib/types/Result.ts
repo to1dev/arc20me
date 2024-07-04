@@ -40,7 +40,7 @@ export interface ContentBase {
     v: string;
 }
 
-export interface Content extends ContentBase {
+export interface DKContent extends ContentBase {
     n: string;
     i: string;
     b: string;
@@ -50,6 +50,10 @@ export interface Content extends ContentBase {
         n: string[];
     };
     l: Links;
+}
+
+export interface Meta {
+    v: string;
 }
 
 export interface RealmData {
