@@ -185,10 +185,10 @@
                         class="text-gray-800 text-3xl font-bold mb-2 min-h-[1rem]"
                     >
                         <span
-                            >{profile?.name
-                                ? profile.name
+                            >{profile?.n
+                                ? profile.n
                                 : realmData?.realm
-                                  ? `+${realmData?.realm}`
+                                  ? `${realmData?.realm}`
                                   : realm}</span
                         >
                     </h2>

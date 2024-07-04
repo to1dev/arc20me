@@ -188,7 +188,7 @@
                             >{profile?.name
                                 ? profile.name
                                 : realmData?.realm
-                                  ? `+${realmData?.realm}`
+                                  ? `${realmData?.realm}`
                                   : realm}</span
                         >
                     </h2>
