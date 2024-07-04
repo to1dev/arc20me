@@ -3,6 +3,7 @@
     import DOMPurify from "dompurify";
     import Avatar from "./parts/Avatar.svelte";
     import RotatingPizza from "./parts/RotatingPizza.svelte";
+    import Title from "./parts/Title.svelte";
 
     export let realm;
     export let debug;
@@ -181,18 +182,7 @@
                 {#if isLoading}
                     <RotatingPizza />
                 {:else}
-                    <h2
-                        class="text-gray-800 text-3xl font-bold mb-2 min-h-[1rem]"
-                    >
-                        <span
-                            >{profile?.n
-                                ? profile.n
-                                : realmData?.realm
-                                  ? `${realmData?.realm}`
-                                  : realm}</span
-                        >
-                    </h2>
-                    <span>+{realmData?.realm ? realmData.realm : realm}</span>
+                    <Title name={profile?.n} {realm} />
                 {/if}
                 <p class="mt-2 text-gray-500 font-light leading-relaxed">
                     {#if profile?.d?.enUS}
