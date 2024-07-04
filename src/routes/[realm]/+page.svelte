@@ -12,9 +12,9 @@
 
     let error: string | null = null;
     let isLoading: boolean = false;
-    let realmData: RealmData | null;
-    let meta: Meta | null;
-    let profile: ProfileBase | null;
+    let realmData: RealmData | null = null;
+    let meta: Meta | null = null;
+    let profile: ProfileBase | null = null;
     let isDk: boolean = false;
 
     onMount(async () => {
@@ -31,6 +31,7 @@
         } catch (e) {
             error = (e as Error).message;
         } finally {
+            realmData = { id: "", realm: realm, pid: "" };
             isLoading = false;
         }
     });

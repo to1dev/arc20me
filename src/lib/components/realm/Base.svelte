@@ -182,7 +182,7 @@
                 {#if isLoading}
                     <RotatingPizza />
                 {:else}
-                    <Title name={profile?.name} {realm} />
+                    <Title name={profile?.name} realm={realmData?.realm} />
                 {/if}
                 <p class="mt-2 text-gray-500 font-light leading-relaxed">
                     {#if profile?.d?.enUS}
