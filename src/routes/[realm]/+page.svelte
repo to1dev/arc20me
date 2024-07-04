@@ -15,6 +15,7 @@
     let realmData: RealmData | null;
     let meta: Meta | null;
     let profile: ContentBase | null;
+    let isDk: boolean = false;
 
     onMount(async () => {
         try {
@@ -23,6 +24,9 @@
             meta = result?.meta;
             profile = result?.profile;
             realmData = result?.realm;
+
+            let v = meta?.v ?? "1.2.0";
+            isDk = v.endsWith("dk");
             error = null;
         } catch (e) {
             error = (e as Error).message;
@@ -31,21 +35,16 @@
         }
     });
 
-    import V11 from "$lib/components/realm/base/Version1_1.svelte";
-    import V12 from "$lib/components/realm/base/Version1_2.svelte";
-    import DK from "$lib/components/realm/base/Version_dk.svelte";
+    import V12 from "$lib/components/realm/Base.svelte";
+    import DK from "$lib/components/realm/DK.svelte";
     import Wallet from "$lib/components/Wallet.svelte";
     import LocalServer from "$lib/components/LocalServer.svelte";
 </script>
 
-{#if meta?.v === "1.2"}
-    <V12 {realm} {debug} {isLoading} {realmData} {meta} {profile} />
-{:else if meta?.v === "1.1"}
-    <V11 {realm} {debug} {isLoading} {realmData} {meta} {profile} />
-{:else if meta?.v === "0.1.dk"}
-    <DK {realm} {debug} {isLoading} {realmData} {meta} {profile} />
+{#if isDk}
+    <DK {realm} {debug} {isLoading} {realmData} {profile} />
 {:else}
-    <V12 {realm} {debug} {isLoading} {realmData} {meta} {profile} />
+    <V12 {realm} {debug} {isLoading} {realmData} {profile} />
 {/if}
 
 {#if debug}

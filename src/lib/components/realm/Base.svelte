@@ -7,7 +7,6 @@
     export let debug;
     export let isLoading;
     export let realmData;
-    export let meta;
     export let profile;
 
     function closeMenu(): void {
@@ -471,11 +470,6 @@
                 {#if realmData}
                     <div class="mt-2 font-light leading-relaxed break-all">
                         {JSON.stringify(realmData, null, 4)}
-                    </div>
-                {/if}
-                {#if meta?.v}
-                    <div class="mt-2 font-light leading-relaxed break-all">
-                        {meta?.v}
                     </div>
                 {/if}
             </div>

@@ -1,7 +1,7 @@
 import type {
     ResponseResult,
     Info,
-    Content,
+    ContentBase,
     RealmData,
 } from "$lib/types/Result";
 import {
