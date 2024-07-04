@@ -2,12 +2,6 @@
     import { onMount } from "svelte";
 
     export let image;
-
-    //let random: number;
-
-    onMount(async () => {
-        //random = Math.floor(Math.random() * 30) + 1;
-    });
 </script>
 
 <img

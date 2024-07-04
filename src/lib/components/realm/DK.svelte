@@ -185,16 +185,14 @@
                         class="text-gray-800 text-3xl font-bold mb-2 min-h-[1rem]"
                     >
                         <span
-                            >{profile?.n
-                                ? profile.n
+                            >{profile?.name
+                                ? profile.name
                                 : realmData?.realm
                                   ? `+${realmData?.realm}`
-                                  : ""}</span
+                                  : realm}</span
                         >
                     </h2>
-                    {#if realmData?.realm}
-                        <span>+{realmData.realm}</span>
-                    {/if}
+                    <span>+{realmData?.realm ? realmData.realm : realm}</span>
                 {/if}
                 <p class="mt-2 text-gray-500 font-light leading-relaxed">
                     {#if profile?.d?.enUS}
