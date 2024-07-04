@@ -3,7 +3,7 @@
     import { get } from "svelte/store";
     import { onMount } from "svelte";
 
-    import { fetchResult } from "$lib/protocols/btc/vanilla/base";
+    import { fetchResult } from "$lib/protocols/atomicals/vanilla";
     import type { ContentBase, Meta, RealmData } from "$lib/types/Result";
 
     $: realm = get(page).params.realm;

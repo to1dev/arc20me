@@ -8,4 +8,4 @@ import {
     fetchRealmAtomicalId,
     fetchRealmInfo,
     fetchRealmProfile,
-} from "../vanilla/base";
+} from "./vanilla";

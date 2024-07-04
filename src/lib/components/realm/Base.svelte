@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { fetchResult } from "$lib/protocols/btc/vanilla/base";
+    import { fetchResult } from "$lib/protocols/atomicals/vanilla";
     import { onMount } from "svelte";
     import DOMPurify from "dompurify";
 
