@@ -1,6 +1,8 @@
 <script lang="ts">
     import { onMount } from "svelte";
     import DOMPurify from "dompurify";
+    import Avatar from "./parts/Avatar.svelte";
+    import RotatingPizza from "./parts/RotatingPizza.svelte";
 
     export let realm;
     export let debug;
@@ -43,15 +45,7 @@
             />
         </div>
         <div class="flex justify-center px-5 -mt-12 bg-white">
-            <img
-                class="h-32 w-32 bg-white p-2 rounded-full"
-                src={profile?.i
-                    ? profile.i
-                    : isLoading
-                      ? "/images/loading/animals/24.gif"
-                      : "/images/loading/animals/s/24.svg"}
-                alt=""
-            />
+            <Avatar image={profile?.i} />
         </div>
         <div class="dropdown dropdown-end absolute top-2 right-2 p-1">
             <div
@@ -185,11 +179,7 @@
         <div class="bg-white">
             <div class="text-center px-14 break-words">
                 {#if isLoading}
-                    <h2
-                        class="text-gray-800 text-3xl font-bold mb-2 animate-spin"
-                    >
-                        <span class="emoji">🍕</span>
-                    </h2>
+                    <RotatingPizza />
                 {:else}
                     <h2
                         class="text-gray-800 text-3xl font-bold mb-2 min-h-[1rem]"
