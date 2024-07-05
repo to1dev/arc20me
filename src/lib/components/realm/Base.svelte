@@ -27,7 +27,7 @@
 
 <div class="flex items-center justify-center min-h-screen">
     <div
-        class="container m-4 lg:w-2/6 xl:w-2/7 sm:w-full md:w-2/3 shadow-2xl transform border-2 border-white rounded-t-xl"
+        class="container m-4 sm:w-full md:w-2/3 2xl:w-2/5 xl:w-2/4 lg:w-3/5 shadow-2xl transform border-2 border-white rounded-t-xl"
     >
         <div class="h-48 overflow-hidden rounded-t-xl">
             <img
