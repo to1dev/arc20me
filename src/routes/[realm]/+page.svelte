@@ -1,12 +1,11 @@
 <script lang="ts">
     import { page } from "$app/stores";
-    import { get } from "svelte/store";
     import { onMount } from "svelte";
 
     import { fetchResult } from "$lib/protocols/atomicals/vanilla";
     import type { ProfileBase, Meta, RealmData } from "$lib/interfaces/Result";
 
-    $: realm = get(page).params.realm;
+    $: realm = $page.params.realm.toLowerCase();
 
     let debug = import.meta.env.MODE === "development";
 
