@@ -22,7 +22,6 @@
             const result = await fetchResult(realm);
             meta = result?.meta;
             profile = result?.profile;
-            realmData = result?.realm;
 
             let v = meta?.v ?? "1.2.0";
             isDk = v.endsWith("dk");
@@ -30,7 +29,7 @@
         } catch (e) {
             error = (e as Error).message;
         } finally {
-            realmData = { id: "", realm: realm, pid: "" };
+            realmData = { realm: realm };
             isLoading = false;
         }
     });
@@ -42,9 +41,9 @@
 </script>
 
 {#if isDk}
-    <DK {realm} {debug} {isLoading} {realmData} {profile} />
+    <DK {realm} {debug} {isLoading} {realmData} {meta} {profile} />
 {:else}
-    <V12 {realm} {debug} {isLoading} {realmData} {profile} />
+    <V12 {realm} {debug} {isLoading} {realmData} {meta} {profile} />
 {/if}
 
 {#if debug}

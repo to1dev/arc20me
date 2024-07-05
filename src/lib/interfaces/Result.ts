@@ -38,12 +38,12 @@ interface Links {
 
 export interface Meta {
     v: string;
+    id: string;
+    pid: string;
 }
 
 export interface RealmData {
-    id: string;
     realm: string;
-    pid: string;
 }
 
 export interface ProfileBase {

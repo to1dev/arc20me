@@ -182,14 +182,12 @@ export async function fetchRealmProfile(
 
 export async function fetchResult(realm: string): Promise<{
     meta: Meta | null;
-    realm: RealmData | null;
     profile: ProfileBase | null;
 }> {
     const _id = await fetchRealmAtomicalId(realm);
     if (!_id.id) {
         return {
             meta: null,
-            realm: null,
             profile: null,
         };
     }
@@ -197,8 +195,7 @@ export async function fetchResult(realm: string): Promise<{
     const pid = await fetchRealmProfileId(_id.id);
     if (!pid.pid) {
         return {
-            meta: null,
-            realm: null,
+            meta: { v: "", id: _id.id, pid: "" },
             profile: null,
         };
     }
@@ -206,15 +203,13 @@ export async function fetchResult(realm: string): Promise<{
     const _profile = await fetchRealmProfile(pid.pid);
     if (!_profile.profile) {
         return {
-            meta: null,
-            realm: null,
+            meta: { v: "", id: _id.id, pid: pid.pid },
             profile: null,
         };
     }
 
     return {
-        meta: { v: _profile.profile.v },
-        realm: { id: _id.id, realm: realm, pid: pid.pid },
+        meta: { v: _profile.profile.v, id: _id.id, pid: pid.pid },
         profile: _profile.profile,
     };
 }
