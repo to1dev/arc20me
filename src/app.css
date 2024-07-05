@@ -5,9 +5,19 @@
 @layer base {
 
     html {
-        font-family: "Alkatra", "ZCOOL XiaoWei", sans-serif;
+        font-family: "Playwrite DE Grund", "ZCOOL XiaoWei", sans-serif;
         font-optical-sizing: auto;
     }
+}
+
+.alkatra {
+    font-family: "Alkatra", "ZCOOL XiaoWei", system-ui;
+    font-optical-sizing: auto;
+}
+
+.playwrite-de-grund {
+    font-family: "Playwrite DE Grund", "ZCOOL XiaoWei", cursive;
+    font-optical-sizing: auto;
 }
 
 .playwrite-fr-moderne {

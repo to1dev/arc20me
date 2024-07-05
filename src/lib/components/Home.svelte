@@ -49,7 +49,9 @@
 <div class="relative overflow-hidden min-h-screen">
     <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-24">
         <div class="text-center">
-            <h1 class="text-4xl sm:text-6xl font-bold text-info">Realm</h1>
+            <h1 class="text-4xl sm:text-6xl font-bold text-warning alkatra">
+                Realm
+            </h1>
 
             <p class="mt-8 text-neutral-400 text-xl lg:min-h-8 min-h-14">
                 {#if desc}{desc}{/if}
