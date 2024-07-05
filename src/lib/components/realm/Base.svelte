@@ -15,7 +15,6 @@
 
     export let realm;
     export let debug;
-    export let isLoading;
     export let realmData;
     export let meta;
     export let profile;
@@ -26,8 +25,9 @@
 </svelte:head>
 
 <div class="flex items-center justify-center min-h-screen">
+    <!--div class="container m-4 lg:w-2/6 xl:w-2/7 sm:w-full md:w-2/3 shadow-2xl transform border-2 border-white rounded-t-xl"></div-->
     <div
-        class="container m-4 lg:w-2/6 xl:w-2/7 sm:w-full md:w-2/3 shadow-2xl transform border-2 border-white rounded-t-xl"
+        class="container m-4 sm:w-full md:w-2/3 2xl:w-2/6 xl:w-2/5 lg:w-3/6 shadow-2xl transform border-2 border-white rounded-t-xl"
     >
         <div class="h-48 overflow-hidden rounded-t-xl">
             <img
@@ -43,11 +43,7 @@
 
         <div class="bg-white">
             <div class="text-center px-14 break-words">
-                {#if isLoading}
-                    <RotatingPizza />
-                {:else}
-                    <Title name={profile?.name} realm={realmData?.realm} />
-                {/if}
+                <Title name={profile?.name} realm={realmData?.realm} />
                 <Content text={profile?.desc} />
             </div>
             <Links links={profile?.links} />

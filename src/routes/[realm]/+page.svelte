@@ -2,13 +2,13 @@
     import { page } from "$app/stores";
     import { onMount } from "svelte";
     import { isDk } from "$lib/stores/Realm";
-
     import { fetchResult } from "$lib/protocols/atomicals/vanilla";
     import type { ProfileBase, Meta, RealmData } from "$lib/interfaces/Result";
 
     $: realm = $page.params.realm.toLowerCase();
 
     let debug = import.meta.env.MODE === "development";
+    debug = false;
 
     let error: string | null = null;
     let isLoading: boolean = false;
@@ -41,9 +41,9 @@
 </script>
 
 {#if $isDk}
-    <DK {realm} {debug} {isLoading} {realmData} {meta} {profile} />
+    <DK {realm} {debug} {realmData} {meta} {profile} />
 {:else}
-    <V12 {realm} {debug} {isLoading} {realmData} {meta} {profile} />
+    <V12 {realm} {debug} {realmData} {meta} {profile} />
 {/if}
 
 {#if debug}
