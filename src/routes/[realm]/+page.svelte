@@ -8,7 +8,6 @@
     $: realm = $page.params.realm.toLowerCase();
 
     let debug = import.meta.env.MODE === "development";
-    debug = false;
 
     let error: string | null = null;
     let isLoading: boolean = false;
@@ -36,7 +35,7 @@
 
     import V12 from "$lib/components/realm/Base.svelte";
     import DK from "$lib/components/realm/DK.svelte";
-    import Wallet from "$lib/components/Wallet.svelte";
+    import Wallet from "$lib/protocols/atomicals/Wallet.svelte";
     import LocalServer from "$lib/components/LocalServer.svelte";
 </script>
 

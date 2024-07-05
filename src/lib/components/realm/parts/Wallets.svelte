@@ -1,6 +1,4 @@
 <script lang="ts">
-    import { isDk } from "$lib/stores/Realm";
-
     export let wallets;
 </script>
 

@@ -3,7 +3,6 @@ import type {
     Info,
     ProfileBase,
     Meta,
-    RealmData,
 } from "$lib/interfaces/Result";
 import {
     PUBLIC_ELECTRUMX_BASE_URL,
@@ -26,14 +25,21 @@ export async function fetchRealmAtomicalId(
         }
 
         const data = await res.json();
-        const id = data.response.result.atomical_id;
+        const id = data.response?.result?.atomical_id;
+        if (!id) {
+            return {
+                id: null,
+            };
+        }
 
         return {
-            id: id,
+            id,
         };
     } catch (error) {
         console.error("Failed to fetch realm info:", error);
-        throw error;
+        return {
+            id: null,
+        };
     }
 }
 
@@ -127,15 +133,12 @@ export async function fetchRealmProfileId(
         const data: ResponseResult = await res.json();
 
         if (
-            data.response &&
-            Array.isArray(data.response.result) &&
+            Array.isArray(data.response?.result) &&
             data.response.result.length > 0
         ) {
             const pid = await findFirstDKeyValue(data.response.result);
             if (pid) {
-                return {
-                    pid: pid,
-                };
+                return { pid };
             }
         }
 
@@ -165,12 +168,12 @@ export async function fetchRealmProfile(
 
         const data = await res.json();
         const profile = await findObjectWithKey(
-            data.response.result.mint_data.fields,
+            data.response?.result?.mint_data?.fields,
             "v"
         );
 
         return {
-            profile: profile as ProfileBase,
+            profile: profile ? (profile as ProfileBase) : null,
         };
     } catch (error) {
         console.error("Failed to fetch realm info:", error);
@@ -187,7 +190,7 @@ export async function fetchResult(realm: string): Promise<{
     const _id = await fetchRealmAtomicalId(realm);
     if (!_id.id) {
         return {
-            meta: null,
+            meta: { v: "", id: "", pid: "" },
             profile: null,
         };
     }

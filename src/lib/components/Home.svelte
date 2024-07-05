@@ -14,6 +14,16 @@
     let desc: string;
     let realm: string = "";
 
+    let inputElement: HTMLInputElement;
+
+    function clearInput() {
+        realm = "";
+    }
+
+    function preventFocus(event: MouseEvent) {
+        event.preventDefault();
+    }
+
     onMount(() => {
         realm = "";
         desc = descs[Math.floor(Math.random() * descs.length)];
@@ -66,7 +76,7 @@
                             <label
                                 for="search-realm"
                                 class="block text-sm font-medium text-white"
-                                ><span class="sr-only">Search article</span
+                                ><span class="sr-only">Search realm</span
                                 ></label
                             >
                             <input
@@ -74,10 +84,41 @@
                                 id="search-realm"
                                 class="py-2.5 px-4 block w-full rounded-lg border-none bg-neutral-900 text-neutral-400 placeholder-neutral-500 input pl-10 outline-none focus:outline-none focus:ring-2 transition-border duration-200"
                                 placeholder="Search realm"
-                                value={realm}
+                                bind:value={realm}
                                 on:input={handleInput}
                                 on:keydown={handleKeydown}
                             />
+                            <div
+                                class="absolute top-1/2 end-20 -translate-y-1/2"
+                            >
+                                <button
+                                    type="button"
+                                    class="duration-200 size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent hover:bg-neutral disabled:opacity-50 disabled:pointer-events-none text-neutral-400 hover:text-neutral-300 bg-neutral-800"
+                                    class:hidden={realm === ""}
+                                    on:click={clearInput}
+                                    on:mousedown={preventFocus}
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="flex-shrink-0 size-4 icon icon-tabler icons-tabler-outline icon-tabler-x"
+                                        ><path
+                                            stroke="none"
+                                            d="M0 0h24v24H0z"
+                                            fill="none"
+                                        /><path d="M18 6l-12 12" /><path
+                                            d="M6 6l12 12"
+                                        /></svg
+                                    >
+                                </button>
+                            </div>
                         </div>
                         <div class="flex-[0_0_auto]">
                             <button
