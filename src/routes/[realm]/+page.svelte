@@ -41,9 +41,9 @@
 </script>
 
 {#if isDk}
-    <DK {realm} {debug} {isLoading} {realmData} {meta} {profile} />
+    <DK {isDk} {realm} {debug} {isLoading} {realmData} {meta} {profile} />
 {:else}
-    <V12 {realm} {debug} {isLoading} {realmData} {meta} {profile} />
+    <V12 {isDk} {realm} {debug} {isLoading} {realmData} {meta} {profile} />
 {/if}
 
 {#if debug}
