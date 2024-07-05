@@ -1,5 +1,8 @@
 <div class="flex justify-center items-center p-4 bg-white border-t">
-    Bring to you with <span class="text-red-500 mx-1 emoji">❤️</span>
+    Bring to you with <span
+        class="text-red-500 mx-1 emoji text-lg cursor-pointer hover:animate-pulse"
+        >❤️</span
+    >
     by
     <a href="https://x.com/to1dev" target="_blank" class="ml-1">@to1dev</a>
     <a href="https://github.com/to1dev/arc20me" target="_blank" class="ml-2"
