@@ -10,8 +10,9 @@
     import Debug from "./parts/Debug.svelte";
     import Love from "./parts/Love.svelte";
     import Menu from "./parts/Menu.svelte";
+    import Collections from "./parts/Collections.svelte";
+    import Wallets from "./parts/Wallets.svelte";
 
-    export let isDk;
     export let realm;
     export let debug;
     export let isLoading;
@@ -47,9 +48,11 @@
                 {:else}
                     <Title name={profile?.name} realm={realmData?.realm} />
                 {/if}
-                <Content {isDk} text={profile?.desc} />
+                <Content text={profile?.desc} />
             </div>
-            <Links links={profile?.l} />
+            <Links links={profile?.links} />
+            <Collections collections={profile?.collections} />
+            <Wallets wallets={profile?.wallets} />
             <Shortcuts />
         </div>
 

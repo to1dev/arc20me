@@ -1,6 +1,7 @@
 <script lang="ts">
     import { page } from "$app/stores";
     import { onMount } from "svelte";
+    import { isDk } from "$lib/stores/Realm";
 
     import { fetchResult } from "$lib/protocols/atomicals/vanilla";
     import type { ProfileBase, Meta, RealmData } from "$lib/interfaces/Result";
@@ -14,7 +15,6 @@
     let realmData: RealmData | null = null;
     let meta: Meta | null = null;
     let profile: ProfileBase | null = null;
-    let isDk: boolean = false;
 
     onMount(async () => {
         try {
@@ -24,7 +24,7 @@
             profile = result?.profile;
 
             let v = meta?.v ?? "1.2.0";
-            isDk = v.endsWith("dk");
+            isDk.set(v.endsWith("dk"));
             error = null;
         } catch (e) {
             error = (e as Error).message;
@@ -40,10 +40,10 @@
     import LocalServer from "$lib/components/LocalServer.svelte";
 </script>
 
-{#if isDk}
-    <DK {isDk} {realm} {debug} {isLoading} {realmData} {meta} {profile} />
+{#if $isDk}
+    <DK {realm} {debug} {isLoading} {realmData} {meta} {profile} />
 {:else}
-    <V12 {isDk} {realm} {debug} {isLoading} {realmData} {meta} {profile} />
+    <V12 {realm} {debug} {isLoading} {realmData} {meta} {profile} />
 {/if}
 
 {#if debug}

@@ -1,12 +1,12 @@
 <script lang="ts">
     import DOMPurify from "dompurify";
+    import { isDk } from "$lib/stores/Realm";
 
-    export let isDk;
     export let text;
 </script>
 
 <div class="mt-2 text-gray-600 font-light leading-relaxed">
-    {#if isDk}
+    {#if $isDk}
         {#if text?.enUS}
             {DOMPurify.sanitize(text.enUS)}
         {/if}

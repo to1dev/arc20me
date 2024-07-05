@@ -10,7 +10,6 @@
     import Love from "./parts/Love.svelte";
     import Menu from "./parts/Menu.svelte";
 
-    export let isDk;
     export let realm;
     export let debug;
     export let isLoading;
@@ -46,7 +45,7 @@
                 {:else}
                     <Title name={profile?.n} realm={realmData?.realm} />
                 {/if}
-                <Content {isDk} text={profile?.d} />
+                <Content text={profile?.d} />
             </div>
             <Links links={profile?.l} />
             <Shortcuts />
