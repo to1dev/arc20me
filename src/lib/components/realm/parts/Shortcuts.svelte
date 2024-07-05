@@ -1,8 +1,11 @@
 <hr class="mt-6" />
 <div class="flex bg-gray-50 playwrite-fr-moderne">
     <div
-        class="flex justify-center items-center w-1/2 p-4 hover:bg-gray-100 cursor-pointer duration-100"
+        class="flex justify-center items-center w-1/2 p-4 hover:bg-gray-100 cursor-pointer duration-100 has-tooltip"
     >
+        <span class="tooltip bg-info text-neutral rounded shadow-lg p-2 -mt-8 bg-opacity-75"
+            >Some Nice Tooltip Text</span
+        >
         <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -48,3 +51,13 @@
         <span class="font-medium">Subrealms</span>
     </div>
 </div>
+
+<style lang="postcss">
+    .tooltip {
+        @apply invisible absolute;
+    }
+
+    .has-tooltip:hover .tooltip {
+        @apply visible z-50;
+    }
+</style>
