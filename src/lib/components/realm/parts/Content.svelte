@@ -4,7 +4,7 @@
     export let text;
 </script>
 
-<div class="mt-2 text-gray-500 leading-relaxed">
+<div class="mt-2 text-gray-600 font-light leading-relaxed">
     {#if text?.enUS}
         {DOMPurify.sanitize(text.enUS)}
     {/if}
