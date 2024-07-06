@@ -14,7 +14,7 @@
     let desc: string;
     let realm: string = "";
 
-    let inputElement: HTMLInputElement;
+    let inputFocused: boolean = false;
 
     function clearInput() {
         realm = "";
@@ -70,7 +70,9 @@
             <div class="mt-7 sm:mt-12 mx-auto max-w-xl relative">
                 <form on:submit={handleSubmit}>
                     <div
-                        class="relative z-10 flex space-x-3 p-3 border rounded-lg shadow-lg bg-neutral-900 border-neutral-700 shadow-gray-900/20"
+                        class="relative z-10 flex space-x-3 p-3 transition-border duration-200 border-2 {inputFocused
+                            ? 'border-neutral-600'
+                            : 'border-neutral'} rounded-lg shadow-lg bg-neutral-900 border-neutral-700 shadow-gray-900/20"
                     >
                         <div class="flex-[1_0_0%]">
                             <label
@@ -82,9 +84,17 @@
                             <input
                                 name="search-realm"
                                 id="search-realm"
-                                class="py-2.5 px-4 block w-full rounded-lg border-none bg-neutral-900 text-neutral-400 placeholder-neutral-500 input pl-10 outline-none focus:outline-none focus:ring-2 transition-border duration-200"
+                                class="py-2.5 px-4 block w-full rounded-lg border-none bg-neutral-900 text-neutral-400 placeholder-neutral-500 input pl-10 outline-none focus:outline-none"
                                 placeholder="Search realm"
                                 bind:value={realm}
+                                on:focus={() => {
+                                    inputFocused = true;
+                                    console.log("true");
+                                }}
+                                on:blur={() => {
+                                    inputFocused = false;
+                                    console.log("false");
+                                }}
                                 on:input={handleInput}
                                 on:keydown={handleKeydown}
                             />
