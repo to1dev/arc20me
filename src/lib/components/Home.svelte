@@ -11,10 +11,8 @@
         `Discover the enigmatic depths of virtual realities, amplifying your experience.`,
     ];
 
-    let desc: string;
+    let desc: string | null = null;
     let realm: string = "";
-
-    let inputFocused: boolean = false;
 
     function clearInput() {
         realm = "";
@@ -63,16 +61,16 @@
                 Realm
             </h1>
 
-            <p class="mt-8 text-neutral-400 text-base lg:min-h-8 min-h-14">
-                {#if desc}{desc}{/if}
+            <p class="mt-8 text-neutral-400 text-base min-h-[3rem]">
+                {#if desc != null}
+                    {desc}
+                {/if}
             </p>
 
             <div class="mt-7 sm:mt-12 mx-auto max-w-xl relative">
                 <form on:submit={handleSubmit}>
                     <div
-                        class="relative z-10 flex space-x-3 p-3 transition-border duration-200 border-2 {inputFocused
-                            ? 'border-neutral-600'
-                            : 'border-neutral'} rounded-lg shadow-lg bg-neutral-900 border-neutral-700 shadow-gray-900/20"
+                        class="relative z-10 flex space-x-3 p-3 transition-border duration-200 border-2 rounded-full shadow-lg bg-neutral-900 border-neutral-700 shadow-gray-900/20"
                     >
                         <div class="flex-[1_0_0%]">
                             <label
@@ -87,14 +85,6 @@
                                 class="py-2.5 px-4 block w-full rounded-lg border-none bg-neutral-900 text-neutral-400 placeholder-neutral-500 input pl-10 outline-none focus:outline-none"
                                 placeholder="Search realm"
                                 bind:value={realm}
-                                on:focus={() => {
-                                    inputFocused = true;
-                                    console.log("true");
-                                }}
-                                on:blur={() => {
-                                    inputFocused = false;
-                                    console.log("false");
-                                }}
                                 on:input={handleInput}
                                 on:keydown={handleKeydown}
                             />
@@ -133,7 +123,7 @@
                         <div class="flex-[0_0_auto]">
                             <button
                                 type="submit"
-                                class="transition-colors duration-300 size-[46px] inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
+                                class="transition-colors duration-300 size-[46px] inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
                                 disabled={realm === ""}
                                 on:click={handleButtonClick}
                             >
