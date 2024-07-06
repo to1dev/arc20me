@@ -4,15 +4,13 @@
 >
     <!-- Card -->
     <div
-        class="p-4 bg-white/60 backdrop-blur-lg rounded-xl shadow-2xl dark:bg-neutral-900/60 dark:shadow-black/70"
+        class="p-4 backdrop-blur-lg rounded-xl shadow-2xl bg-neutral-900/60 shadow-black/70"
     >
         <div class="flex justify-between items-center gap-x-5 sm:gap-x-10">
-            <h2 class="font-semibold text-gray-800 dark:text-white">
-                My Wallet
-            </h2>
+            <h2 class="font-semibold text-white">My Wallet</h2>
             <button
                 type="button"
-                class="duration-200 inline-flex rounded-full p-2 text-gray-500 hover:bg-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-gray-600 dark:hover:bg-neutral-800 dark:text-neutral-300"
+                class="duration-200 inline-flex rounded-full p-2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-gray-600 hover:bg-neutral-800 text-neutral-300"
                 data-hs-remove-element="#cookies-with-stacked-buttons"
             >
                 <span class="sr-only">Dismiss</span>
@@ -32,18 +30,18 @@
                 >
             </button>
         </div>
-        <p class="mt-2 text-sm text-gray-800 dark:text-neutral-200">
-            We use cookies to improve your experience and for marketing. Visit
-            our <button
-                class="duration-200 inline-flex items-center gap-x-1.5 text-blue-600 decoration-2 hover:underline font-medium dark:text-blue-500"
-                >Cookies Policy</button
-            > to learn more.
+        <p class="mt-2 text-sm text-neutral-200">
+            A small but mighty Bitcoin wallet <span class="emoji">🌟</span>,
+            perfect for handling Atomicals
+            <span class="emoji">⚛️</span> and Realm protocols
+            <span class="emoji">🌐</span>
+            with ease <span class="emoji">🚀</span>.
         </p>
         <div class="mt-5 mb-2 w-full flex gap-x-2">
             <div class="grid w-full">
                 <button
                     type="button"
-                    class="duration-200 py-2 px-3 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
+                    class="duration-150 py-2 px-3 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -73,7 +71,7 @@
             <div class="grid w-full">
                 <button
                     type="button"
-                    class="duration-200 py-2 px-3 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
+                    class="duration-150 py-2 px-3 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -102,7 +100,7 @@
         <div class="grid w-full">
             <button
                 type="button"
-                class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800"
+                class="duration-150 w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-full bg-white text-gray-800 shadow-sm hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none"
             >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
