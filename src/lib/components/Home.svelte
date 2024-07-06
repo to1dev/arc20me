@@ -82,7 +82,7 @@
                             <input
                                 name="search-realm"
                                 id="search-realm"
-                                class="py-2.5 px-4 block w-full rounded-lg border-none bg-neutral-900 text-neutral-400 placeholder-neutral-500 input pl-10 outline-none focus:outline-none"
+                                class="py-2.5 px-4 block w-full rounded-none border-none bg-transparent text-neutral-400 placeholder-neutral-500 input pl-10 outline-none focus:outline-none"
                                 placeholder="Search realm"
                                 bind:value={realm}
                                 on:input={handleInput}
