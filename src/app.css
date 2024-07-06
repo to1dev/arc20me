@@ -2,51 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
+:root {
+    --primary-chinese-font: "ZCOOL XiaoWei", cursive;
+}
 
-    html {
-        font-family: "Playwrite DE Grund", "ZCOOL XiaoWei", sans-serif;
-        font-optical-sizing: auto;
-        font-display: swap;
-    }
+html {
+    font-family: "Playwrite DE Grund", var(--primary-chinese-font), sans-serif;
+    font-optical-sizing: auto;
 }
 
 .alkatra {
-    font-family: "Alkatra", "ZCOOL XiaoWei", system-ui;
+    font-family: "Alkatra", var(--primary-chinese-font), system-ui;
     font-optical-sizing: auto;
-    font-display: swap;
 }
 
 .playwrite-de-grund {
-    font-family: "Playwrite DE Grund", "ZCOOL XiaoWei", cursive;
+    font-family: "Playwrite DE Grund", var(--primary-chinese-font), cursive;
     font-optical-sizing: auto;
-    font-display: swap;
 }
 
 .playwrite-fr-moderne {
-    font-family: "Playwrite FR Moderne", "ZCOOL XiaoWei", cursive;
+    font-family: "Playwrite FR Moderne", var(--primary-chinese-font), cursive;
     font-optical-sizing: auto;
-    font-display: swap;
 }
 
 .playwrite-us-modern {
-    font-family: "Playwrite US Modern", "ZCOOL XiaoWei", cursive;
+    font-family: "Playwrite US Modern", var(--primary-chinese-font), cursive;
     font-optical-sizing: auto;
-    font-display: swap;
 }
 
 .playwrite-nz {
-    font-family: "Playwrite NZ", "ZCOOL XiaoWei", cursive;
+    font-family: "Playwrite NZ", var(--primary-chinese-font), cursive;
     font-optical-sizing: auto;
-    font-display: swap;
 }
 
 .emoji {
     font-family: "Noto Color Emoji", sans-serif;
-    font-display: swap;
 }
 
 .runic {
     font-family: "Noto Sans Runic", sans-serif;
-    font-display: swap;
 }

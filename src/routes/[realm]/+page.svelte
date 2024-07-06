@@ -6,6 +6,10 @@
     import type { ProfileBase, Meta, RealmData } from "$lib/interfaces/Result";
     import punycode from "punycode/";
 
+    import Purse from "$lib/components/Purse.svelte";
+    import V12 from "$lib/components/realm/Base.svelte";
+    import DK from "$lib/components/realm/DK.svelte";
+
     $: realm = punycode.toASCII($page.params.realm.toLowerCase());
 
     let debug = import.meta.env.MODE === "development";
@@ -33,12 +37,6 @@
             isLoading = false;
         }
     });
-
-    import Purse from "$lib/components/Purse.svelte";
-    import V12 from "$lib/components/realm/Base.svelte";
-    import DK from "$lib/components/realm/DK.svelte";
-    import Wallet from "$lib/protocols/atomicals/Wallet.svelte";
-    import LocalServer from "$lib/components/LocalServer.svelte";
 </script>
 
 <Purse />
@@ -47,9 +45,4 @@
     <DK {realm} {debug} {realmData} {meta} {profile} />
 {:else}
     <V12 {realm} {debug} {realmData} {meta} {profile} />
-{/if}
-
-{#if debug}
-    <LocalServer />
-    <Wallet />
 {/if}

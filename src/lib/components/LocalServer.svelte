@@ -33,9 +33,7 @@
 </script>
 
 {#if corsResult}
-    <div
-        class="flex flex-col justify-center items-center p-4 bg-white border-t"
-    >
+    <div class="flex flex-col justify-center items-center p-4 border-t mx-auto bg-white">
         <div class=" mt-2 leading-relaxed break-words">
             {corsResult}
         </div>

@@ -39,7 +39,7 @@
 </svelte:head>
 
 <div
-    class="flex flex-col lg:flex-row flex-auto {!onHomepage
+    class="flex flex-col lg:flex-row flex-auto min-h-screen {!onHomepage
         ? 'background'
         : ''}"
 >

@@ -31,7 +31,7 @@
             </button>
         </div>
         <p class="mt-2 text-sm text-neutral-200">
-            A small but mighty Bitcoin wallet <span class="emoji">🌟</span>,
+            A small but mighty Bitcoin wallet <span class="emoji">🪄</span>,
             perfect for handling Atomicals
             <span class="emoji">⚛️</span> and Realm protocols
             <span class="emoji">🌐</span>

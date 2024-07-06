@@ -1,5 +1,8 @@
 <script lang="ts">
     import { onMount } from "svelte";
+    import Database from "$lib/protocols/atomicals/Database.svelte";
+    import LocalServer from "$lib/components/LocalServer.svelte";
+
     import Avatar from "./parts/Avatar.svelte";
     import Banner from "./parts/Banner.svelte";
     import Title from "./parts/Title.svelte";
@@ -24,7 +27,7 @@
 <div class="flex items-center justify-center min-h-screen">
     <!--div class="container m-4 lg:w-2/6 xl:w-2/7 sm:w-full md:w-2/3 shadow-2xl transform border-2 border-white rounded-t-xl"></div-->
     <div
-        class="container m-4 sm:w-full md:w-2/3 2xl:w-2/6 xl:w-2/5 lg:w-3/6 shadow-2xl transform border-2 border-white rounded-t-xl"
+        class="container m-4 sm:w-full md:w-2/3 2xl:w-2/6 xl:w-2/5 lg:w-3/6 shadow-2xl transform border-2 border-white"
     >
         <Banner banner={profile?.b} />
         <Avatar image={profile?.i} />
@@ -42,6 +45,8 @@
         <Love />
         {#if debug}
             <Debug {meta} />
+            <LocalServer />
+            <Database />
         {/if}
     </div>
 </div>

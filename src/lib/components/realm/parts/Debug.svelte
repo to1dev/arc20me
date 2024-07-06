@@ -2,7 +2,7 @@
     export let meta;
 </script>
 
-<div class="flex flex-col justify-center items-center p-4 bg-white border-t">
+<div class="flex flex-col justify-center items-center p-4 bg-white border-t bottom-0">
     {#if meta}
         <div class="mt-2 font-light leading-relaxed break-all">
             {JSON.stringify(meta, null, 4)}
