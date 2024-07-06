@@ -11,7 +11,7 @@
     <div
         tabindex="-1"
         role="button"
-        class="btn btn-ghost btn-circle btn-sm bg-neutral-700 hover:bg-neutral p-1"
+        class="btn btn-ghost btn-circle btn-sm no-animation bg-white text-base-200 hover:bg-neutral hover:text-base-content p-1"
     >
         <svg
             xmlns="http://www.w3.org/2000/svg"
