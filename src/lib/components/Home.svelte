@@ -70,7 +70,7 @@
             <div class="mt-7 sm:mt-12 mx-auto max-w-xl relative">
                 <form on:submit={handleSubmit}>
                     <div
-                        class="relative z-10 flex space-x-3 p-3 transition-border duration-200 border-2 rounded-full shadow-lg bg-neutral-900 border-neutral-700 shadow-gray-900/20"
+                        class="relative z-10 flex space-x-3 p-3 transition-border duration-200 border-2 rounded-lg shadow-lg bg-neutral-900 border-neutral-700 shadow-gray-900/20"
                     >
                         <div class="flex-[1_0_0%]">
                             <label
