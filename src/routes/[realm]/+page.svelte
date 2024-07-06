@@ -6,7 +6,6 @@
     import type { ProfileBase, Meta, RealmData } from "$lib/interfaces/Result";
     import punycode from "punycode/";
 
-    import Purse from "$lib/components/Purse.svelte";
     import V12 from "$lib/components/realm/Base.svelte";
     import DK from "$lib/components/realm/DK.svelte";
 
@@ -38,8 +37,6 @@
         }
     });
 </script>
-
-<Purse />
 
 {#if $isDk}
     <DK {realm} {debug} {realmData} {meta} {profile} />

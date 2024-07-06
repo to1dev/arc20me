@@ -27,7 +27,7 @@
 <div class="flex items-center justify-center">
     <!--div class="container m-4 lg:w-2/6 xl:w-2/7 sm:w-full md:w-2/3 shadow-2xl transform border-2 border-white rounded-t-xl"></div-->
     <div
-        class="container m-0 md:m-4 sm:w-full md:w-2/3 2xl:w-2/6 xl:w-2/5 lg:w-3/6 sm:shadow-2xl transform ring-8 ring-white"
+        class="container m-0 md:m-8 sm:w-full md:w-2/3 2xl:w-2/6 xl:w-2/5 lg:w-3/6 sm:shadow-2xl transform ring-8 ring-white"
     >
         <Banner banner={profile?.b} />
         <Avatar image={profile?.i} />
