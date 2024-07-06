@@ -6,9 +6,16 @@
     --primary-chinese-font: "ZCOOL XiaoWei", cursive;
 }
 
-html {
+html, pre, code {
     font-family: "Playwrite DE Grund", var(--primary-chinese-font), sans-serif;
     font-optical-sizing: auto;
+}
+
+pre {
+    white-space: pre-wrap;
+    /* Wrap long lines */
+    word-wrap: break-word;
+    /* Break long words */
 }
 
 .alkatra {
