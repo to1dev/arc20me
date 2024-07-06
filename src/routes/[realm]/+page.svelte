@@ -4,8 +4,9 @@
     import { isDk } from "$lib/stores/Realm";
     import { fetchResult } from "$lib/protocols/atomicals/vanilla";
     import type { ProfileBase, Meta, RealmData } from "$lib/interfaces/Result";
+    import punycode from "punycode/";
 
-    $: realm = $page.params.realm.toLowerCase();
+    $: realm = punycode.toASCII($page.params.realm.toLowerCase());
 
     let debug = import.meta.env.MODE === "development";
 
@@ -33,11 +34,14 @@
         }
     });
 
+    import Purse from "$lib/components/Purse.svelte";
     import V12 from "$lib/components/realm/Base.svelte";
     import DK from "$lib/components/realm/DK.svelte";
     import Wallet from "$lib/protocols/atomicals/Wallet.svelte";
     import LocalServer from "$lib/components/LocalServer.svelte";
 </script>
+
+<Purse />
 
 {#if $isDk}
     <DK {realm} {debug} {realmData} {meta} {profile} />

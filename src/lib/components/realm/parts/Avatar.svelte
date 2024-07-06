@@ -10,8 +10,10 @@
     });*/
 </script>
 
-<img
-    class="h-32 w-32 bg-white p-2 rounded-full"
-    src={image ? image : `/images/loading/animals/24.gif`}
-    alt=""
-/>
+<div class="flex justify-center px-5 -mt-12 bg-white">
+    <img
+        class="h-32 w-32 bg-white p-2 rounded-full"
+        src={image ? image : `/images/loading/animals/24.gif`}
+        alt=""
+    />
+</div>

@@ -1,8 +1,7 @@
 <script lang="ts">
     import { onMount } from "svelte";
-    import DOMPurify from "dompurify";
     import Avatar from "./parts/Avatar.svelte";
-    import RotatingPizza from "./parts/RotatingPizza.svelte";
+    import Banner from "./parts/Banner.svelte";
     import Title from "./parts/Title.svelte";
     import Content from "./parts/Content.svelte";
     import Links from "./parts/Links.svelte";
@@ -29,16 +28,8 @@
     <div
         class="container m-4 sm:w-full md:w-2/3 2xl:w-2/6 xl:w-2/5 lg:w-3/6 shadow-2xl transform border-2 border-white rounded-t-xl"
     >
-        <div class="h-48 overflow-hidden rounded-t-xl">
-            <img
-                class="w-full"
-                src={profile?.b ? profile.b : "/images/banner.jpg"}
-                alt=""
-            />
-        </div>
-        <div class="flex justify-center px-5 -mt-12 bg-white">
-            <Avatar image={profile?.i} />
-        </div>
+        <Banner banner={profile?.b} />
+        <Avatar image={profile?.i} />
         <Menu />
 
         <div class="bg-white">
