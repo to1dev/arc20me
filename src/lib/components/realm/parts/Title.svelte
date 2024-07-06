@@ -1,4 +1,6 @@
 <script lang="ts">
+    import punycode from "punycode/";
+
     export let name;
     export let realm;
 
@@ -9,7 +11,7 @@
     class="text-gray-800 text-3xl font-bold mb-2 min-h-[1rem] alkatra lowercase"
 >
     {#if realm != null}
-        <span>{name ? name : realm}</span>
+        <span>{name ? name : punycode.toUnicode(realm)}</span>
     {:else}
         <span class="loading loading-dots loading-lg text-info"></span>
     {/if}
