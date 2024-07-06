@@ -13,7 +13,6 @@
     $: realm = punycode.toASCII($page.params.realm.toLowerCase());
 
     let debug = import.meta.env.MODE === "development";
-    debug = false;
 
     let error: string | null = null;
     let isLoading: boolean = false;

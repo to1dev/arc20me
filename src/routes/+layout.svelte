@@ -39,8 +39,8 @@
 </svelte:head>
 
 <div
-    class="flex flex-col lg:flex-row flex-auto min-h-screen bg-white {!onHomepage
-        ? 'background'
+    class="flex flex-col lg:flex-row flex-auto min-h-screen {!onHomepage
+        ? 'bg-white background'
         : ''}"
 >
     <div class="flex-auto">
