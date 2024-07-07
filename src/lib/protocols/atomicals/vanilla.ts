@@ -190,7 +190,7 @@ export async function fetchResult(realm: string): Promise<{
     const _id = await fetchRealmAtomicalId(realm);
     if (!_id.id) {
         return {
-            meta: { v: "", id: "", pid: "" },
+            meta: { v: "", id: "", pid: "", image: "" },
             profile: null,
         };
     }
@@ -198,7 +198,7 @@ export async function fetchResult(realm: string): Promise<{
     const pid = await fetchRealmProfileId(_id.id);
     if (!pid.pid) {
         return {
-            meta: { v: "", id: _id.id, pid: "" },
+            meta: { v: "", id: _id.id, pid: "", image: "" },
             profile: null,
         };
     }
@@ -206,13 +206,20 @@ export async function fetchResult(realm: string): Promise<{
     const _profile = await fetchRealmProfile(pid.pid);
     if (!_profile.profile) {
         return {
-            meta: { v: "", id: _id.id, pid: pid.pid },
+            meta: { v: "", id: _id.id, pid: pid.pid, image: "" },
             profile: null,
         };
     }
 
     return {
-        meta: { v: _profile.profile.v, id: _id.id, pid: pid.pid },
+        meta: {
+            v: _profile.profile?.v,
+            id: _id.id,
+            pid: pid.pid,
+            image: _profile.profile?.image
+                ? (_profile.profile?.image as string)
+                : (_profile.profile?.i as string),
+        },
         profile: _profile.profile,
     };
 }
@@ -240,3 +247,52 @@ export function parseURN(input: string): ParsedData | null {
         identifier,
     };
 }
+
+type AtomId = string;
+
+export interface ParsedId {
+    prefix: string;
+    id: AtomId;
+}
+
+const removeDuplicatePrefixes = (line: string): string => {
+    const parts = line.split(":");
+    const seen = new Set<string>();
+    const result: string[] = [];
+
+    for (let i = 0; i < parts.length; i++) {
+        if (!seen.has(parts[i])) {
+            result.push(parts[i]);
+            seen.add(parts[i]);
+        }
+    }
+
+    return result.join(":");
+};
+
+export const parseSingleLine = (line: string): ParsedId | null => {
+    const correctedLine = removeDuplicatePrefixes(line);
+    const parts = correctedLine.split(":");
+
+    if (parts.length >= 4) {
+        const prefix = parts[0];
+        const protocol = parts[1];
+        const type = parts[2];
+        const idPart = parts.slice(3).join(":");
+
+        if (protocol === "btc" && (type === "id" || type === "dat")) {
+            const id = idPart.split("/")[0]; // Remove any file extensions or paths
+            return {
+                prefix: "atom",
+                id: id,
+            };
+        } else if (protocol === "btc" && type === "id" && prefix === "ord") {
+            return {
+                prefix: "ord",
+                id: idPart,
+            };
+        }
+    }
+
+    return null;
+};

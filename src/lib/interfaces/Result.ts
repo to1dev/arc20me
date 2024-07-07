@@ -40,6 +40,7 @@ export interface Meta {
     v: string;
     id: string;
     pid: string;
+    image: string;
 }
 
 export interface RealmData {
@@ -48,6 +49,8 @@ export interface RealmData {
 
 export interface ProfileBase {
     v: string;
+    image?: string;
+    i?: string;
 }
 
 export interface DKProfile extends ProfileBase {

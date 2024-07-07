@@ -1,7 +1,9 @@
 <script lang="ts">
     import { onMount } from "svelte";
-    import Database from "$lib/protocols/atomicals/Database.svelte";
+    import Database from "$lib/components/realm/Database.svelte";
     import LocalServer from "$lib/components/LocalServer.svelte";
+
+    import punycode from "punycode/";
 
     import Avatar from "./parts/Avatar.svelte";
     import Banner from "./parts/Banner.svelte";
@@ -18,10 +20,15 @@
     export let realmData;
     export let meta;
     export let profile;
+
+    let uname: string | null = null;
+    onMount(async () => {
+        uname = punycode.toUnicode(realm);
+    });
 </script>
 
 <svelte:head>
-    <title>{realm} | A Humble Explorer for Atomicals Realm</title>
+    <title>{uname} | A Humble Explorer for Atomicals Realm</title>
 </svelte:head>
 
 <div class="flex items-center justify-center">
@@ -35,7 +42,7 @@
 
         <div class="bg-white">
             <div class="text-center px-14 break-words">
-                <Title name={profile?.n} realm={realmData?.realm} />
+                <Title name={profile?.n} realm={realmData?.realm} {uname} />
                 <Content text={profile?.d} />
             </div>
             <Links links={profile?.l} />
