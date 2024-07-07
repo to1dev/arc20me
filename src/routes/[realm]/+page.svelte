@@ -11,6 +11,9 @@
 
     $: realm = punycode.toASCII($page.params.realm.toLowerCase());
 
+    //let debug = import.meta.env.MODE === "development";
+    let _debug = $debug;
+
     let error: string | null = null;
     let isLoading: boolean = false;
     let realmData: RealmData | null = null;
@@ -37,7 +40,7 @@
 </script>
 
 {#if $isDk}
-    <DK {realm} {debug} {realmData} {meta} {profile} />
+    <DK {realm} debug={_debug} {realmData} {meta} {profile} />
 {:else}
-    <V12 {realm} {debug} {realmData} {meta} {profile} />
+    <V12 {realm} debug={_debug} {realmData} {meta} {profile} />
 {/if}
