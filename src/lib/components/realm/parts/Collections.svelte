@@ -6,7 +6,7 @@
 
 {#if collections}
     <div class="flex justify-center space-x-4 p-4 break-all">
-        {#if debug}
+        {#if $debug}
             <span>Collections</span>
             <pre><code>{JSON.stringify(collections, null, 4)}</code></pre>
         {/if}

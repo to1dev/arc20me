@@ -5,7 +5,7 @@
 
 {#if wallets}
     <div class="flex space-x-4 p-4 break-all">
-        {#if debug}
+        {#if $debug}
             <span>Wallets</span>
             <pre><code>{JSON.stringify(wallets, null, 4)}</code></pre>
         {/if}
