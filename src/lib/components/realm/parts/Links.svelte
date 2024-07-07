@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { isDk } from "$lib/stores/Realm";
+    import { isDk, debug } from "$lib/stores/Realm";
 
     export let links;
 </script>
@@ -156,7 +156,10 @@
         {/if}
     </div>
 {:else if links}
-    <div class="flex justify-center space-x-4 p-4">
-        {JSON.stringify(links, null, 4)}
+    <div class="flex space-x-4 p-4 break-all">
+        {#if debug}
+            <span>Links</span>
+            <pre><code>{JSON.stringify(links, null, 4)}</code></pre>
+        {/if}
     </div>
 {/if}
