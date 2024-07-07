@@ -270,7 +270,7 @@ const removeDuplicatePrefixes = (line: string): string => {
     return result.join(":");
 };
 
-export const parseSingleLine = (line: string): ParsedId | null => {
+export const parseAtomicalIdfromURN = (line: string): ParsedId | null => {
     const correctedLine = removeDuplicatePrefixes(line);
     const parts = correctedLine.split(":");
 
@@ -280,18 +280,21 @@ export const parseSingleLine = (line: string): ParsedId | null => {
         const type = parts[2];
         const idPart = parts.slice(3).join(":");
 
-        if (protocol === "btc" && (type === "id" || type === "dat")) {
-            const id = idPart.split("/")[0]; // Remove any file extensions or paths
-            return {
-                prefix: "atom",
-                id: id,
-            };
+        const id = idPart.split("/")[0]; // Remove any file extensions or paths
+
+        return {
+            prefix: prefix,
+            id: id,
+        };
+
+        /*if (
+            protocol === "btc" &&
+            (type === "id" || type === "dat") &&
+            prefix === "atom"
+        ) {
         } else if (protocol === "btc" && type === "id" && prefix === "ord") {
-            return {
-                prefix: "ord",
-                id: idPart,
-            };
-        }
+        } else {
+        }*/
     }
 
     return null;

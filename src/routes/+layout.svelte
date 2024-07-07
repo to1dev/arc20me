@@ -1,6 +1,9 @@
 <script lang="ts">
     import "../app.css";
     import { page } from "$app/stores";
+    import { debug } from "$lib/stores/Realm";
+
+    const _debug = import.meta.env.MODE === "development";
 
     enum PageType {
         Homepage,
@@ -32,6 +35,7 @@
 
     $: onHomepage =
         getPageType($page.url.pathname) == PageType.Homepage ? true : false;
+    $: debug.set(_debug);
 </script>
 
 <svelte:head>

@@ -1,10 +1,7 @@
 <script lang="ts">
     import { onMount } from "svelte";
-    import {
-        type ParsedId,
-        parseSingleLine,
-    } from "$lib/protocols/atomicals/vanilla";
-    import { parseIds } from "../../../../tests/parse-image-id";
+    import { type ParsedId } from "$lib/protocols/atomicals/vanilla";
+    import { parseIds } from "../../../../tests/parse-atomical-id.test";
 
     async function test1(): Promise<ParsedId[]> {
         return await parseIds();

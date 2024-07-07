@@ -1,7 +1,7 @@
 <script lang="ts">
     import { page } from "$app/stores";
     import { onMount } from "svelte";
-    import { isDk } from "$lib/stores/Realm";
+    import { isDk, debug } from "$lib/stores/Realm";
     import { fetchResult } from "$lib/protocols/atomicals/vanilla";
     import type { ProfileBase, Meta, RealmData } from "$lib/interfaces/Result";
     import punycode from "punycode/";
@@ -10,8 +10,6 @@
     import DK from "$lib/components/realm/DK.svelte";
 
     $: realm = punycode.toASCII($page.params.realm.toLowerCase());
-
-    let debug = import.meta.env.MODE === "development";
 
     let error: string | null = null;
     let isLoading: boolean = false;

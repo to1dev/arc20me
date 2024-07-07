@@ -1,7 +1,7 @@
 <script lang="ts">
     import { onMount } from "svelte";
-    import Database from "$lib/components/realm/Database.svelte";
-    import LocalServer from "$lib/components/LocalServer.svelte";
+    import Database from "$lib/components/db/Database.svelte";
+    import LocalServer from "$lib/components/server/LocalServer.svelte";
 
     import punycode from "punycode/";
 

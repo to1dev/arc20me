@@ -1,5 +1,5 @@
 import {
-    parseSingleLine,
+    parseAtomicalIdfromURN,
     type ParsedId,
 } from "$lib/protocols/atomicals/vanilla";
 
@@ -19,7 +19,7 @@ export const parseIds = async (): Promise<ParsedId[]> => {
     const parsedIds: ParsedId[] = [];
 
     for (const line of lines) {
-        const parsedId = parseSingleLine(line);
+        const parsedId = parseAtomicalIdfromURN(line);
         if (parsedId) {
             parsedIds.push(parsedId);
         }
