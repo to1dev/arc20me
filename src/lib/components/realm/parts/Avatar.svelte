@@ -30,7 +30,6 @@
                 const imageData = await fetchHexData(id.id);
                 if (imageData) {
                     imageSrc = hexToBase64(imageData.data, imageData.ext);
-                    console.log(imageData.ext);
                 }
             } else {
                 imageSrc = image;
