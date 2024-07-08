@@ -22,7 +22,7 @@
     export let profile;
 
     let uname: string | null = null;
-    onMount(async () => {
+    onMount(() => {
         uname = punycode.toUnicode(realm);
     });
 </script>

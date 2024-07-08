@@ -1,8 +1,4 @@
 <script lang="ts">
-    import { onMount } from "svelte";
-
-    onMount(async () => {});
-
     export let meta;
 
     $: highlightedJson = JSON.stringify(meta, null, 4);

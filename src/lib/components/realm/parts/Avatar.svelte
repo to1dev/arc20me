@@ -1,9 +1,5 @@
 <script lang="ts">
-    import { onMount } from "svelte";
-
     export let image;
-
-    onMount(async () => {});
 
     let fallbackImage = "/images/loading/animals/24.gif";
     function handleImageError(event: Event) {

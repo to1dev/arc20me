@@ -5,15 +5,27 @@
     export let text;
 </script>
 
-<div class="mt-2 text-gray-600 leading-relaxed">
+<div class="mt-2 text-gray-600 leading-relaxed playwrite-fr-moderne">
     {#if $isDk}
         {#if text?.enUS}
-            {DOMPurify.sanitize(text.enUS)}
+            <div
+                class="p-4 mb-4 text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400"
+            >
+                {DOMPurify.sanitize(text.enUS)}
+            </div>
         {/if}
         {#if text?.zhCN}
-            {DOMPurify.sanitize(text.zhCN)}
+            <div
+                class="p-4 mb-4 text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+            >
+                {DOMPurify.sanitize(text.zhCN)}
+            </div>
         {/if}
     {:else if text}
-        {DOMPurify.sanitize(text)}
+        <div
+            class="p-4 mb-4 text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400"
+        >
+            {DOMPurify.sanitize(text)}
+        </div>
     {/if}
 </div>

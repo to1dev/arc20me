@@ -100,17 +100,14 @@ async function findObjectWithKey(
     return null;
 }
 
-async function extractImages(
-    data: JsonData,
-    result: string[] = []
-): Promise<string[]> {
+export function extractImages(data: JsonData, result: string[] = []): string[] {
     for (const key in data) {
         if (data.hasOwnProperty(key)) {
             const value = data[key];
             if (key === "image" || key === "img") {
                 result.push(value);
             } else if (typeof value === "object" && value !== null) {
-                await extractImages(value, result);
+                extractImages(value, result);
             }
         }
     }
@@ -228,6 +225,8 @@ type AtomId = string;
 
 export interface ParsedId {
     prefix: string;
+    protocol: string;
+    type: string;
     id: AtomId;
 }
 
@@ -260,6 +259,8 @@ export const parseAtomicalIdfromURN = (line: string): ParsedId | null => {
 
         return {
             prefix: prefix,
+            protocol: protocol,
+            type: type,
             id: id,
         };
 
