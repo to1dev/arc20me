@@ -224,30 +224,6 @@ export async function fetchResult(realm: string): Promise<{
     };
 }
 
-interface ParsedData {
-    protocol: string;
-    blockchain: string;
-    ref_type: string;
-    identifier: string;
-}
-
-export function parseURN(input: string): ParsedData | null {
-    const parts = input.split(":");
-    if (parts.length !== 4) {
-        console.error("Invalid input format");
-        return null;
-    }
-
-    const [protocol, blockchain, ref_type, identifier] = parts;
-
-    return {
-        protocol,
-        blockchain,
-        ref_type,
-        identifier,
-    };
-}
-
 type AtomId = string;
 
 export interface ParsedId {
@@ -299,3 +275,39 @@ export const parseAtomicalIdfromURN = (line: string): ParsedId | null => {
 
     return null;
 };
+
+import { base64, hex } from "@scure/base";
+
+export function hexToBase64(
+    hexString: string,
+    ext: string = "image/png"
+): string {
+    const bytes = hex.decode(hexString);
+    const b64 = base64.encode(bytes);
+    return `data:${ext};base64,${b64}`;
+}
+
+export interface ParsedHexData {
+    fileName: string;
+    hexData: string;
+}
+
+export function extractHexData(obj: any, parentKey = ""): ParsedHexData[] {
+    let result: ParsedHexData[] = [];
+
+    if (obj && typeof obj === "object") {
+        for (const key of Object.keys(obj)) {
+            if (key === "$b") {
+                const hexData =
+                    typeof obj[key] === "string" ? obj[key] : obj[key].$b;
+                if (typeof hexData === "string") {
+                    result.push({ fileName: parentKey, hexData });
+                }
+            } else {
+                result = result.concat(extractHexData(obj[key], key));
+            }
+        }
+    }
+
+    return result;
+}

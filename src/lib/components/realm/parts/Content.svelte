@@ -5,7 +5,7 @@
     export let text;
 </script>
 
-<div class="mt-2 text-gray-600 font-light leading-relaxed">
+<div class="mt-2 text-gray-600 leading-relaxed">
     {#if $isDk}
         {#if text?.enUS}
             {DOMPurify.sanitize(text.enUS)}
