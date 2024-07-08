@@ -10,6 +10,7 @@
     import Title from "./parts/Title.svelte";
     import Content from "./parts/Content.svelte";
     import Bingo from "./parts/Bingo.svelte";
+    import NoProfile from "./parts/NoProfile.svelte";
     import Links from "./parts/Links.svelte";
     import Shortcuts from "./parts/Shortcuts.svelte";
     import Debug from "./parts/Debug.svelte";
@@ -48,6 +49,7 @@
                 <Title name={profile?.name} realm={realmData?.realm} {uname} />
                 <Content text={profile?.desc} />
                 <Bingo {meta} />
+                <NoProfile {meta} />
             </div>
             <Links links={profile?.links} />
             <Collections collections={profile?.collections} />

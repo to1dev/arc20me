@@ -9,6 +9,8 @@
     import Banner from "./parts/Banner.svelte";
     import Title from "./parts/Title.svelte";
     import Content from "./parts/Content.svelte";
+    import Bingo from "./parts/Bingo.svelte";
+    import NoProfile from "./parts/NoProfile.svelte";
     import Links from "./parts/Links.svelte";
     import Shortcuts from "./parts/Shortcuts.svelte";
     import Debug from "./parts/Debug.svelte";
@@ -44,6 +46,8 @@
             <div class="text-center px-14 break-words">
                 <Title name={profile?.n} realm={realmData?.realm} {uname} />
                 <Content text={profile?.d} />
+                <Bingo {meta} />
+                <NoProfile {meta} />
             </div>
             <Links links={profile?.l} />
             <Shortcuts />
