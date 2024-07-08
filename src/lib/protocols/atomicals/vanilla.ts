@@ -1,3 +1,5 @@
+import { base64, hex } from "@scure/base";
+
 import type {
     ResponseResult,
     Info,
@@ -180,6 +182,35 @@ export async function fetchRealmProfile(
     }
 }
 
+export async function fetchHexData(
+    id: string
+): Promise<{ b64: string | null }> {
+    const baseUrl = PUBLIC_ELECTRUMX_BASE_URL;
+    const endpoint = PUBLIC_ELECTRUMX_ENDPOINT3;
+    const url: string = `${baseUrl}${endpoint}?params=["${id}"]`;
+
+    try {
+        const res = await fetch(url);
+        if (!res.ok) {
+            throw new Error(`Error fetching data: ${res.statusText}`);
+        }
+
+        const data = await res.json();
+        const profile = extractHexData(
+            data.response?.result?.mint_data?.fields
+        );
+
+        return {
+            b64: null,
+        };
+    } catch (error) {
+        console.error("Failed to fetch realm info:", error);
+        return {
+            b64: null,
+        };
+    }
+}
+
 export async function fetchResult(realm: string): Promise<{
     meta: Meta | null;
     profile: ProfileBase | null;
@@ -276,8 +307,6 @@ export const parseAtomicalIdfromURN = (line: string): ParsedId | null => {
 
     return null;
 };
-
-import { base64, hex } from "@scure/base";
 
 export function hexToBase64(
     hexString: string,
