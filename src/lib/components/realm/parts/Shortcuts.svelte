@@ -1,7 +1,7 @@
 <hr class="mt-6" />
 <div class="flex bg-gray-50 playwrite-fr-moderne">
-    <div
-        class="flex justify-center items-center w-1/2 p-4 hover:bg-gray-100 cursor-pointer duration-100 has-tooltip"
+    <button
+        class="flex justify-center items-center w-1/2 p-4 hover:bg-gray-100 duration-100"
     >
         <!--span
             class="tooltip bg-info text-neutral rounded shadow-lg p-2 -mt-8 bg-opacity-75"
@@ -27,10 +27,10 @@
             /></svg
         >
         <span class="font-medium">Donate</span>
-    </div>
+    </button>
     <div class="border"></div>
-    <div
-        class="flex justify-center items-center w-1/2 p-4 hover:bg-gray-100 cursor-pointer duration-100"
+    <button
+        class="flex justify-center items-center w-1/2 p-4 hover:bg-gray-100 duration-100"
     >
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -50,7 +50,7 @@
             /><path d="M5 12l0 .01" /><path d="M5 18l0 .01" /></svg
         >
         <span class="font-medium">Subrealms</span>
-    </div>
+    </button>
 </div>
 
 <style lang="postcss">

@@ -38,7 +38,7 @@ export async function fetchRealmAtomicalId(
             id,
         };
     } catch (error) {
-        console.error("Failed to fetch realm info:", error);
+        console.error("Failed to fetch realm id:", error);
         return {
             id: null,
         };

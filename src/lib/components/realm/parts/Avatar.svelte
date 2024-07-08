@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { afterUpdate, beforeUpdate, onMount } from "svelte";
+    import { afterUpdate } from "svelte";
     import {
         fetchHexData,
         hexToBase64,
