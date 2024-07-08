@@ -182,9 +182,14 @@ export async function fetchRealmProfile(
     }
 }
 
+interface ImageData {
+    ext: string | null;
+    data: string | null;
+}
+
 export async function fetchHexData(
-    id: string
-): Promise<{ b64: string | null }> {
+    id: string | null | undefined
+): Promise<ImageData | null> {
     const baseUrl = PUBLIC_ELECTRUMX_BASE_URL;
     const endpoint = PUBLIC_ELECTRUMX_ENDPOINT3;
     const url: string = `${baseUrl}${endpoint}?params=["${id}"]`;
@@ -196,17 +201,25 @@ export async function fetchHexData(
         }
 
         const data = await res.json();
-        const profile = extractHexData(
-            data.response?.result?.mint_data?.fields
-        );
+        const imageData = extractHexData(data.response?.result?.mint_data);
+
+        if (imageData && imageData.length > 0) {
+            const image = imageData[0];
+            return {
+                ext: image.ext,
+                data: image.hexData,
+            };
+        }
 
         return {
-            b64: null,
+            ext: null,
+            data: null,
         };
     } catch (error) {
-        console.error("Failed to fetch realm info:", error);
+        console.error("Failed to fetch hex data:", error);
         return {
-            b64: null,
+            ext: null,
+            data: null,
         };
     }
 }
@@ -309,16 +322,20 @@ export const parseAtomicalIdfromURN = (line: string): ParsedId | null => {
 };
 
 export function hexToBase64(
-    hexString: string,
-    ext: string = "image/png"
-): string {
+    hexString: string | null,
+    ext: string | null = "png"
+): string | null {
+    if (!hexString) {
+        return null;
+    }
     const bytes = hex.decode(hexString);
     const b64 = base64.encode(bytes);
-    return `data:${ext};base64,${b64}`;
+    return `data:image/${ext};base64,${b64}`;
 }
 
 export interface ParsedHexData {
     fileName: string;
+    ext: string;
     hexData: string;
 }
 
@@ -331,7 +348,10 @@ export function extractHexData(obj: any, parentKey = ""): ParsedHexData[] {
                 const hexData =
                     typeof obj[key] === "string" ? obj[key] : obj[key].$b;
                 if (typeof hexData === "string") {
-                    result.push({ fileName: parentKey, hexData });
+                    const parts = parentKey.split(".");
+                    const ext =
+                        parts.length > 1 ? parts[parts.length - 1] : "png";
+                    result.push({ fileName: parentKey, ext: ext, hexData });
                 }
             } else {
                 result = result.concat(extractHexData(obj[key], key));
