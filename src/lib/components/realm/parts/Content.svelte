@@ -8,17 +8,17 @@
 <div class="mt-2 text-gray-600 leading-relaxed playwrite-fr-moderne">
     {#if $isDk}
         {#if text?.enUS}
-            <div class="text-blue-800 dark:text-blue-400">
+        <div class="m-2">
                 {DOMPurify.sanitize(text.enUS)}
             </div>
         {/if}
         {#if text?.zhCN}
-            <div class="text-red-800 dark:text-red-400">
+        <div class="m-2">
                 {DOMPurify.sanitize(text.zhCN)}
             </div>
         {/if}
     {:else if text}
-        <div class="text-blue-800 dark:text-blue-400">
+        <div class="m-2">
             {DOMPurify.sanitize(text)}
         </div>
     {/if}
