@@ -2,8 +2,8 @@
     export let meta;
 </script>
 
-{#if meta && !meta.pid}
-    <div class="m-4 flex justify-center items-center duration-100 text-success">
+{#if meta && meta.id && !meta.pid}
+    <div class="m-4 flex justify-center items-center duration-100 text-info">
         <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -22,7 +22,7 @@
     </div>
     <div>
         <button
-            class="duration-150 py-2 px-3 inline-flex justify-center items-center w-28 gap-x-2 text-sm font-semibold rounded-full bg-success text-white hover:bg-green-600 disabled:opacity-50 disabled:pointer-events-none"
+            class="duration-150 py-2 px-3 inline-flex justify-center items-center w-28 gap-x-2 text-sm font-semibold rounded-full bg-blue-500 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
         >
             <svg
                 xmlns="http://www.w3.org/2000/svg"
