@@ -32,7 +32,7 @@
 </script>
 
 <svelte:head>
-    <title>{uname} | A Humble Explorer for Atomicals Realm</title>
+    <title>{uname ? uname : ""} | A Humble Explorer for Atomicals Realm</title>
 </svelte:head>
 
 <div class="flex items-center justify-center">
