@@ -268,10 +268,10 @@ export async function fetchResult(realm: string): Promise<{
 type AtomId = string;
 
 export interface ParsedId {
-    prefix: string;
-    protocol: string;
-    type: string;
-    id: AtomId;
+    prefix?: string | null;
+    protocol?: string | null;
+    type?: string | null;
+    id?: AtomId | null;
 }
 
 const removeDuplicatePrefixes = (line: string): string => {
@@ -289,7 +289,7 @@ const removeDuplicatePrefixes = (line: string): string => {
     return result.join(":");
 };
 
-export const parseAtomicalIdfromURN = (line: string): ParsedId | null => {
+export const parseAtomicalIdfromURN = (line: string): ParsedId => {
     const correctedLine = removeDuplicatePrefixes(line);
     const parts = correctedLine.split(":");
 
@@ -318,7 +318,12 @@ export const parseAtomicalIdfromURN = (line: string): ParsedId | null => {
         }*/
     }
 
-    return null;
+    return {
+        prefix: null,
+        protocol: null,
+        type: null,
+        id: null,
+    };
 };
 
 export function hexToBase64(

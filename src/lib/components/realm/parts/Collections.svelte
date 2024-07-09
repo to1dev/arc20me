@@ -31,7 +31,11 @@
                 class="p-4 mb-4 text-sm rounded-lg bg-gray-800 text-blue-400 break-all"
                 role="alert"
             >
-                {parseAtomicalIdfromURN(image)?.id}
+                {#each Object.entries(parseAtomicalIdfromURN(image)) as [key, value]}
+                    {#if key == "id" || key == "prefix"}
+                        <div>{value}</div>
+                    {/if}
+                {/each}
             </div>
         {/each}
     {/if}
