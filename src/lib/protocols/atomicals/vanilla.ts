@@ -15,7 +15,7 @@ import {
 
 export async function fetchRealmAtomicalId(
     realm: string
-): Promise<{ id: string | null }> {
+): Promise<{ id: string | null; cid: string | null }> {
     const baseUrl = PUBLIC_ELECTRUMX_BASE_URL;
     const endpoint = PUBLIC_ELECTRUMX_ENDPOINT1;
     const url: string = `${baseUrl}${endpoint}?params=["${realm}"]`;
@@ -28,19 +28,29 @@ export async function fetchRealmAtomicalId(
 
         const data = await res.json();
         const id = data.response?.result?.atomical_id;
+        const cid = data.response?.result?.candidates[0]?.atomical_id;
         if (!id) {
+            if (!cid) {
+                return {
+                    id: null,
+                    cid: null,
+                };
+            }
             return {
                 id: null,
+                cid: cid,
             };
         }
 
         return {
             id,
+            cid,
         };
     } catch (error) {
         console.error("Failed to fetch realm id:", error);
         return {
             id: null,
+            cid: null,
         };
     }
 }
@@ -224,35 +234,39 @@ export async function fetchHexData(
     }
 }
 
-export async function fetchResult(realm: string): Promise<{
-    meta: Meta | null;
-    profile: ProfileBase | null;
-}> {
+export async function fetchResult(realm: string): Promise<Response> {
     const _id = await fetchRealmAtomicalId(realm);
     if (!_id.id) {
-        return {
-            meta: { v: "", id: "", pid: "", image: "" },
+        if (!_id.cid) {
+            return Response.json({
+                meta: { v: "", id: "", cid: "", pid: "", image: "" },
+                profile: null,
+            });
+        }
+
+        return Response.json({
+            meta: { v: "", id: "", cid: _id.cid, pid: "", image: "" },
             profile: null,
-        };
+        });
     }
 
     const pid = await fetchRealmProfileId(_id.id);
     if (!pid.pid) {
-        return {
-            meta: { v: "", id: _id.id, pid: "", image: "" },
+        return Response.json({
+            meta: { v: "", id: _id.id, cid: _id.cid, pid: "", image: "" },
             profile: null,
-        };
+        });
     }
 
     const _profile = await fetchRealmProfile(pid.pid);
     if (!_profile.profile) {
-        return {
-            meta: { v: "", id: _id.id, pid: pid.pid, image: "" },
+        return Response.json({
+            meta: { v: "", id: _id.id, cid: _id.cid, pid: pid.pid, image: "" },
             profile: null,
-        };
+        });
     }
 
-    return {
+    return Response.json({
         meta: {
             v: _profile.profile?.v,
             id: _id.id,
@@ -262,7 +276,7 @@ export async function fetchResult(realm: string): Promise<{
                 : (_profile.profile?.i as string),
         },
         profile: _profile.profile,
-    };
+    });
 }
 
 type AtomId = string;
