@@ -23,6 +23,10 @@
         try {
             isLoading = true;
             const result = await fetchResult(realm);
+            /*const data: any = await fetch(
+                `https://ep2.to1.dev/api/realm/${realm}`
+            );
+            const result = await data.json();*/
             meta = result?.meta;
             profile = result?.profile;
 
