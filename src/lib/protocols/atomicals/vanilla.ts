@@ -234,49 +234,50 @@ export async function fetchHexData(
     }
 }
 
-export async function fetchResult(realm: string): Promise<Response> {
+export async function fetchResult(realm: string): Promise<any> {
     const _id = await fetchRealmAtomicalId(realm);
     if (!_id.id) {
         if (!_id.cid) {
-            return Response.json({
+            return {
                 meta: { v: "", id: "", cid: "", pid: "", image: "" },
                 profile: null,
-            });
+            };
         }
 
-        return Response.json({
+        return {
             meta: { v: "", id: "", cid: _id.cid, pid: "", image: "" },
             profile: null,
-        });
+        };
     }
 
     const pid = await fetchRealmProfileId(_id.id);
     if (!pid.pid) {
-        return Response.json({
+        return {
             meta: { v: "", id: _id.id, cid: _id.cid, pid: "", image: "" },
             profile: null,
-        });
+        };
     }
 
     const _profile = await fetchRealmProfile(pid.pid);
     if (!_profile.profile) {
-        return Response.json({
+        return {
             meta: { v: "", id: _id.id, cid: _id.cid, pid: pid.pid, image: "" },
             profile: null,
-        });
+        };
     }
 
-    return Response.json({
+    return {
         meta: {
             v: _profile.profile?.v,
             id: _id.id,
+            cid: _id.cid,
             pid: pid.pid,
             image: _profile.profile?.image
                 ? (_profile.profile?.image as string)
                 : (_profile.profile?.i as string),
         },
         profile: _profile.profile,
-    });
+    };
 }
 
 type AtomId = string;

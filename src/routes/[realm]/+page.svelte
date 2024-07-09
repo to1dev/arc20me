@@ -22,8 +22,9 @@
     onMount(async () => {
         try {
             isLoading = true;
-            const data = await fetchResult(realm);
-            const result = await data.json();
+            //const data = await fetchResult(realm);
+            //const result = await data.json();
+            const result: any = await fetchResult(realm);
             /*const data: any = await fetch(
                 `https://ep2.to1.dev/api/realm/${realm}`
             );
