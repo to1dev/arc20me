@@ -1,6 +1,5 @@
 <script lang="ts">
     import { onMount } from "svelte";
-    import { strim } from "$lib/utils/Fallback";
 
     const descs = [
         `A gateway to the arcane intricacies of virtual realms, enhancing
@@ -30,7 +29,8 @@
 
     function handleInput(event: Event) {
         const target = event.target as HTMLInputElement;
-        realm = strim(target.value);
+        //realm = strim(target.value);
+        realm = target.value.trim();
     }
 
     function handleKeydown(event: KeyboardEvent) {
