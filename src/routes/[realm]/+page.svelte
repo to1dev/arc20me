@@ -4,7 +4,6 @@
     import { debug } from "$lib/stores/Core";
     import { isDk } from "$lib/stores/Realm";
     import { fetchResult } from "$lib/protocols/atomicals/vanilla";
-    import type { ProfileBase, Meta, RealmData } from "$lib/interfaces/Result";
     import punycode from "punycode/";
 
     import V12 from "$lib/components/realm/Base.svelte";
@@ -16,9 +15,9 @@
 
     let error: string | null = null;
     let isLoading: boolean = false;
-    let realmData: RealmData | null = null;
-    let meta: Meta | null = null;
-    let profile: ProfileBase | null = null;
+    let realmData: any | null = null;
+    let meta: any | null = null;
+    let profile: any | null = null;
 
     onMount(async () => {
         try {
