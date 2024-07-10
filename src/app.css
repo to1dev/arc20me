@@ -16,7 +16,7 @@
     }
 
     pre, code {
-        font-family: var(--primary-main-font), sans-serif;
+        font-family: var(--primary-mono-font), sans-serif;
     }
 
     pre {
