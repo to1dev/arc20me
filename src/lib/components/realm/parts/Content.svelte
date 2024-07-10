@@ -2,8 +2,8 @@
     import DOMPurify from "dompurify";
     import { isDk } from "$lib/stores/Realm";
 
-    let _seq = import.meta.env.PERSISTENT_SEQUENCE;
-    console.log(_seq);
+    const apiUrl = import.meta.env.VITE_API_URL;
+    console.log("API URL:", apiUrl);
 
     export let text;
 </script>
