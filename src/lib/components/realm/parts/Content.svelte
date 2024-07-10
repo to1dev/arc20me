@@ -3,7 +3,11 @@
     import { isDk } from "$lib/stores/Realm";
 
     const apiUrl = import.meta.env.VITE_API_URL;
+    const seq = import.meta.env.VITE_PERSISTENT_SEQUENCE;
+    const seq2 = import.meta.env.PERSISTENT_SEQUENCE;
     console.log("API URL:", apiUrl);
+    console.log("seq:", seq);
+    console.log("seq2:", seq2);
 
     export let text;
 </script>
