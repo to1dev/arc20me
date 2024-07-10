@@ -11,7 +11,8 @@
     html, pre, code {
         font-family: var(--primary-main-font), sans-serif;
         font-optical-sizing: auto;
-        font-size: clamp(16px, 2vw + 1rem, 24px);
+        font-size: 18px;
+        /*font-size: clamp(16px, 2vw + 1rem, 24px);*/
     }
 
     pre {
