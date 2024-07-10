@@ -8,18 +8,7 @@ export default {
     },
 
     daisyui: {
-        themes: [
-            "dark",
-            "business",
-            "dim",
-            "dracula",
-            "coffee",
-            "halloween",
-            "forest",
-            "luxury",
-            "night",
-            "sunset",
-        ],
+        themes: ["dark", "business"],
     },
 
     plugins: [require("daisyui")],
