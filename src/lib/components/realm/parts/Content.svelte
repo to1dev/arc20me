@@ -5,7 +5,7 @@
     export let text;
 </script>
 
-<div class="mt-2 text-gray-900 font-light leading-relaxed">
+<div class="mt-2 text-slate-500 font-light leading-relaxed text-justify">
     {#if $isDk}
         {#if text?.enUS}
             <div class="m-2">
