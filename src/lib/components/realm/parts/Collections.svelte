@@ -19,7 +19,9 @@
 
 {#if $debug}
     {#if collections}
-        <div class="flex justify-center space-x-4 p-4 break-all">
+        <div
+            class="flex justify-center text-info leading-relaxed space-x-4 p-4 break-all"
+        >
             <span>Collections</span>
             <pre><code>{JSON.stringify(collections, null, 4)}</code></pre>
         </div>
@@ -28,7 +30,7 @@
     {#if imageList}
         {#each imageList as image}
             <div
-                class="p-4 mb-4 mx-2 sm:mx-0 text-sm rounded-lg bg-gray-800 text-blue-400 break-all"
+                class="p-4 mb-4 mx-2 sm:mx-0 text-sm rounded-lg bg-base-100 text-info break-all"
                 role="alert"
             >
                 {#each Object.entries(parseAtomicalIdfromURN(image)) as [key, value]}

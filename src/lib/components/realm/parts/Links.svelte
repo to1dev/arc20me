@@ -159,8 +159,10 @@
 {:else if links}
     <div class="flex space-x-4 p-4 break-all">
         {#if $debug}
-            <span>Links</span>
-            <pre><code>{JSON.stringify(links, null, 4)}</code></pre>
+            <div class="text-info leading-relaxed">
+                <span>Links</span>
+                <pre><code>{JSON.stringify(links, null, 4)}</code></pre>
+            </div>
         {/if}
     </div>
 {/if}
