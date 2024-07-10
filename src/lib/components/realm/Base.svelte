@@ -44,7 +44,7 @@
         <Avatar image={profile?.image} />
         <Menu />
 
-        <div class="bg-white">
+        <div class="bg-white pt-3">
             <div class="text-center px-14 break-words">
                 <Title name={profile?.name} realm={realmData?.realm} {uname} />
                 <Content text={profile?.desc} />
