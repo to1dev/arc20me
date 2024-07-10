@@ -28,7 +28,7 @@
 }
 
 .alkatra {
-    font-family: "Alkatra", system-ui;
+    font-family: "Alkatra", var(--primary-main-font), system-ui;
     font-optical-sizing: auto;
 }
 
