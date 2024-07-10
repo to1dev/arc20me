@@ -3,14 +3,15 @@
 @tailwind utilities;
 
 :root {
-    --primary-chinese-font: "ZCOOL XiaoWei";
-    --primary-main-font: "Playwrite DE Grund";
+    --primary-main-font: "LXGW WenKai TC";
+    --primary-second-font: "Playwrite DE Grund";
 }
 
 @layer base {
     html, pre, code {
-        font-family: var(--primary-main-font), var(--primary-chinese-font), sans-serif;
+        font-family: var(--primary-main-font), sans-serif;
         font-optical-sizing: auto;
+        font-size: clamp(16px, 2vw + 1rem, 24px);
     }
 
     pre {
@@ -22,27 +23,39 @@
 }
 
 .alkatra {
-    font-family: "Alkatra", var(--primary-chinese-font), system-ui;
+    font-family: "Alkatra", system-ui;
     font-optical-sizing: auto;
 }
 
+.lxgw-wenkai-mono-tc-regular {
+    font-family: "LXGW WenKai Mono TC", monospace;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.lxgw-wenkai-tc-regular {
+    font-family: "LXGW WenKai TC", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
 .playwrite-de-grund {
-    font-family: "Playwrite DE Grund", var(--primary-chinese-font), cursive;
+    font-family: "Playwrite DE Grund", cursive;
     font-optical-sizing: auto;
 }
 
 .playwrite-fr-moderne {
-    font-family: "Playwrite FR Moderne", var(--primary-chinese-font), cursive;
+    font-family: "Playwrite FR Moderne", cursive;
     font-optical-sizing: auto;
 }
 
 .playwrite-us-modern {
-    font-family: "Playwrite US Modern", var(--primary-chinese-font), cursive;
+    font-family: "Playwrite US Modern", cursive;
     font-optical-sizing: auto;
 }
 
 .playwrite-nz {
-    font-family: "Playwrite NZ", var(--primary-chinese-font), cursive;
+    font-family: "Playwrite NZ", cursive;
     font-optical-sizing: auto;
 }
 
