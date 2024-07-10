@@ -62,7 +62,7 @@
                 Realm
             </h1>
 
-            <p class="mt-8 text-neutral-400 text-lg h-16">
+            <p class="mt-8 text-neutral-400 text-lg min-h-[5rem]">
                 {#if desc != null}
                     {desc}
                 {/if}
