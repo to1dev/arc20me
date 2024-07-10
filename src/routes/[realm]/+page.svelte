@@ -1,7 +1,8 @@
 <script lang="ts">
     import { page } from "$app/stores";
     import { onMount } from "svelte";
-    import { isDk, debug } from "$lib/stores/Realm";
+    import { debug } from "$lib/stores/Core";
+    import { isDk } from "$lib/stores/Realm";
     import { fetchResult } from "$lib/protocols/atomicals/vanilla";
     import type { ProfileBase, Meta, RealmData } from "$lib/interfaces/Result";
     import punycode from "punycode/";

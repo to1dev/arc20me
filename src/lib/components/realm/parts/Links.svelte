@@ -1,5 +1,6 @@
 <script lang="ts">
-    import { isDk, debug } from "$lib/stores/Realm";
+    import { debug } from "$lib/stores/Core";
+    import { isDk } from "$lib/stores/Realm";
 
     export let links;
 </script>

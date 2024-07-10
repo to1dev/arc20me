@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { debug } from "$lib/stores/Realm";
+    import { debug } from "$lib/stores/Core";
     export let wallets;
 </script>
 
