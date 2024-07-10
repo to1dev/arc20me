@@ -4,14 +4,19 @@
 
 :root {
     --primary-main-font: "LXGW WenKai TC";
+    --primary-mono-font: "LXGW WenKai Mono TC";
     --primary-second-font: "Playwrite DE Grund";
 }
 
 @layer base {
-    html, pre, code {
+    html {
         font-family: var(--primary-main-font), sans-serif;
         font-optical-sizing: auto;
         font-size: 18px;
+    }
+
+    pre, code {
+        font-family: var(--primary-main-font), sans-serif;
     }
 
     pre {
