@@ -213,7 +213,6 @@ export async function fetchHexData(
 export async function fetchResult(realm: string): Promise<any> {
     const _id = await fetchRealmAtomicalId(realm);
     if (!_id?.id) {
-        console.log("fuck off");
         if (!_id?.cid) {
             return {
                 meta: { v: "", id: "", cid: "", pid: "", image: "" },
