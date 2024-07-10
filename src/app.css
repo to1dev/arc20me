@@ -3,19 +3,22 @@
 @tailwind utilities;
 
 :root {
-    --primary-chinese-font: "ZCOOL XiaoWei", cursive;
+    --primary-chinese-font: "ZCOOL XiaoWei";
+    --primary-main-font: "Playwrite DE Grund";
 }
 
-html, pre, code {
-    font-family: "Playwrite DE Grund", var(--primary-chinese-font), sans-serif;
-    font-optical-sizing: auto;
-}
+@layer base {
+    html, pre, code {
+        font-family: var(--primary-main-font), var(--primary-chinese-font), sans-serif;
+        font-optical-sizing: auto;
+    }
 
-pre {
-    white-space: pre-wrap;
-    /* Wrap long lines */
-    word-wrap: break-word;
-    /* Break long words */
+    pre {
+        white-space: pre-wrap;
+        /* Wrap long lines */
+        word-wrap: break-word;
+        /* Break long words */
+    }
 }
 
 .alkatra {
