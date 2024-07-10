@@ -62,7 +62,7 @@
                 Realm
             </h1>
 
-            <p class="mt-8 text-neutral-400 text-base min-h-[3rem]">
+            <p class="mt-8 text-neutral-400 text-lg h-16">
                 {#if desc != null}
                     {desc}
                 {/if}
@@ -122,28 +122,32 @@
                             </div>
                         </div>
                         <div class="flex-[0_0_auto]">
-                            <button
-                                type="submit"
-                                class="transition-colors duration-300 size-[46px] inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
-                                disabled={realm === ""}
-                                on:click={handleButtonClick}
+                            <div
+                                class="absolute top-1/2 end-4 -translate-y-1/2"
                             >
-                                <svg
-                                    class="flex-shrink-0 size-5"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="24"
-                                    height="24"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    stroke-width="2"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    ><circle cx="11" cy="11" r="8" /><path
-                                        d="m21 21-4.3-4.3"
-                                    /></svg
+                                <button
+                                    type="submit"
+                                    class="transition-colors duration-300 size-[46px] inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
+                                    disabled={realm === ""}
+                                    on:click={handleButtonClick}
                                 >
-                            </button>
+                                    <svg
+                                        class="flex-shrink-0 size-5"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        ><circle cx="11" cy="11" r="8" /><path
+                                            d="m21 21-4.3-4.3"
+                                        /></svg
+                                    >
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </form>
