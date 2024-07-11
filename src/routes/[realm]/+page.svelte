@@ -3,7 +3,7 @@
     import { onMount } from "svelte";
     import { debug } from "$lib/stores/Core";
     import { isDk } from "$lib/stores/Realm";
-    import { fetchResult } from "$lib/protocols/atomicals/vanilla";
+    import { fetchResult, sendQueue } from "$lib/protocols/atomicals/vanilla";
     import punycode from "punycode/";
 
     import V12 from "$lib/components/realm/Base.svelte";
@@ -29,6 +29,10 @@
                 `https://ep2.to1.dev/api/realm/${realm}`
             );
             const result = await data.json();*/
+
+            const res = await sendQueue(realm);
+            console.log(res);
+
             meta = result?.meta;
             profile = result?.profile;
 
