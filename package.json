@@ -33,6 +33,8 @@
     },
     "type": "module",
     "dependencies": {
+        "@fontsource/lxgw-wenkai-mono-tc": "^5.0.1",
+        "@fontsource/lxgw-wenkai-tc": "^5.0.1",
         "@scure/base": "^1.1.7",
         "@scure/btc-signer": "^1.3.2",
         "dompurify": "^3.1.5"
