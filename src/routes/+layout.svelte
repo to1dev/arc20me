@@ -1,6 +1,4 @@
 <script lang="ts">
-    import "@fontsource/lxgw-wenkai-tc";
-    import "@fontsource/lxgw-wenkai-mono-tc";
     import "../app.css";
     import { page } from "$app/stores";
     import { debug, seq } from "$lib/stores/Core";

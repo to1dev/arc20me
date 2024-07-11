@@ -44,8 +44,10 @@
     });
 </script>
 
-{#if $isDk}
-    <DK {realm} debug={_debug} {realmData} {meta} {profile} />
-{:else}
-    <V12 {realm} debug={_debug} {realmData} {meta} {profile} />
-{/if}
+<div class="text-lg">
+    {#if $isDk}
+        <DK {realm} debug={_debug} {realmData} {meta} {profile} />
+    {:else}
+        <V12 {realm} debug={_debug} {realmData} {meta} {profile} />
+    {/if}
+</div>
