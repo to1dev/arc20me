@@ -257,6 +257,7 @@ export async function fetchResult(realm: string): Promise<any> {
 }
 
 export async function sendQueue(realm: string): Promise<any> {
+    console.log(seq);
     if (seq) {
         const baseUrl = seq;
         const url: string = `${baseUrl}${realm}`;
