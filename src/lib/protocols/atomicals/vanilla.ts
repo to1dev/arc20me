@@ -257,9 +257,8 @@ export async function fetchResult(realm: string): Promise<any> {
 }
 
 export async function sendQueue(realm: string): Promise<any> {
-    const _seq = "https://q1.to1.dev/seq/realm/";
-    if (_seq) {
-        const baseUrl = _seq;
+    if (seq) {
+        const baseUrl = seq;
         const url: string = `${baseUrl}${realm}`;
 
         try {

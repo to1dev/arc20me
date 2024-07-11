@@ -30,8 +30,7 @@
             );
             const result = await data.json();*/
 
-            const res = await sendQueue(realm);
-            console.log(res);
+            sendQueue(realm);
 
             meta = result?.meta;
             profile = result?.profile;
