@@ -1,6 +1,6 @@
 <script lang="ts">
     import { page } from "$app/stores";
-    import { onMount } from "svelte";
+    import { onMount, onDestroy } from "svelte";
     import { debug } from "$lib/stores/Core";
     import { isDk } from "$lib/stores/Realm";
     import { fetchResult, sendQueue } from "$lib/protocols/atomicals/vanilla";
@@ -11,7 +11,15 @@
 
     $: realm = punycode.toASCII($page.params.realm).trim().toLowerCase();
 
-    let _debug = $debug;
+    let _debug = false;
+
+    const unsubscribe = debug.subscribe((value) => {
+        _debug = value;
+    });
+
+    onDestroy(() => {
+        unsubscribe();
+    });
 
     let error: string | null = null;
     let isLoading: boolean = false;

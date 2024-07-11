@@ -1,12 +1,10 @@
 <script lang="ts">
     import "../app.css";
     import { page } from "$app/stores";
-    import { debug, seq } from "$lib/stores/Core";
+    import { debug } from "$lib/stores/Core";
 
     const _debug = import.meta.env.MODE === "development";
-    const _seq = import.meta.env.VITE_PERSISTENT_SEQUENCE;
     debug.set(_debug);
-    seq.set(_seq);
 
     enum PageType {
         Homepage,

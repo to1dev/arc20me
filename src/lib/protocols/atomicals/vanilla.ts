@@ -1,6 +1,6 @@
 import { base64, hex } from "@scure/base";
-import { seq } from "$lib/stores/Core";
 import {
+    PUBLIC_SEQUENCE_BASE_URL,
     PUBLIC_ELECTRUMX_BASE_URL,
     PUBLIC_ELECTRUMX_ENDPOINT1,
     PUBLIC_ELECTRUMX_ENDPOINT2,
@@ -257,22 +257,17 @@ export async function fetchResult(realm: string): Promise<any> {
 }
 
 export async function sendQueue(realm: string): Promise<any> {
-    console.log(seq);
-    if (seq) {
-        const baseUrl = seq;
-        const url: string = `${baseUrl}${realm}`;
+    const baseUrl = PUBLIC_SEQUENCE_BASE_URL;
+    const url: string = `${baseUrl}${realm}`;
 
-        try {
-            const res = await fetch(url);
-            if (!res.ok) {
-                throw new Error(
-                    `Error sending queue message: ${res.statusText}`
-                );
-            }
-        } catch (error) {
-            console.error("Failed to send queue message:", error);
-            return null;
+    try {
+        const res = await fetch(url);
+        if (!res.ok) {
+            throw new Error(`Error sending queue message: ${res.statusText}`);
         }
+    } catch (error) {
+        console.error("Failed to send queue message:", error);
+        return null;
     }
 
     return null;
