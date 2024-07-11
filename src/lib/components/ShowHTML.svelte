@@ -5,7 +5,7 @@
     let container: HTMLDivElement;
 
     const rawHtml = `
-    <div class="flex justify-center items-center p-4 bg-white border-t text-sm">Hello world!</div>
+    <div class="flex justify-center items-center p-4 bg-white border-t text-base">Hello world!</div>
     `;
 
     let sanitizedHtml: string;

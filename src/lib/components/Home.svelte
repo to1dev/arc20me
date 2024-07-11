@@ -76,7 +76,7 @@
                         <div class="flex-[1_0_0%]">
                             <label
                                 for="search-realm"
-                                class="block text-sm font-medium text-white"
+                                class="block text-base font-medium text-white"
                                 ><span class="sr-only">Search realm</span
                                 ></label
                             >
@@ -94,7 +94,7 @@
                             >
                                 <button
                                     type="button"
-                                    class="duration-200 size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent hover:bg-neutral disabled:opacity-50 disabled:pointer-events-none text-neutral-400 hover:text-neutral-300 bg-neutral-800"
+                                    class="duration-200 size-8 inline-flex justify-center items-center gap-x-2 text-base font-semibold rounded-full border border-transparent hover:bg-neutral disabled:opacity-50 disabled:pointer-events-none text-neutral-400 hover:text-neutral-300 bg-neutral-800"
                                     class:hidden={realm === ""}
                                     on:click={clearInput}
                                     on:mousedown={preventFocus}
@@ -127,7 +127,7 @@
                             >
                                 <button
                                     type="submit"
-                                    class="transition-colors duration-300 size-[46px] inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
+                                    class="transition-colors duration-300 size-[46px] inline-flex justify-center items-center gap-x-2 text-base font-semibold rounded-full border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
                                     disabled={realm === ""}
                                     on:click={handleButtonClick}
                                 >

@@ -30,7 +30,7 @@
     {#if imageList}
         {#each imageList as image}
             <div
-                class="p-4 mb-4 mx-2 sm:mx-0 text-sm rounded-lg bg-base-100 text-info break-all"
+                class="p-4 mb-4 mx-2 sm:mx-0 text-base rounded-lg bg-base-100 text-info break-all"
                 role="alert"
             >
                 {#each Object.entries(parseAtomicalIdfromURN(image)) as [key, value]}

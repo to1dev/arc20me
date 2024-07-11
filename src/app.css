@@ -12,7 +12,6 @@
     html {
         font-family: var(--primary-main-font), sans-serif;
         font-optical-sizing: auto;
-        font-size: 18px;
     }
 
     pre, code {
