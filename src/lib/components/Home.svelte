@@ -55,35 +55,27 @@
     }
 </script>
 
-<div class="relative overflow-hidden min-h-screen">
+<div class="relative overflow-hidden">
     <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-24">
         <div class="text-center">
-            <h1 class="text-4xl sm:text-6xl font-bold text-warning alkatra">
-                Realm
-            </h1>
+            <h1 class="text-6xl font-bold text-warning alkatra">Realm</h1>
 
-            <p class="mt-8 text-neutral-400 text-lg min-h-[5rem]">
+            <div class="mt-8 text-xl text-neutral-400 min-h-[5rem]">
                 {#if desc != null}
-                    {desc}
+                    <p>{desc}</p>
                 {/if}
-            </p>
+            </div>
 
             <div class="mt-7 sm:mt-12 mx-auto max-w-xl relative">
                 <form on:submit={handleSubmit}>
                     <div
-                        class="relative z-10 flex space-x-3 p-3 transition-border duration-200 border-2 rounded-full shadow-lg bg-neutral-900 border-neutral-700 shadow-gray-900/20"
+                        class="relative z-10 flex space-x-3 p-3 transition-border border-2 rounded-full shadow-xl bg-neutral-900 border-neutral-700 shadow-gray-900/20"
                     >
                         <div class="flex-[1_0_0%]">
-                            <label
-                                for="search-realm"
-                                class="block text-base font-medium text-white"
-                                ><span class="sr-only">Search realm</span
-                                ></label
-                            >
                             <input
                                 name="search-realm"
                                 id="search-realm"
-                                class="py-2.5 px-4 block w-full rounded-none border-none bg-transparent text-neutral-400 placeholder-neutral-500 input pl-10 outline-none focus:outline-none"
+                                class="block w-full rounded-full border-none bg-neutral-900 text-neutral-400 placeholder-neutral-500 input pl-10 outline-none focus:outline-none"
                                 placeholder="Search realm"
                                 bind:value={realm}
                                 on:input={handleInput}
