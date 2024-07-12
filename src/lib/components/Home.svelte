@@ -55,212 +55,93 @@
     }
 </script>
 
-<div class="relative overflow-hidden">
-    <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-24">
-        <div class="text-center">
-            <h1 class="text-4xl sm:text-6xl font-bold text-warning alkatra">
-                Realm
-            </h1>
+<div class="py-6 sm:py-8 lg:py-12">
+    <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
+        <h1
+            class="mb-4 text-center text-4xl font-bold md:mb-8 lg:text-6xl text-warning alkatra"
+        >
+            Realm
+        </h1>
 
-            <div class="mt-8 text-lg md:text-xl text-neutral-400 min-h-[5rem]">
-                {#if desc != null}
-                    <p>{desc}</p>
-                {/if}
-            </div>
-
-            <div class="mt-7 sm:mt-12 mx-auto max-w-xl relative">
-                <form on:submit={handleSubmit}>
-                    <div
-                        class="relative z-10 flex space-x-3 p-3 transition-border border-2 rounded-full shadow-xl bg-neutral-900 border-neutral-700 shadow-gray-900/20"
-                    >
-                        <div class="flex-[1_0_0%]">
-                            <input
-                                name="search-realm"
-                                id="search-realm"
-                                class="block w-full rounded-full border-none bg-neutral-900 focus:bg-neutral-900 text-neutral-400 placeholder-neutral-500 input pl-10 outline-none focus:outline-none"
-                                placeholder="Search realm"
-                                bind:value={realm}
-                                on:input={handleInput}
-                                on:keydown={handleKeydown}
-                            />
-                            <div
-                                class="absolute top-1/2 end-20 -translate-y-1/2"
-                            >
-                                <button
-                                    type="button"
-                                    class="duration-200 size-8 inline-flex justify-center items-center gap-x-2 text-base font-semibold rounded-full border border-transparent hover:bg-neutral disabled:opacity-50 disabled:pointer-events-none text-neutral-400 hover:text-neutral-300 bg-neutral-800"
-                                    class:hidden={realm === ""}
-                                    on:click={clearInput}
-                                    on:mousedown={preventFocus}
-                                >
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="24"
-                                        height="24"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        class="flex-shrink-0 size-4 icon icon-tabler icons-tabler-outline icon-tabler-x"
-                                        ><path
-                                            stroke="none"
-                                            d="M0 0h24v24H0z"
-                                            fill="none"
-                                        /><path d="M18 6l-12 12" /><path
-                                            d="M6 6l12 12"
-                                        /></svg
-                                    >
-                                </button>
-                            </div>
-                        </div>
-                        <div class="flex-[0_0_auto]">
-                            <div
-                                class="absolute top-1/2 end-4 -translate-y-1/2"
-                            >
-                                <button
-                                    type="submit"
-                                    class="transition-colors duration-300 size-[46px] inline-flex justify-center items-center gap-x-2 text-base font-semibold rounded-full border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
-                                    disabled={realm === ""}
-                                    on:click={handleButtonClick}
-                                >
-                                    <svg
-                                        class="flex-shrink-0 size-5"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="24"
-                                        height="24"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        ><circle cx="11" cy="11" r="8" /><path
-                                            d="m21 21-4.3-4.3"
-                                        /></svg
-                                    >
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-
-                <div
-                    class="hidden md:block absolute top-0 end-0 -translate-y-12 translate-x-20"
-                >
-                    <svg
-                        class="w-16 h-auto text-orange-500"
-                        width="121"
-                        height="135"
-                        viewBox="0 0 121 135"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path
-                            d="M5 16.4754C11.7688 27.4499 21.2452 57.3224 5 89.0164"
-                            stroke="currentColor"
-                            stroke-width="10"
-                            stroke-linecap="round"
-                        />
-                        <path
-                            d="M33.6761 112.104C44.6984 98.1239 74.2618 57.6776 83.4821 5"
-                            stroke="currentColor"
-                            stroke-width="10"
-                            stroke-linecap="round"
-                        />
-                        <path
-                            d="M50.5525 130C68.2064 127.495 110.731 117.541 116 78.0874"
-                            stroke="currentColor"
-                            stroke-width="10"
-                            stroke-linecap="round"
-                        />
-                    </svg>
-                </div>
-
-                <div
-                    class="hidden md:block absolute bottom-0 start-0 translate-y-10 -translate-x-32"
-                >
-                    <svg
-                        class="w-40 h-auto text-cyan-500"
-                        width="347"
-                        height="188"
-                        viewBox="0 0 347 188"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path
-                            d="M4 82.4591C54.7956 92.8751 30.9771 162.782 68.2065 181.385C112.642 203.59 127.943 78.57 122.161 25.5053C120.504 2.2376 93.4028 -8.11128 89.7468 25.5053C85.8633 61.2125 130.186 199.678 180.982 146.248L214.898 107.02C224.322 95.4118 242.9 79.2851 258.6 107.02C274.299 134.754 299.315 125.589 309.861 117.539L343 93.4426"
-                            stroke="currentColor"
-                            stroke-width="7"
-                            stroke-linecap="round"
-                        />
-                    </svg>
-                </div>
-            </div>
-
-            {#if false}
-                <div class="mt-10 sm:mt-20">
-                    <button
-                        class="transition-colors duration-300 m-1 py-3 px-4 inline-flex items-center gap-x-2 font-medium rounded-lg border shadow-sm disabled:opacity-50 disabled:pointer-events-none bg-neutral-900 border-neutral-700 text-secondary hover:bg-neutral-800"
-                    >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            class="icon icon-tabler icons-tabler-outline icon-tabler-report"
-                            ><path
-                                stroke="none"
-                                d="M0 0h24v24H0z"
-                                fill="none"
-                            /><path
-                                d="M8 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h5.697"
-                            /><path d="M18 14v4h4" /><path
-                                d="M18 11v-4a2 2 0 0 0 -2 -2h-2"
-                            /><path
-                                d="M8 3m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z"
-                            /><path
-                                d="M18 18m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"
-                            /><path d="M8 11h4" /><path d="M8 15h3" /></svg
-                        >Business
-                    </button>
-                    <button
-                        class="transition-colors duration-300 m-1 py-3 px-4 inline-flex items-center gap-x-2 font-medium rounded-lg border shadow-sm disabled:opacity-50 disabled:pointer-events-none bg-neutral-900 border-neutral-700 text-secondary hover:bg-neutral-800"
-                    >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            class="icon icon-tabler icons-tabler-outline icon-tabler-report"
-                            ><path
-                                stroke="none"
-                                d="M0 0h24v24H0z"
-                                fill="none"
-                            /><path
-                                d="M8 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h5.697"
-                            /><path d="M18 14v4h4" /><path
-                                d="M18 11v-4a2 2 0 0 0 -2 -2h-2"
-                            /><path
-                                d="M8 3m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z"
-                            /><path
-                                d="M18 18m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"
-                            /><path d="M8 11h4" /><path d="M8 15h3" /></svg
-                        >Business
-                    </button>
-                </div>
+        <div
+            class="mx-auto max-w-lg text-center text-lg text-neutral-400 min-h-[5rem]"
+        >
+            {#if desc != null}
+                <p>{desc}</p>
             {/if}
         </div>
+
+        <form on:submit={handleSubmit} class="mx-auto max-w-xl rounded-lg">
+            <div class="flex flex-col gap-4 p-4 md:p-8">
+                <div class="mb-2 relative">
+                    <input
+                        name="realm"
+                        class="w-full rounded-full border-2 bg-neutral-900 px-8 py-4 text-neutral-400 placeholder-neutral-500 outline-none border-neutral-700 shadow-xl shadow-gray-900/20 transition duration-100"
+                        bind:value={realm}
+                        on:input={handleInput}
+                        on:keydown={handleKeydown}
+                    />
+                    <button
+                        type="button"
+                        class="absolute top-1/2 right-4 transform -translate-y-1/2 rounded-full w-8 h-8 flex items-center justify-center text-neutral-400 hover:text-neutral-300 bg-neutral-800"
+                        class:hidden={realm === ""}
+                        on:click={clearInput}
+                        on:mousedown={preventFocus}
+                        ><svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="flex-shrink-0 size-4 icon icon-tabler icons-tabler-outline icon-tabler-x"
+                            ><path
+                                stroke="none"
+                                d="M0 0h24v24H0z"
+                                fill="none"
+                            /><path d="M18 6l-12 12" /><path
+                                d="M6 6l12 12"
+                            /></svg
+                        ></button
+                    >
+                </div>
+
+                <div class="flex flex-col md:flex-row justify-center gap-4">
+                    <button
+                        class="rounded-full btn btn-primary no-animation text-base min-w-32 px-8 py-3 text-center font-semibold text-base-content disabled:bg-primary"
+                        disabled={realm === ""}
+                        on:click={handleButtonClick}
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="w-5 h-5 icon icon-tabler icons-tabler-outline icon-tabler-search"
+                            ><path
+                                stroke="none"
+                                d="M0 0h24v24H0z"
+                                fill="none"
+                            /><path
+                                d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0"
+                            /><path d="M21 21l-6 -6" /></svg
+                        >Search
+                    </button>
+                    <button
+                        class="rounded-full btn btn-accent no-animation text-base min-w-32 px-8 py-3 text-center font-semibold text-base-content"
+                    >
+                        <span class="emoji">🤞</span>Lucky
+                    </button>
+                </div>
+            </div>
+        </form>
     </div>
 </div>

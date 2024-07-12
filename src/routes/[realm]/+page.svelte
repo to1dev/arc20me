@@ -6,8 +6,7 @@
     import { fetchResult, sendQueue } from "$lib/protocols/atomicals/vanilla";
     import punycode from "punycode/";
 
-    import V12 from "$lib/components/realm/Base.svelte";
-    import DK from "$lib/components/realm/DK.svelte";
+    import Base from "$lib/components/realm/themes/Base.svelte";
 
     $: realm = punycode.toASCII($page.params.realm).trim().toLowerCase();
 
@@ -56,9 +55,5 @@
 </script>
 
 <div class="text-lg">
-    {#if $isDk}
-        <DK {realm} debug={_debug} {realmData} {meta} {profile} />
-    {:else}
-        <V12 {realm} debug={_debug} {realmData} {meta} {profile} />
-    {/if}
+    <Base isDk={$isDk} {realm} debug={_debug} {realmData} {meta} {profile} />
 </div>
