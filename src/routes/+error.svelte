@@ -5,17 +5,17 @@
 {#if $page}
     <div class="flex items-center justify-center min-h-screen bg-gray-800">
         <div class="text-center space-y-4">
-            <h2 class="h2 text-info">
+            <h1 class="text-info text-lg">
                 {$page.status}:{#if $page.error}
                     {$page.error.message}
                 {/if}
-            </h2>
+            </h1>
             <p class="text-warning">We're sorry, something went wrong.</p>
             <div
                 class="mt-5 flex flex-col justify-center items-center gap-2 sm:flex-row sm:gap-3"
             >
                 <a
-                    class="btn w-auto py-3 px-4 inline-flex justify-center items-center gap-x-2 text-base font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
+                    class="btn no-animation w-auto py-3 px-4 inline-flex justify-center items-center gap-x-2 text-base font-semibold rounded-full bg-blue-600 text-base-content hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
                     href="/"
                 >
                     <svg
