@@ -58,9 +58,11 @@
 <div class="relative overflow-hidden">
     <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-24">
         <div class="text-center">
-            <h1 class="text-6xl font-bold text-warning alkatra">Realm</h1>
+            <h1 class="text-4xl sm:text-6xl font-bold text-warning alkatra">
+                Realm
+            </h1>
 
-            <div class="mt-8 text-xl text-neutral-400 min-h-[5rem]">
+            <div class="mt-8 text-lg md:text-xl text-neutral-400 min-h-[5rem]">
                 {#if desc != null}
                     <p>{desc}</p>
                 {/if}
@@ -75,7 +77,7 @@
                             <input
                                 name="search-realm"
                                 id="search-realm"
-                                class="block w-full rounded-full border-none bg-neutral-900 text-neutral-400 placeholder-neutral-500 input pl-10 outline-none focus:outline-none"
+                                class="block w-full rounded-full border-none bg-neutral-900 focus:bg-neutral-900 text-neutral-400 placeholder-neutral-500 input pl-10 outline-none focus:outline-none"
                                 placeholder="Search realm"
                                 bind:value={realm}
                                 on:input={handleInput}
