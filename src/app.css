@@ -43,30 +43,11 @@
     font-style: normal;
 }
 
-.playwrite-de-grund {
-    font-family: "Playwrite DE Grund", cursive;
-    font-optical-sizing: auto;
-}
-
 .playwrite-fr-moderne {
     font-family: "Playwrite FR Moderne", cursive;
     font-optical-sizing: auto;
 }
 
-.playwrite-us-modern {
-    font-family: "Playwrite US Modern", cursive;
-    font-optical-sizing: auto;
-}
-
-.playwrite-nz {
-    font-family: "Playwrite NZ", cursive;
-    font-optical-sizing: auto;
-}
-
 .emoji {
     font-family: "Noto Color Emoji", sans-serif;
-}
-
-.runic {
-    font-family: "Noto Sans Runic", sans-serif;
 }
