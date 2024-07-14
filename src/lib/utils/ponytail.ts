@@ -5,6 +5,18 @@ export function strim(str: string): string {
     return str.replace(/[^\w.]/g, "");
 }
 
+export function hexToBase64(
+    hexString: string | null,
+    ext: string | null = "png"
+): string | null {
+    if (!hexString) {
+        return null;
+    }
+    const bytes = hex.decode(hexString);
+    const b64 = base64.encode(bytes);
+    return `data:image/${ext};base64,${b64}`;
+}
+
 const mainnet = {
     bech32: "bc",
     pubKeyHash: 0x00,

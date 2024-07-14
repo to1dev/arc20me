@@ -1,5 +1,4 @@
-import { base64, hex } from "@scure/base";
-import * as btc from "@scure/btc-signer";
+import { scriptAddress } from "$lib/utils/ponytail";
 import {
     PUBLIC_SEQUENCE_BASE_URL,
     PUBLIC_ELECTRUMX_BASE_URL,
@@ -175,30 +174,20 @@ export async function fetchRealmProfile(id: string): Promise<any | null> {
             return null;
         }
 
-        const hexScript =
-            data.response?.result?.mint_info?.reveal_location_script;
-        if (!hexScript) {
+        let address = scriptAddress(
+            data.response?.result?.mint_info?.reveal_location_script
+        );
+
+        if (!address) {
             return {
                 profile: profile,
                 owner: null,
             };
         }
 
-        const mainnet = {
-            bech32: "bc",
-            pubKeyHash: 0x00,
-            scriptHash: 0x05,
-            wif: 0x80,
-        };
-
-        const addr = btc.Address(mainnet);
-        const script = hex.decode(hexScript);
-        const parsedScript = btc.OutScript.decode(script);
-        const parsedAddress = addr.encode(parsedScript);
-
         return {
             profile: profile,
-            owner: parsedAddress,
+            owner: address,
         };
     } catch (error) {
         console.error("Failed to fetch realm info:", error);
@@ -370,18 +359,6 @@ export const parseAtomicalIdfromURN = (line: string): ParsedId => {
         id: null,
     };
 };
-
-export function hexToBase64(
-    hexString: string | null,
-    ext: string | null = "png"
-): string | null {
-    if (!hexString) {
-        return null;
-    }
-    const bytes = hex.decode(hexString);
-    const b64 = base64.encode(bytes);
-    return `data:image/${ext};base64,${b64}`;
-}
 
 export interface ParsedHexData {
     fileName: string;

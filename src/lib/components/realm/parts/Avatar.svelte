@@ -1,8 +1,8 @@
 <script lang="ts">
     import { afterUpdate } from "svelte";
+    import { hexToBase64 } from "$lib/utils/ponytail";
     import {
         fetchHexData,
-        hexToBase64,
         parseAtomicalIdfromURN,
     } from "$lib/protocols/atomicals/vanilla";
 
