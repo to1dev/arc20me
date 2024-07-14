@@ -1,10 +1,7 @@
 <script lang="ts">
     import { afterUpdate } from "svelte";
-    import { hexToBase64 } from "$lib/utils/ponytail";
-    import {
-        fetchHexData,
-        parseAtomicalIdfromURN,
-    } from "$lib/protocols/atomicals/vanilla";
+    import { hexToBase64, parseAtomicalIdfromURN } from "$lib/utils/ponytail";
+    import { fetchHexData } from "$lib/protocols/atomicals/vanilla";
 
     export let image;
 

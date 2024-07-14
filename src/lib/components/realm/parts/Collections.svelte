@@ -2,10 +2,7 @@
     import { onMount } from "svelte";
     import { afterUpdate } from "svelte";
     import { debug } from "$lib/stores/Core";
-    import {
-        extractImages,
-        parseAtomicalIdfromURN,
-    } from "$lib/protocols/atomicals/vanilla";
+    import { extractImages, parseAtomicalIdfromURN } from "$lib/utils/ponytail";
 
     export let collections;
 

@@ -1,6 +1,169 @@
 import { base64, hex } from "@scure/base";
 import * as btc from "@scure/btc-signer";
 
+interface JsonData {
+    [key: string]: any;
+}
+
+export async function findFirstDKeyValue(
+    dataArray: JsonData[]
+): Promise<string | null> {
+    for (const data of dataArray) {
+        const result = await findDKeyValueInObject(data);
+        if (result) {
+            return result;
+        }
+    }
+    return null;
+}
+
+export async function findDKeyValueInObject(
+    data: JsonData
+): Promise<string | null> {
+    for (const key in data) {
+        if (data.hasOwnProperty(key)) {
+            const value = data[key];
+            if (key === "d") {
+                return value;
+            } else if (typeof value === "object" && value !== null) {
+                const result = await findDKeyValueInObject(value);
+                if (result) {
+                    return result;
+                }
+            }
+        }
+    }
+    return null;
+}
+
+export async function findObjectWithKey(
+    data: JsonData,
+    targetKey: string
+): Promise<JsonData | null> {
+    if (typeof data !== "object" || data === null) {
+        return null;
+    }
+
+    if (targetKey in data) {
+        return data;
+    }
+
+    for (const key in data) {
+        if (data.hasOwnProperty(key)) {
+            const result = await findObjectWithKey(data[key], targetKey);
+            if (result) {
+                return result;
+            }
+        }
+    }
+
+    return null;
+}
+
+export function extractImages(data: JsonData, result: string[] = []): string[] {
+    for (const key in data) {
+        if (data.hasOwnProperty(key)) {
+            const value = data[key];
+            if (key === "image" || key === "img") {
+                result.push(value);
+            } else if (typeof value === "object" && value !== null) {
+                extractImages(value, result);
+            }
+        }
+    }
+    return result;
+}
+
+type AtomId = string;
+
+export interface ParsedId {
+    prefix?: string | null;
+    protocol?: string | null;
+    type?: string | null;
+    id?: AtomId | null;
+}
+
+const removeDuplicatePrefixes = (line: string): string => {
+    const parts = line.split(":");
+    const seen = new Set<string>();
+    const result: string[] = [];
+
+    for (let i = 0; i < parts.length; i++) {
+        if (!seen.has(parts[i])) {
+            result.push(parts[i]);
+            seen.add(parts[i]);
+        }
+    }
+
+    return result.join(":");
+};
+
+export const parseAtomicalIdfromURN = (line: string): ParsedId => {
+    const correctedLine = removeDuplicatePrefixes(line);
+    const parts = correctedLine.split(":");
+
+    if (parts.length >= 4) {
+        const prefix = parts[0];
+        const protocol = parts[1];
+        const type = parts[2];
+        const idPart = parts.slice(3).join(":");
+
+        const id = idPart.split("/")[0]; // Remove any file extensions or paths
+
+        return {
+            prefix: prefix,
+            protocol: protocol,
+            type: type,
+            id: id,
+        };
+
+        /*if (
+            protocol === "btc" &&
+            (type === "id" || type === "dat") &&
+            prefix === "atom"
+        ) {
+        } else if (protocol === "btc" && type === "id" && prefix === "ord") {
+        } else {
+        }*/
+    }
+
+    return {
+        prefix: null,
+        protocol: null,
+        type: null,
+        id: null,
+    };
+};
+
+export interface ParsedHexData {
+    fileName: string;
+    ext: string;
+    hexData: string;
+}
+
+export function extractHexData(obj: any, parentKey = ""): ParsedHexData[] {
+    let result: ParsedHexData[] = [];
+
+    if (obj && typeof obj === "object") {
+        for (const key of Object.keys(obj)) {
+            if (key === "$b") {
+                const hexData =
+                    typeof obj[key] === "string" ? obj[key] : obj[key].$b;
+                if (typeof hexData === "string") {
+                    const parts = parentKey.split(".");
+                    const ext =
+                        parts.length > 1 ? parts[parts.length - 1] : "png";
+                    result.push({ fileName: parentKey, ext: ext, hexData });
+                }
+            } else {
+                result = result.concat(extractHexData(obj[key], key));
+            }
+        }
+    }
+
+    return result;
+}
+
 export function strim(str: string): string {
     return str.replace(/[^\w.]/g, "");
 }

@@ -1,7 +1,4 @@
-import {
-    extractHexData,
-    type ParsedHexData,
-} from "$lib/protocols/atomicals/vanilla";
+import { extractHexData, type ParsedHexData } from "$lib/utils/ponytail";
 
 const jsonData1 = {
     mint_data: {

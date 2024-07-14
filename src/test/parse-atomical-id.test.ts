@@ -1,7 +1,4 @@
-import {
-    parseAtomicalIdfromURN,
-    type ParsedId,
-} from "$lib/protocols/atomicals/vanilla";
+import { parseAtomicalIdfromURN, type ParsedId } from "$lib/utils/ponytail";
 
 const data = `
 atom:btc:id:189550
