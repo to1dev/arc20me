@@ -65,7 +65,7 @@
 
         <div class="flex justify-center">
             <div
-                class="inline-block h-16 text-center max-w-md text-lg text-neutral-400"
+                class="px-8 inline-block h-16 text-center max-w-xl text-lg text-neutral-400"
             >
                 {#if desc != null}
                     <p>{desc}</p>
