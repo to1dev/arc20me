@@ -180,6 +180,7 @@ export async function fetchResult(realm: string): Promise<any> {
                     cid: null,
                     pid: null,
                     image: null,
+                    po: null,
                 },
                 profile: null,
             };
@@ -192,6 +193,7 @@ export async function fetchResult(realm: string): Promise<any> {
                 cid: _id.cid,
                 pid: null,
                 image: null,
+                po: null,
             },
             profile: null,
         };
@@ -206,6 +208,7 @@ export async function fetchResult(realm: string): Promise<any> {
                 cid: _id.cid,
                 pid: null,
                 image: null,
+                po: null,
             },
             profile: null,
         };
