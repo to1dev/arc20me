@@ -240,13 +240,25 @@ export async function fetchResult(realm: string): Promise<any> {
     if (!_id?.id) {
         if (!_id?.cid) {
             return {
-                meta: { v: "", id: "", cid: "", pid: "", image: "" },
+                meta: {
+                    v: null,
+                    id: null,
+                    cid: null,
+                    pid: null,
+                    image: null,
+                },
                 profile: null,
             };
         }
 
         return {
-            meta: { v: "", id: "", cid: _id.cid, pid: "", image: "" },
+            meta: {
+                v: null,
+                id: null,
+                cid: _id.cid,
+                pid: null,
+                image: null,
+            },
             profile: null,
         };
     }
@@ -254,7 +266,13 @@ export async function fetchResult(realm: string): Promise<any> {
     const pid = await fetchRealmProfileId(_id.id);
     if (!pid?.pid) {
         return {
-            meta: { v: "", id: _id.id, cid: _id.cid, pid: "", image: "" },
+            meta: {
+                v: null,
+                id: _id.id,
+                cid: _id.cid,
+                pid: null,
+                image: null,
+            },
             profile: null,
         };
     }
@@ -262,7 +280,14 @@ export async function fetchResult(realm: string): Promise<any> {
     const _profile = await fetchRealmProfile(pid.pid);
     if (!_profile?.profile) {
         return {
-            meta: { v: "", id: _id.id, cid: _id.cid, pid: pid.pid, image: "" },
+            meta: {
+                v: null,
+                id: _id.id,
+                cid: _id.cid,
+                pid: pid.pid,
+                image: null,
+                po: null,
+            },
             profile: null,
         };
     }
