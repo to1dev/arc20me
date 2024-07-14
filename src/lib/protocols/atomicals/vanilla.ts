@@ -239,16 +239,10 @@ export async function fetchHexData(
             };
         }
 
-        return {
-            ext: null,
-            data: null,
-        };
+        return null;
     } catch (error) {
         console.error("Failed to fetch hex data:", error);
-        return {
-            ext: null,
-            data: null,
-        };
+        return null;
     }
 }
 
