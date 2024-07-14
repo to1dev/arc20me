@@ -63,12 +63,14 @@
             Realm
         </h1>
 
-        <div
-            class="mx-auto max-w-lg text-center text-lg text-neutral-400 min-h-[5rem]"
-        >
-            {#if desc != null}
-                <p>{desc}</p>
-            {/if}
+        <div class="flex justify-center">
+            <div
+                class="inline-block h-16 text-center max-w-lg text-lg text-neutral-400"
+            >
+                {#if desc != null}
+                    <p>{desc}</p>
+                {/if}
+            </div>
         </div>
 
         <form on:submit={handleSubmit} class="mx-auto max-w-xl rounded-lg">
