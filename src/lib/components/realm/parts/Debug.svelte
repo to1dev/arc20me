@@ -4,12 +4,12 @@
     $: highlightedJson = JSON.stringify(meta, null, 4);
 </script>
 
-<div
-    class="flex flex-col text-info leading-relaxed p-4 bg-white border-t bottom-0"
->
-    {#if meta}
+{#if meta}
+    <div
+        class="flex flex-col text-info leading-relaxed p-4 bg-white border-t bottom-0"
+    >
         <div class="mt-2 font-light leading-relaxed break-all">
             <pre><code class="json">{highlightedJson}</code></pre>
         </div>
-    {/if}
-</div>
+    </div>
+{/if}
