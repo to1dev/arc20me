@@ -4,6 +4,7 @@
     import { fetchHexData } from "$lib/protocols/atomicals/vanilla";
 
     export let image;
+    export let imageData;
 
     let fallbackImage = "/images/loading/animals/24.gif";
     function handleImageError(event: Event) {
@@ -21,7 +22,7 @@
     let imageSrc: string | null = null;
 
     afterUpdate(async () => {
-        if (image) {
+        /*if (image) {
             const id = parseAtomicalIdfromURN(image);
             if (id?.id) {
                 const imageData = await fetchHexData(id.id);
@@ -31,6 +32,11 @@
             } else {
                 imageSrc = image;
             }
+        }*/
+        if (imageData) {
+            imageSrc = imageData;
+        } else {
+            imageSrc = image;
         }
     });
 </script>
