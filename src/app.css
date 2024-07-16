@@ -44,7 +44,7 @@
 }
 
 .playwrite-fr-moderne {
-    font-family: "Playwrite FR Moderne", cursive;
+    font-family: "Playwrite FR Moderne", var(--primary-main-font), cursive;
     font-optical-sizing: auto;
 }
 
