@@ -1,6 +1,6 @@
 <script lang="ts">
     import { page } from "$app/stores";
-    import { onMount, onDestroy } from "svelte";
+    import { onMount, onDestroy, beforeUpdate } from "svelte";
     import { debug } from "$lib/stores/Core";
     import { isDk } from "$lib/stores/Realm";
     import { fetchResult, sendQueue } from "$lib/protocols/atomicals/vanilla";
@@ -26,7 +26,7 @@
     let meta: any | null = null;
     let profile: any | null = null;
 
-    onMount(async () => {
+    beforeUpdate(async () => {
         try {
             isLoading = true;
 

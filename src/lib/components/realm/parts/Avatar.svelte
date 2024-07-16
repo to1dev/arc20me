@@ -1,7 +1,5 @@
 <script lang="ts">
-    import { afterUpdate } from "svelte";
-    import { hexToBase64, parseAtomicalIdfromURN } from "$lib/utils/ponytail";
-    import { fetchHexData } from "$lib/protocols/atomicals/vanilla";
+    import { afterUpdate, beforeUpdate, onMount } from "svelte";
 
     export let image;
     export let imageData;
@@ -22,17 +20,6 @@
     let imageSrc: string | null = null;
 
     afterUpdate(async () => {
-        /*if (image) {
-            const id = parseAtomicalIdfromURN(image);
-            if (id?.id) {
-                const imageData = await fetchHexData(id.id);
-                if (imageData) {
-                    imageSrc = hexToBase64(imageData.data, imageData.ext);
-                }
-            } else {
-                imageSrc = image;
-            }
-        }*/
         if (imageData) {
             imageSrc = imageData;
         } else {
