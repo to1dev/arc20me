@@ -26,7 +26,7 @@
     let meta: any | null = null;
     let profile: any | null = null;
 
-    beforeUpdate(async () => {
+    onMount(async () => {
         try {
             isLoading = true;
 
