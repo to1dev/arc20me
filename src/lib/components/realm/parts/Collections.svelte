@@ -1,5 +1,4 @@
 <script lang="ts">
-    import { onMount } from "svelte";
     import { afterUpdate } from "svelte";
     import { debug } from "$lib/stores/Core";
     import { extractImages, parseAtomicalIdfromURN } from "$lib/utils/ponytail";

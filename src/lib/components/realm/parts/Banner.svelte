@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { afterUpdate, beforeUpdate, onMount } from "svelte";
+    import { afterUpdate } from "svelte";
 
     export let banner;
     export let bannerData;

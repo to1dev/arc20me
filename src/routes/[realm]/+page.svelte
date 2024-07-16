@@ -1,9 +1,8 @@
 <script lang="ts">
     import { page } from "$app/stores";
-    import { onMount, onDestroy, beforeUpdate } from "svelte";
+    import { onMount, onDestroy } from "svelte";
     import { debug } from "$lib/stores/Core";
     import { isDk } from "$lib/stores/Realm";
-    import { fetchResult, sendQueue } from "$lib/protocols/atomicals/vanilla";
     import punycode from "punycode/";
 
     import Base from "$lib/components/realm/themes/Base.svelte";
