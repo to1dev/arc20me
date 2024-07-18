@@ -34,7 +34,6 @@
             );
             const result = await data.json();
 
-            //const result: any = await fetchResult(realm);
             meta = result?.meta;
             profile = result?.profile;
 
