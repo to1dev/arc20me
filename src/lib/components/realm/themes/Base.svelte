@@ -33,7 +33,8 @@
 </script>
 
 <svelte:head>
-    <title>{uname ? uname : ""} | A Humble Explorer for Atomicals Realm</title>
+    <title>{uname ? uname : ""} | Your Personal Gateway on the Bitcoin Blockchain</title
+    >
 </svelte:head>
 
 <div class="flex items-center justify-center">

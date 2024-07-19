@@ -29,7 +29,7 @@
     }
 
     const metaSettings = {
-        title: "A Humble Explorer for Atomicals Realm - Let the party begin!",
+        title: "Your Personal Gateway on the Bitcoin Blockchain",
         description: "",
         image: "",
     };
