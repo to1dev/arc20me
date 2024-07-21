@@ -3,7 +3,7 @@
 
     async function fetchData(): Promise<string | null> {
         try {
-            const response = await fetch("http://127.0.0.1:9999/json");
+            const response = await fetch("http://127.0.0.1:4000/json");
             if (!response.ok) {
                 throw new Error("Network response was not ok");
             }
