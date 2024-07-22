@@ -8,6 +8,7 @@
     import Base from "$lib/components/realm/themes/Base.svelte";
 
     $: realm = punycode.toASCII($page.params.realm).trim().toLowerCase();
+    const search = $page.url.search;
 
     let _debug = false;
 
@@ -30,7 +31,7 @@
             isLoading = true;
 
             const data: any = await fetch(
-                `https://ep2.to1.dev/api/realm/${realm}`
+                `https://ep2.to1.dev/api/realm/${realm}${search}`
             );
             const result = await data.json();
 
