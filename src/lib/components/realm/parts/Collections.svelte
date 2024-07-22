@@ -1,87 +1,96 @@
 <script lang="ts">
     import { parseAtomicalIdfromURN } from "$lib/utils/ponytail";
-    import { afterUpdate } from "svelte";
-    import "keen-slider/keen-slider.min.css";
-    import KeenSlider from "keen-slider";
-    import { slide } from "svelte/transition";
+    import { afterUpdate, onMount } from "svelte";
+    import Swiper from "swiper/bundle";
+    import "swiper/swiper-bundle.css";
 
-    function scaleElement(element: any, portion: number) {
-        var scale_size = 0.7;
-        var scale = 1 - (scale_size - scale_size * portion);
-        var style = `scale(${scale})`;
-        element.style.transform = style;
-        element.style["-webkit-transform"] = style;
-    }
-
-    let slider: any = null;
     afterUpdate(async () => {
-        //var slider = new KeenSlider("#my-keen-slider");
-        if (slider) {
-            slider = new KeenSlider("#my-keen-slider", {
-                loop: true,
-                detailsChanged: (s) => {
-                    const slides = s.track.details.slides;
-                    s.slides.forEach((element: any, idx: number) => {
-                        scaleElement(
-                            element.querySelector("div"),
-                            slides[idx].portion
-                        );
-                    });
-                },
-                initial: 2,
-            });
-        }
+        var swiper = new Swiper(".swiper", {
+            effect: "cards",
+            grabCursor: true,
+        });
     });
 
     export let collections;
 </script>
 
 {#if collections}
-    <!--div
-        class="flex justify-center text-info leading-relaxed space-x-4 p-4 break-all"
-    ></div-->
-
-    <div id="my-keen-slider" class="keen-slider zoom-out" bind:this={slider}>
-        {#each Object.entries(collections) as [_, value]}
-            <div class="keen-slider__slide zoom-out__slide">
-                <div>
-                    <img
-                        src={`https://s1.arc20.me/images/${parseAtomicalIdfromURN(value?.image)?.id}`}
-                        alt="Shoes"
-                    />
-                </div>
+    <div class="m-8">
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                {#each Object.entries(collections) as [_, value]}
+                    <div class="swiper-slide">
+                        <img
+                            class="object-none"
+                            src={`https://s1.arc20.me/images/${parseAtomicalIdfromURN(value?.image)?.id}`}
+                            alt="Shoes"
+                        />
+                    </div>
+                {/each}
             </div>
-        {/each}
+        </div>
     </div>
 {/if}
 
 <style>
-    .zoom-out {
-        perspective: 1000px;
-        height: 50vw;
+    .swiper {
+        width: 240px;
+        height: 320px;
     }
 
-    @media (min-width: 768px) {
-        .zoom-out {
-            height: 300px;
-        }
+    .swiper-slide {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 18px;
+        font-size: 22px;
+        font-weight: bold;
+        color: #fff;
     }
 
-    .zoom-out__slide div {
-        overflow: hidden;
-        position: absolute;
+    .swiper-slide img {
         width: 100%;
         height: 100%;
+        object-fit: cover;
     }
 
-    .zoom-out__slide img {
-        background-color: transparent;
-        width: 100%;
-        height: auto;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translateY(-50%) translateX(-50%);
-        -webkit-transform: translateY(-50%) translateX(-50%);
+    .swiper-slide:nth-child(1n) {
+        background-color: rgb(206, 17, 17);
+    }
+
+    .swiper-slide:nth-child(2n) {
+        background-color: rgb(0, 140, 255);
+    }
+
+    .swiper-slide:nth-child(3n) {
+        background-color: rgb(10, 184, 111);
+    }
+
+    .swiper-slide:nth-child(4n) {
+        background-color: rgb(211, 122, 7);
+    }
+
+    .swiper-slide:nth-child(5n) {
+        background-color: rgb(118, 163, 12);
+    }
+
+    .swiper-slide:nth-child(6n) {
+        background-color: rgb(180, 10, 47);
+    }
+
+    .swiper-slide:nth-child(7n) {
+        background-color: rgb(35, 99, 19);
+    }
+
+    .swiper-slide:nth-child(8n) {
+        background-color: rgb(0, 68, 255);
+    }
+
+    .swiper-slide:nth-child(9n) {
+        background-color: rgb(218, 12, 218);
+    }
+
+    .swiper-slide:nth-child(10n) {
+        background-color: rgb(54, 94, 77);
     }
 </style>
