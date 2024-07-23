@@ -183,13 +183,15 @@
     </div>
 {:else if links}
     <div class="flex space-x-4 p-4 break-all justify-center">
-        <div class="text-info leading-relaxed">
+        <div
+            class="text-info leading-relaxed w-full flex flex-col items-center sm:flex-row sm:flex-wrap sm:justify-center"
+        >
             {#each Object.entries(links) as [_, group], i}
                 {#each Object.entries(group?.items) as [_, item], index}
                     <div
-                        class={`badge border-none gap-2 mr-1 p-3 ${
+                        class={`w-80 overflow-hidden sm:w-auto badge border-none gap-2 mr-1 p-4 ${
                             backgroundColors[index % backgroundColors.length]
-                        }`}
+                        } m-2`}
                     >
                         {#if item?.type === "x"}<svg
                                 xmlns="http://www.w3.org/2000/svg"
