@@ -17,11 +17,11 @@
     function getPageType(pageUrlPath: string): PageType {
         if (pageUrlPath === "/") {
             return PageType.Homepage;
-        } else if (pageUrlPath.startsWith("/blog")) {
+        } else if (pageUrlPath.startsWith("/_blog")) {
             return PageType.BlogPage;
-        } else if (pageUrlPath.startsWith("/about")) {
+        } else if (pageUrlPath.startsWith("/_about")) {
             return PageType.AboutPage;
-        } else if (pageUrlPath.startsWith("/contact")) {
+        } else if (pageUrlPath.startsWith("/_contact")) {
             return PageType.ContactPage;
         } else {
             return PageType.OtherPage;
