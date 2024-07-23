@@ -288,8 +288,10 @@
                                     d="M13 18l-.397 .534a5.068 5.068 0 0 1 -7.127 0a4.972 4.972 0 0 1 0 -7.071l.524 -.463"
                                 /></svg
                             >{/if}
-                        <a class="text-white" href={item?.url} target="_blank"
-                            >{item?.name}</a
+                        <a
+                            class="text-white text-base"
+                            href={item?.url}
+                            target="_blank">{item?.name}</a
                         >
                     </div>
                 {/each}
