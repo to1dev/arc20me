@@ -14,13 +14,14 @@
 
     interface CollectionItem {
         name: string;
+        desc: string;
         image: string;
     }
 
     export let collections: Record<string, CollectionItem> = {};
 </script>
 
-{#if collections}
+{#if collections && Object.keys(collections).length > 0}
     <div class="overflow-hidden p-2">
         <div id="swiper" class="block relative w-60 h-80 p-4 mx-auto z-auto">
             <div class="swiper-wrapper">
