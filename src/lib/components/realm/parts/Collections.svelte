@@ -8,6 +8,7 @@
         var swiper = new Swiper("#swiper", {
             effect: "cards",
             grabCursor: true,
+            loop: true,
         });
     });
 
@@ -30,7 +31,7 @@
                         >
                             <div class="card-body p-3">
                                 <p
-                                    class="text-sm font-light text-white playwrite-fr-moderne"
+                                    class="font-light text-white playwrite-fr-moderne"
                                 >
                                     {value?.name}
                                 </p>
