@@ -33,7 +33,8 @@
 </script>
 
 <svelte:head>
-    <title>{uname ? uname : ""} | Your Personal Gateway on the Bitcoin Blockchain</title
+    <title
+        >{uname ? uname : ""} | Your Personal Gateway on the Bitcoin Blockchain</title
     >
 </svelte:head>
 

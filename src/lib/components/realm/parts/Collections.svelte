@@ -5,26 +5,42 @@
     import "swiper/swiper-bundle.css";
 
     afterUpdate(async () => {
-        var swiper = new Swiper(".swiper", {
+        var swiper = new Swiper("#swiper", {
             effect: "cards",
             grabCursor: true,
         });
     });
 
-    export let collections;
+    interface CollectionItem {
+        name: string;
+        image: string;
+    }
+
+    export let collections: Record<string, CollectionItem> = {};
 </script>
 
 {#if collections}
-    <div class="m-8">
-        <div class="swiper">
+    <div class="overflow-hidden p-2">
+        <div id="swiper" class="swiper p-4">
             <div class="swiper-wrapper">
                 {#each Object.entries(collections) as [_, value]}
-                    <div class="swiper-slide">
-                        <img
-                            class="object-none"
-                            src={`https://s1.arc20.me/images/${parseAtomicalIdfromURN(value?.image)?.id}`}
-                            alt="Shoes"
-                        />
+                    <div class="swiper-slide ring-4 ring-white">
+                        <div
+                            class="card image-full w-full h-full shadow-xl bg-opacity-5"
+                        >
+                            <div class="card-body">
+                                <p class="font-light text-white">
+                                    {value?.name}
+                                </p>
+                            </div>
+                            <figure>
+                                <img
+                                    class="object-cover"
+                                    src={`https://s1.arc20.me/images/${parseAtomicalIdfromURN(value?.image)?.id}`}
+                                    alt="Shoes"
+                                />
+                            </figure>
+                        </div>
                     </div>
                 {/each}
             </div>
@@ -33,6 +49,10 @@
 {/if}
 
 <style>
+    .card.image-full:before {
+        --tw-bg-opacity: 0.15;
+    }
+
     .swiper {
         width: 240px;
         height: 320px;
@@ -46,12 +66,6 @@
         font-size: 22px;
         font-weight: bold;
         color: #fff;
-    }
-
-    .swiper-slide img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
     }
 
     .swiper-slide:nth-child(1n) {
