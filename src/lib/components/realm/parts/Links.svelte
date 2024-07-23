@@ -189,7 +189,7 @@
             {#each Object.entries(links) as [_, group], i}
                 {#each Object.entries(group?.items) as [_, item], index}
                     <div
-                        class={`w-64 overflow-hidden sm:w-auto badge border-none gap-2 mr-1 p-5 ${
+                        class={`w-64 rounded-full overflow-hidden sm:w-auto badge border-none gap-2 mr-1 p-5 ${
                             backgroundColors[index % backgroundColors.length]
                         } m-2`}
                     >
