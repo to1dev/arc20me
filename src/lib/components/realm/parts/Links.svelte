@@ -189,7 +189,7 @@
             {#each Object.entries(links) as [_, group], i}
                 {#each Object.entries(group?.items) as [_, item], index}
                     <div
-                        class={`w-64 overflow-hidden sm:w-auto badge border-none gap-2 mr-1 p-4 ${
+                        class={`w-64 overflow-hidden sm:w-auto badge border-none gap-2 mr-1 p-5 ${
                             backgroundColors[index % backgroundColors.length]
                         } m-2`}
                     >
@@ -203,7 +203,7 @@
                                 stroke-width="2"
                                 stroke-linecap="round"
                                 stroke-linejoin="round"
-                                class="w-4 h-4 text-white icon icon-tabler icons-tabler-outline icon-tabler-brand-x"
+                                class="w-5 h-5 text-white icon icon-tabler icons-tabler-outline icon-tabler-brand-x"
                                 ><path
                                     stroke="none"
                                     d="M0 0h24v24H0z"
@@ -223,7 +223,7 @@
                                 stroke-width="2"
                                 stroke-linecap="round"
                                 stroke-linejoin="round"
-                                class="w-4 h-4 text-white icon icon-tabler icons-tabler-outline icon-tabler-brand-github"
+                                class="w-5 h-5 text-white icon icon-tabler icons-tabler-outline icon-tabler-brand-github"
                                 ><path
                                     stroke="none"
                                     d="M0 0h24v24H0z"
@@ -241,7 +241,7 @@
                                 stroke-width="2"
                                 stroke-linecap="round"
                                 stroke-linejoin="round"
-                                class="w-4 h-4 text-white icon icon-tabler icons-tabler-outline icon-tabler-brand-facebook"
+                                class="w-5 h-5 text-white icon icon-tabler icons-tabler-outline icon-tabler-brand-facebook"
                                 ><path
                                     stroke="none"
                                     d="M0 0h24v24H0z"
@@ -259,7 +259,7 @@
                                 stroke-width="2"
                                 stroke-linecap="round"
                                 stroke-linejoin="round"
-                                class="w-4 h-4 text-white icon icon-tabler icons-tabler-outline icon-tabler-rosette-discount-check"
+                                class="w-5 h-5 text-white icon icon-tabler icons-tabler-outline icon-tabler-rosette-discount-check"
                                 ><path
                                     stroke="none"
                                     d="M0 0h24v24H0z"
