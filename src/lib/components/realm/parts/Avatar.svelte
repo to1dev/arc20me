@@ -20,7 +20,7 @@
     let imageSrc: string | null = null;
 
     afterUpdate(async () => {
-        if (imageData) {
+        if (imageData && !image) {
             imageSrc = imageData;
         } else {
             imageSrc = image;
