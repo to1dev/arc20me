@@ -63,9 +63,8 @@
 </div>
 
 <ModalTest bind:showModal>
-    <div class="card bg-base-100 w-96 shadow-xl p-2">
-        <figure>
-        </figure>
+    <div class="card bg-base-100 shadow-xl p-2">
+        <figure></figure>
     </div>
 </ModalTest>
 

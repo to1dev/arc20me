@@ -46,6 +46,10 @@
 
 <!-- svelte-ignore css-unused-selector -->
 <style>
+    :root:has(:is(.modal-popup)) {
+        overflow: hidden;
+    }
+
     @keyframes fadeIn {
         0% {
             opacity: 0;
