@@ -1,10 +1,6 @@
 <script lang="ts">
     import "../app.css";
     import { page } from "$app/stores";
-    /*import { debug } from "$lib/stores/Core";
-
-    const _debug = import.meta.env.MODE === "development";
-    debug.set(_debug);*/
 
     enum PageType {
         Homepage,

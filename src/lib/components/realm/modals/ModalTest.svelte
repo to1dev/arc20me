@@ -47,7 +47,6 @@
 <!-- svelte-ignore css-unused-selector -->
 <style>
     .modal-open {
-        overflow: hidden;
         display: none;
     }
 
