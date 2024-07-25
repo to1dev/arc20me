@@ -5,10 +5,20 @@
 
     $: if (dialog && showModal) {
         dialog.showModal();
-        document.body.classList.add("modal-popup");
+        if (hasScrollbar()) {
+            document.body.classList.add("modal-popup", "keep-gutter");
+        } else {
+            document.body.classList.add("modal-popup");
+        }
     } else if (dialog) {
         dialog.close();
-        document.body.classList.remove("modal-popup");
+        document.body.classList.remove("modal-popup", "keep-gutter");
+    }
+
+    function hasScrollbar(): boolean {
+        const hasVerticalScrollbar =
+            document.body.scrollHeight > window.innerHeight;
+        return hasVerticalScrollbar;
     }
 
     function handleKeyDown(event: KeyboardEvent) {
@@ -23,7 +33,7 @@
     bind:this={dialog}
     on:close={() => {
         showModal = false;
-        document.body.classList.remove("modal-popup");
+        document.body.classList.remove("modal-popup", "keep-gutter");
     }}
     on:keydown={handleKeyDown}
 >
@@ -36,7 +46,10 @@
                 class="bg-base-300 btn btn-ghost no-animation"
                 on:click={() => {
                     dialog.close();
-                    document.body.classList.remove("modal-popup");
+                    document.body.classList.remove(
+                        "modal-popup",
+                        "keep-gutter"
+                    );
                 }}
                 >Close
             </button>
@@ -48,6 +61,10 @@
 <style>
     :root:has(:is(.modal-popup)) {
         overflow: hidden;
+    }
+
+    :root:has(:is(.keep-gutter)) {
+        scrollbar-gutter: stable;
     }
 
     @keyframes fadeIn {
