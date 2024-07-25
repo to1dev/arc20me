@@ -5,10 +5,10 @@
 
     $: if (dialog && showModal) {
         dialog.showModal();
-        document.body.classList.add("modal-open");
+        document.body.classList.add("modal-popup");
     } else if (dialog) {
         dialog.close();
-        document.body.classList.remove("modal-open");
+        document.body.classList.remove("modal-popup");
     }
 
     function handleKeyDown(event: KeyboardEvent) {
@@ -23,7 +23,7 @@
     bind:this={dialog}
     on:close={() => {
         showModal = false;
-        document.body.classList.remove("modal-open");
+        document.body.classList.remove("modal-popup");
     }}
     on:keydown={handleKeyDown}
 >
@@ -36,7 +36,7 @@
                 class="bg-base-300 btn btn-ghost no-animation"
                 on:click={() => {
                     dialog.close();
-                    document.body.classList.remove("modal-open");
+                    document.body.classList.remove("modal-popup");
                 }}
                 >Close
             </button>
@@ -46,23 +46,6 @@
 
 <!-- svelte-ignore css-unused-selector -->
 <style>
-    .modal-open {
-        display: none;
-    }
-
-    /*@keyframes slideDownFadeIn {
-        0% {
-            transform: translateX(-20%);
-        }
-        100% {
-            transform: translateY(0);
-        }
-    }
-
-    dialog[open] {
-        animation: slideDownFadeIn 100ms ease-in forwards;
-    }*/
-
     @keyframes fadeIn {
         0% {
             opacity: 0;
