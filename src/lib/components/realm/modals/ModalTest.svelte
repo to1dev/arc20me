@@ -3,25 +3,94 @@
 
     let dialog: HTMLDialogElement;
 
-    $: if (dialog && showModal) dialog.showModal();
+    $: if (dialog && showModal) {
+        dialog.showModal();
+        document.body.classList.add("modal-open");
+    } else if (dialog) {
+        dialog.close();
+        document.body.classList.remove("modal-open");
+    }
+
+    function handleKeyDown(event: KeyboardEvent) {
+        event.preventDefault();
+        event.stopPropagation();
+    }
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events a11y-no-noninteractive-element-interactions -->
 <dialog
-    class="modal"
+    class="z-10 shadow-2xl rounded-md ring-4 ring-white focus:outline-none backdrop:bg-black/25 backdrop:backdrop-blur-sm"
     bind:this={dialog}
-    on:close={() => (showModal = false)}
-    on:click|self={() => dialog.close()}
+    on:close={() => {
+        showModal = false;
+        document.body.classList.remove("modal-open");
+    }}
+    on:keydown={handleKeyDown}
 >
     <!-- svelte-ignore a11y-no-static-element-interactions -->
-    <div class="bg-base-100 shadow-xl rounded-md">
+    <div class="bg-base-100">
         <slot />
         <div class="p-5 flex justify-end">
             <button
                 type="button"
-                class="bg-base-300 btn btn-ghost"
-                on:click={() => dialog.close()}>Close</button
-            >
+                class="bg-base-300 btn btn-ghost no-animation"
+                on:click={() => {
+                    dialog.close();
+                    document.body.classList.remove("modal-open");
+                }}
+                >Close
+            </button>
         </div>
     </div>
 </dialog>
+
+<!-- svelte-ignore css-unused-selector -->
+<style>
+    .modal-open {
+        overflow: hidden;
+        display: none;
+    }
+
+    /*@keyframes slideDownFadeIn {
+        0% {
+            transform: translateX(-20%);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    dialog[open] {
+        animation: slideDownFadeIn 100ms ease-in forwards;
+    }*/
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeOut {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+
+    dialog::backdrop {
+        animation: fadeIn 200ms ease-in forwards;
+    }
+
+    button {
+        aspect-ratio: 1;
+        border-radius: 50%;
+        transform: translate(-2px, -2px);
+        filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.2));
+        transition: all 0.1s;
+    }
+</style>

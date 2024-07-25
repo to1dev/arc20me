@@ -1,7 +1,16 @@
+<script lang="ts">
+    import ModalTest from "../modals/ModalTest.svelte";
+
+    let showModal: boolean = false;
+</script>
+
 <hr class="mt-6" />
 <div class="flex bg-gray-50 playwrite-fr-moderne">
     <button
         class="flex justify-center items-center w-1/2 p-4 hover:bg-gray-100 duration-100"
+        on:click={() => {
+            showModal = true;
+        }}
     >
         <!--span
             class="tooltip bg-info text-neutral rounded shadow-lg p-2 -mt-8 bg-opacity-75"
@@ -53,6 +62,14 @@
     </button>
 </div>
 
+<ModalTest bind:showModal>
+    <div class="card bg-base-100 w-96 shadow-xl p-2">
+        <figure>
+        </figure>
+    </div>
+</ModalTest>
+
+<!-- svelte-ignore css-unused-selector -->
 <style lang="postcss">
     .tooltip {
         @apply invisible absolute;

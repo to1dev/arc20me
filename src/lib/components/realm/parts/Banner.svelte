@@ -31,4 +31,10 @@
         alt=""
         on:error={handleImageError}
     />
+    <!--div class="absolute left-14 top-3 m-2 indicator">
+        <span
+            class="indicator-item badge badge-primary rounded-full border-none"
+            >0.0.1-alpha.1</span
+        >
+    </div-->
 </div>

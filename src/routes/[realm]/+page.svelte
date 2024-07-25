@@ -1,7 +1,7 @@
 <script lang="ts">
     import { page } from "$app/stores";
     import { onMount, onDestroy } from "svelte";
-    import { debug } from "$lib/stores/Core";
+    import { dev } from "$app/environment";
     import { isDk } from "$lib/stores/Realm";
     import punycode from "punycode/";
 
@@ -9,16 +9,6 @@
 
     $: realm = punycode.toASCII($page.params.realm).trim().toLowerCase();
     const search = $page.url.search;
-
-    let _debug = false;
-
-    const unsubscribe = debug.subscribe((value) => {
-        _debug = value;
-    });
-
-    onDestroy(() => {
-        unsubscribe();
-    });
 
     let error: string | null = null;
     let isLoading: boolean = false;
@@ -51,5 +41,5 @@
 </script>
 
 <div class="text-lg">
-    <Base isDk={$isDk} {realm} debug={_debug} {realmData} {meta} {profile} />
+    <Base isDk={$isDk} {realm} debug={dev} {realmData} {meta} {profile} />
 </div>

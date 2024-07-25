@@ -60,7 +60,9 @@
             </div>
             <Links links={isDk ? profile?.l : profile?.links} />
             <Collections collections={profile?.collections} />
-            <Wallets wallets={profile?.wallets} />
+            {#if debug}
+                <Wallets wallets={profile?.wallets} />
+            {/if}
             <Shortcuts />
         </div>
 
