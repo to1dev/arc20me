@@ -30,7 +30,7 @@
 
 <div class="flex justify-center px-5 -mt-12 bg-white">
     <img
-        class="h-24 w-24 sm:h-28 sm:w-28 bg-white ring-8 ring-white rounded-full {isPixelImage
+        class="object-cover h-24 w-24 sm:h-28 sm:w-28 bg-white ring-8 ring-white rounded-full {isPixelImage
             ? 'pixel-image'
             : 'high-res-image'}"
         src={imageSrc ? imageSrc : fallbackImage}
