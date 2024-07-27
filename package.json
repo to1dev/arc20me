@@ -25,6 +25,7 @@
         "dompurify": "^3.1.6",
         "micro-ordinals": "^0.1.1",
         "postcss": "^8.4.38",
+        "punycode": "^2.3.1",
         "svelte": "^4.2.7",
         "svelte-check": "^3.6.0",
         "swiper": "^11.1.7",
@@ -34,8 +35,5 @@
         "vite": "^5.0.3",
         "wrangler": "^3.67.1"
     },
-    "type": "module",
-    "dependencies": {
-        "punycode": "^2.3.1"
-    }
+    "type": "module"
 }

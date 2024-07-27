@@ -7,7 +7,7 @@
 </script>
 
 <h2 class="text-gray-800 text-3xl font-bold mb-2 alkatra">
-    {#if realm}
+    {#if uname || name}
         <span>{name ? name : uname}</span>
     {:else}
         <span class="loading loading-dots loading-lg text-info"></span>
