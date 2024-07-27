@@ -48,11 +48,7 @@
 
         <div class="bg-white pt-3">
             <div class="text-center px-14 break-words">
-                <Title
-                    name={profile?.name}
-                    realm={realmData?.realm}
-                    {uname}
-                />
+                <Title name={profile?.name} realm={realmData?.realm} {uname} />
                 <Content text={profile?.desc} />
                 <Bingo {meta} />
                 <NoProfile {meta} />

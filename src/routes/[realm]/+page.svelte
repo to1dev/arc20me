@@ -4,25 +4,31 @@
     import { dev } from "$app/environment";
     import punycode from "punycode/";
 
+    export let data;
+
+    let { realm, meta, profile, realmData, error } = data;
+
     import Base from "$lib/components/realm/themes/Base.svelte";
 
-    $: realm = punycode.toASCII($page.params.realm).trim().toLowerCase();
+    /*$: realm = punycode.toASCII($page.params.realm).trim().toLowerCase();
     const search = $page.url.search;
 
-    let error: string | null = null;
+    onMount(() => {});*/
+
+    /*let error: string | null = null;
     let isLoading: boolean = false;
     let realmData: any | null = null;
     let meta: any | null = null;
-    let profile: any | null = null;
+    let profile: any | null = null;*/
 
-    onMount(async () => {
+    /*onMount(async () => {
         try {
             isLoading = true;
 
-            const data: any = await fetch(
+            const _data: any = await fetch(
                 `https://ep2.to1.dev/api/realm/${realm}${search}`
             );
-            const result = await data.json();
+            const result = await _data.json();
 
             meta = result?.meta;
             profile = result?.profile;
@@ -34,7 +40,7 @@
             realmData = { realm: realm };
             isLoading = false;
         }
-    });
+    });*/
 </script>
 
 <div class="text-lg">

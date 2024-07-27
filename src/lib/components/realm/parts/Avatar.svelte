@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { afterUpdate } from "svelte";
+    import { afterUpdate, beforeUpdate, onMount } from "svelte";
 
     export let image;
     export let imageData;
@@ -19,7 +19,7 @@
 
     let imageSrc: string | null = null;
 
-    afterUpdate(async () => {
+    onMount(async () => {
         if (imageData && !image) {
             imageSrc = imageData;
         } else {
@@ -33,7 +33,7 @@
         class="object-cover h-24 w-24 sm:h-28 sm:w-28 bg-white ring-8 ring-white rounded-full {isPixelImage
             ? 'pixel-image'
             : 'high-res-image'}"
-        src={imageSrc ? imageSrc : fallbackImage}
+        src={image ? image : fallbackImage}
         alt=""
         on:error={handleImageError}
         on:load={handleImageLoad}

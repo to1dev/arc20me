@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { afterUpdate } from "svelte";
+    import { onMount, afterUpdate } from "svelte";
 
     export let banner;
     export let bannerData;
@@ -12,7 +12,7 @@
 
     let bannerSrc: string | null = null;
 
-    afterUpdate(async () => {
+    onMount(async () => {
         if (bannerData) {
             bannerSrc = bannerData;
         } else {
@@ -24,7 +24,7 @@
 <div class="h-32 sm:h-48 overflow-hidden">
     <img
         class="w-full h-full object-cover"
-        src={bannerSrc ? bannerSrc : fallbackBanner}
+        src={banner ? banner : fallbackBanner}
         alt=""
         on:error={handleImageError}
     />

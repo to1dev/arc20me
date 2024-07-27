@@ -1,10 +1,10 @@
 <script lang="ts">
     import { parseAtomicalIdfromURN } from "$lib/utils/ponytail";
-    import { afterUpdate } from "svelte";
+    import { afterUpdate, onMount } from "svelte";
     import Swiper from "swiper/bundle";
     import "swiper/swiper-bundle.css";
 
-    afterUpdate(async () => {
+    onMount(async () => {
         var swiper = new Swiper("#swiper", {
             effect: "cards",
             grabCursor: true,
@@ -23,7 +23,10 @@
 
 {#if collections && Object.keys(collections).length > 0}
     <div class="overflow-hidden p-2">
-        <div id="swiper" class="block relative w-60 h-80 p-4 mx-auto z-auto">
+        <div
+            id="swiper"
+            class="block overflow-hidden relative w-60 h-80 p-4 mx-auto z-auto"
+        >
             <div class="swiper-wrapper">
                 {#each Object.entries(collections) as [_, value], i}
                     <div class="swiper-slide ring-4 ring-white">

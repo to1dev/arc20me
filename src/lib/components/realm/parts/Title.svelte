@@ -7,13 +7,13 @@
 </script>
 
 <h2 class="text-gray-800 text-3xl font-bold mb-2 alkatra">
-    {#if realm != null}
+    {#if realm}
         <span>{name ? name : uname}</span>
     {:else}
         <span class="loading loading-dots loading-lg text-info"></span>
     {/if}
 </h2>
-{#if realm != null}
+{#if realm}
     <span class="lowercase">+{realm}</span>
 {:else}
     <span class="lowercase text-white">...</span>
