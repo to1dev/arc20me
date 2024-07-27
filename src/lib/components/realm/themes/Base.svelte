@@ -19,15 +19,17 @@
     import Collections from "../parts/Collections.svelte";
     import Wallets from "../parts/Wallets.svelte";
 
-    export let realm;
-    export let debug;
-    export let realmData;
-    export let meta;
-    export let profile;
+    export let realm: string | null = null;
+    export let debug: boolean = false;
+    export let realmData: any | null = null;
+    export let meta: any | null = null;
+    export let profile: any | null = null;
 
     let uname: string | null = null;
     onMount(async () => {
-        uname = punycode.toUnicode(realm);
+        if (realm) {
+            uname = punycode.toUnicode(realm);
+        }
     });
 </script>
 
