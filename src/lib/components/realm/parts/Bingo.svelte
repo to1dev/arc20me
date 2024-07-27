@@ -2,7 +2,7 @@
     export let meta: any | null = null;
 </script>
 
-{#if meta != null && !meta?.id}
+{#if meta}
     <div class="m-4 flex justify-center items-center duration-100 text-success">
         {#if meta?.cid}
             <svg
@@ -20,7 +20,7 @@
                     d="M7 12l5 5l10 -10"
                 /><path d="M2 12l5 5m5 -5l5 -5" /></svg
             >Pending minting with candidates
-        {:else}
+        {:else if !meta?.id}
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -56,7 +56,7 @@
                 /><path d="M18.5 5.5l-8 8" /><path
                     d="M8.276 11.284l4.44 4.44a.968 .968 0 0 1 0 1.369l-2.704 2.704a4.108 4.108 0 0 1 -5.809 -5.81l2.704 -2.703a.968 .968 0 0 1 1.37 0z"
                 /></svg
-            >{#if meta?.cid}Snatch{:else}Mint{/if}
+            >{#if meta?.cid}Snatch{:else if !meta?.id}Mint{/if}
         </button>
     </div>
 {/if}
