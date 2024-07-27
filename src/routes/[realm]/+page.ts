@@ -1,5 +1,5 @@
 import type { PageLoad } from "./$types";
-import punycode from "punycode/";
+//import punycode from "punycode/";
 
 export const load: PageLoad = async ({ fetch, params, url }) => {
     //const realm = punycode.toASCII(params.realm).trim().toLowerCase();
