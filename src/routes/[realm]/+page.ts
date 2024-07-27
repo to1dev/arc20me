@@ -2,7 +2,8 @@ import type { PageLoad } from "./$types";
 import punycode from "punycode/";
 
 export const load: PageLoad = async ({ params, url }) => {
-    const realm = punycode.toASCII(params.realm).trim().toLowerCase();
+    //const realm = punycode.toASCII(params.realm).trim().toLowerCase();
+    const realm = params.realm;
     const search = url.search;
 
     try {
