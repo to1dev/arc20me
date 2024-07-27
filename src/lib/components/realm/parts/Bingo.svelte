@@ -2,7 +2,7 @@
     export let meta;
 </script>
 
-{#if meta && !meta.id}
+{#if meta != null && !meta?.id}
     <div class="m-4 flex justify-center items-center duration-100 text-success">
         {#if meta?.cid}
             <svg
