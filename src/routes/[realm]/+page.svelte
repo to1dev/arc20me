@@ -2,7 +2,7 @@
     import { page } from "$app/stores";
     import { onMount, onDestroy } from "svelte";
     import { dev } from "$app/environment";
-    import punycode from "punycode/";
+    //import punycode from "punycode/";
 
     export let data;
 
