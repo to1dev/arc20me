@@ -1,5 +1,5 @@
 <script lang="ts">
-    export let meta;
+    export let meta: any | null = null;
 </script>
 
 {#if meta != null && !meta?.id}
