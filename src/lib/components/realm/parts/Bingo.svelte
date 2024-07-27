@@ -1,5 +1,11 @@
 <script lang="ts">
+    import { onMount } from "svelte";
+
     export let meta;
+
+    onMount(() => {
+        console.log(meta);
+    });
 </script>
 
 {#if meta && !meta.id}
