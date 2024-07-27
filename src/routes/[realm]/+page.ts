@@ -1,7 +1,7 @@
-import type { PageServerLoad } from "./$types";
+import type { PageLoad } from "./$types";
 import punycode from "punycode/";
 
-export const load: PageServerLoad = async ({ params, url }) => {
+export const load: PageLoad = async ({ params, url }) => {
     const realm = punycode.toASCII(params.realm).trim().toLowerCase();
     const search = url.search;
 
