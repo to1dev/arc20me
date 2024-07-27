@@ -19,7 +19,6 @@
     import Collections from "../parts/Collections.svelte";
     import Wallets from "../parts/Wallets.svelte";
 
-    export let isDk;
     export let realm;
     export let debug;
     export let realmData;
@@ -50,15 +49,15 @@
         <div class="bg-white pt-3">
             <div class="text-center px-14 break-words">
                 <Title
-                    name={isDk ? profile?.n : profile?.name}
+                    name={profile?.name}
                     realm={realmData?.realm}
                     {uname}
                 />
-                <Content text={isDk ? profile?.d : profile?.desc} />
+                <Content text={profile?.desc} />
                 <Bingo {meta} />
                 <NoProfile {meta} />
             </div>
-            <Links links={isDk ? profile?.l : profile?.links} />
+            <Links links={profile?.links} />
             <Collections collections={profile?.collections} />
             {#if debug}
                 <Wallets wallets={profile?.wallets} />

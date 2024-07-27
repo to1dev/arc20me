@@ -2,7 +2,6 @@
     import { page } from "$app/stores";
     import { onMount, onDestroy } from "svelte";
     import { dev } from "$app/environment";
-    import { isDk } from "$lib/stores/Realm";
     import punycode from "punycode/";
 
     import Base from "$lib/components/realm/themes/Base.svelte";
@@ -28,8 +27,6 @@
             meta = result?.meta;
             profile = result?.profile;
 
-            let v = meta?.v ?? "1.2.0";
-            isDk.set(v.endsWith("dk"));
             error = null;
         } catch (e) {
             error = (e as Error).message;
@@ -41,5 +38,5 @@
 </script>
 
 <div class="text-lg">
-    <Base isDk={$isDk} {realm} debug={dev} {realmData} {meta} {profile} />
+    <Base {realm} debug={dev} {realmData} {meta} {profile} />
 </div>
