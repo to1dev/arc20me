@@ -3,7 +3,7 @@
     import Database from "$lib/components/db/Database.svelte";
     import LocalServer from "$lib/components/server/LocalServer.svelte";
 
-    import punycode from "punycode/";
+    import { toUnicode } from "punycode";
 
     import Avatar from "../parts/Avatar.svelte";
     import Banner from "../parts/Banner.svelte";
@@ -28,7 +28,7 @@
     let uname: string | null = null;
     onMount(async () => {
         if (realm) {
-            uname = punycode.toUnicode(realm);
+            uname = toUnicode(realm);
         }
     });
 </script>
