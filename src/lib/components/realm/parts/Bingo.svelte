@@ -3,9 +3,7 @@
 
     export let meta;
 
-    onMount(() => {
-        console.log(meta);
-    });
+    onMount(() => {});
 </script>
 
 {#if meta && !meta.id}
