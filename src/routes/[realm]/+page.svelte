@@ -10,7 +10,6 @@
     let background = meta?.background;
 
     const backgroundStyle = `
-        background-color: #ee5522;
         background-image: url("${background ? background : "/images/background.svg"}");
         background-attachment: fixed;
         background-size: cover;
