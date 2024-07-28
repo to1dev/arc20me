@@ -1,6 +1,6 @@
 <script lang="ts">
     //import { page } from "$app/stores";
-    import { onMount } from "svelte";
+    import { beforeUpdate, onMount } from "svelte";
     import { dev } from "$app/environment";
     //import { toASCII } from "punycode";
 
@@ -20,12 +20,16 @@
 
     let isMobile = false;
 
-    onMount(() => {
+    function updateBackgroundStyle() {
         if (window.innerWidth <= 640) {
             isMobile = true;
         } else {
             isMobile = false;
         }
+    }
+
+    onMount(() => {
+        updateBackgroundStyle();
     });
 
     /*$: realm = toASCII($page.params.realm).trim().toLowerCase();
@@ -60,6 +64,7 @@
 </script>
 
 <div
+    on:resize={updateBackgroundStyle}
     class="flex flex-col lg:flex-row flex-auto min-h-screen white-background"
     style={isMobile ? "" : backgroundStyle}
 >
