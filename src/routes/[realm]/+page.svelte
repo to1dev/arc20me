@@ -1,6 +1,6 @@
 <script lang="ts">
     //import { page } from "$app/stores";
-    import { onMount, onDestroy } from "svelte";
+    import { onMount } from "svelte";
     import { dev } from "$app/environment";
     //import { toASCII } from "punycode";
 
@@ -56,6 +56,10 @@
             isMobile = false;
         }
     }
+
+    onMount(() => {
+        onResize();
+    });
 </script>
 
 <svelte:window on:resize={onResize} />
