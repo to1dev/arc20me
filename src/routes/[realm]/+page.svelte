@@ -50,7 +50,7 @@
 </script>
 
 <div
-    class="flex flex-col lg:flex-row flex-auto min-h-screen"
+    class="flex flex-col lg:flex-row flex-auto min-h-screen white-background"
     style={backgroundStyle}
 >
     <div class="flex-auto">
@@ -73,4 +73,10 @@
 </div>
 
 <style lang="postcss">
+    @media (max-width: 640px) {
+        .white-background {
+            background-color: white;
+            background-image: none;
+        }
+    }
 </style>
