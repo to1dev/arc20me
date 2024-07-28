@@ -2,4 +2,14 @@
     import Home from "$lib/components/Home.svelte";
 </script>
 
-<Home />
+<div class="flex flex-col lg:flex-row flex-auto min-h-screen">
+    <div class="flex-auto">
+        <div class="mx-auto w-full">
+            <div class="space-y-5">
+                <main class="flex-1 text-base-content">
+                    <Home />
+                </main>
+            </div>
+        </div>
+    </div>
+</div>

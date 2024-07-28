@@ -1,11 +1,20 @@
 <script lang="ts">
-    import { page } from "$app/stores";
-    import { onMount, onDestroy } from "svelte";
+    //import { page } from "$app/stores";
+    //import { onMount, onDestroy } from "svelte";
     import { dev } from "$app/environment";
-    import { toASCII } from "punycode";
+    //import { toASCII } from "punycode";
 
     export let data;
     let { realm, meta, profile, realmData, error } = data;
+
+    let background = meta?.background;
+
+    const backgroundStyle = `
+        background-color: #ee5522;
+        background-image: url("${background ? background : "/images/background.svg"}");
+        background-attachment: fixed;
+        background-size: cover;
+    `;
 
     import Base from "$lib/components/realm/themes/Base.svelte";
 
@@ -40,6 +49,28 @@
     });*/
 </script>
 
-<div class="text-lg">
-    <Base {realm} debug={dev} {realmData} {meta} {profile} />
+<div
+    class="flex flex-col lg:flex-row flex-auto min-h-screen"
+    style={backgroundStyle}
+>
+    <div class="flex-auto">
+        <div class="mx-auto w-full">
+            <div class="space-y-5">
+                <main class="flex-1 text-base-content">
+                    <div class="text-lg">
+                        <Base
+                            {realm}
+                            debug={dev}
+                            {realmData}
+                            {meta}
+                            {profile}
+                        />
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
 </div>
+
+<style lang="postcss">
+</style>
