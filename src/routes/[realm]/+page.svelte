@@ -1,6 +1,6 @@
 <script lang="ts">
     //import { page } from "$app/stores";
-    //import { onMount, onDestroy } from "svelte";
+    import { onMount } from "svelte";
     import { dev } from "$app/environment";
     //import { toASCII } from "punycode";
 
@@ -17,6 +17,16 @@
     `;
 
     import Base from "$lib/components/realm/themes/Base.svelte";
+
+    let isMobile = false;
+
+    onMount(() => {
+        if (window.innerWidth <= 640) {
+            isMobile = true;
+        } else {
+            isMobile = false;
+        }
+    });
 
     /*$: realm = toASCII($page.params.realm).trim().toLowerCase();
     const search = $page.url.search;
@@ -51,7 +61,7 @@
 
 <div
     class="flex flex-col lg:flex-row flex-auto min-h-screen white-background"
-    style={backgroundStyle}
+    style={isMobile ? "" : backgroundStyle}
 >
     <div class="flex-auto">
         <div class="mx-auto w-full">
