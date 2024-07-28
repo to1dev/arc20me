@@ -44,7 +44,7 @@
     <div
         class="container m-0 sm:m-8 sm:w-full md:w-2/3 2xl:w-2/6 xl:w-2/5 lg:w-3/6 sm:shadow-2xl transform ring-8 ring-white"
     >
-        <Banner banner={meta?.banner} bannerData={meta?.bannerData} />
+        <Banner banner={meta?.banner} />
         <Avatar image={meta?.image} />
         <Menu />
 

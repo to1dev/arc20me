@@ -2,7 +2,7 @@
     import { onMount, afterUpdate } from "svelte";
 
     export let banner;
-    export let bannerData;
+    //export let bannerData;
 
     let fallbackBanner = "/images/banner.jpg";
     function handleImageError(event: Event) {
