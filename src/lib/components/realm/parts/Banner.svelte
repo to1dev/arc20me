@@ -10,7 +10,7 @@
         target.src = fallbackBanner;
     }
 
-    let bannerSrc: string | null = null;
+    /*let bannerSrc: string | null = null;
 
     onMount(async () => {
         if (bannerData) {
@@ -18,7 +18,7 @@
         } else {
             bannerSrc = banner;
         }
-    });
+    });*/
 </script>
 
 <div class="h-32 sm:h-48 overflow-hidden">
