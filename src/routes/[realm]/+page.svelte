@@ -1,6 +1,6 @@
 <script lang="ts">
     //import { page } from "$app/stores";
-    import { beforeUpdate, onMount } from "svelte";
+    import { onMount, onDestroy } from "svelte";
     import { dev } from "$app/environment";
     //import { toASCII } from "punycode";
 
@@ -17,20 +17,6 @@
     `;
 
     import Base from "$lib/components/realm/themes/Base.svelte";
-
-    let isMobile = false;
-
-    function updateBackgroundStyle() {
-        if (window.innerWidth <= 640) {
-            isMobile = true;
-        } else {
-            isMobile = false;
-        }
-    }
-
-    onMount(() => {
-        updateBackgroundStyle();
-    });
 
     /*$: realm = toASCII($page.params.realm).trim().toLowerCase();
     const search = $page.url.search;
@@ -61,11 +47,21 @@
             isLoading = false;
         }
     });*/
+
+    let isMobile: boolean = false;
+    function onResize() {
+        if (window.innerWidth <= 640) {
+            isMobile = true;
+        } else {
+            isMobile = false;
+        }
+    }
 </script>
 
+<svelte:window on:resize={onResize} />
+
 <div
-    on:resize={updateBackgroundStyle}
-    class="flex flex-col lg:flex-row flex-auto min-h-screen white-background"
+    class="flex flex-col lg:flex-row flex-auto min-h-screen bg-white"
     style={isMobile ? "" : backgroundStyle}
 >
     <div class="flex-auto">
@@ -87,11 +83,5 @@
     </div>
 </div>
 
-<style lang="postcss">
-    @media (max-width: 640px) {
-        .white-background {
-            background-color: white;
-            background-image: none;
-        }
-    }
+<style>
 </style>
