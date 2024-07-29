@@ -49,7 +49,7 @@
     <img
         bind:this={img}
         class="object-cover h-24 w-24 sm:h-28 sm:w-28 bg-white ring-8 ring-white rounded-full {imgClass}"
-        src={image ? image : fallbackImage}
+        src={image || fallbackImage}
         alt=""
         on:error={handleImageError}
         on:load={handleImageLoad}

@@ -24,7 +24,7 @@
 <div class="h-32 sm:h-48 overflow-hidden">
     <img
         class="w-full h-full object-cover"
-        src={banner ? banner : fallbackBanner}
+        src={banner || fallbackBanner}
         alt=""
         on:error={handleImageError}
     />
