@@ -10,7 +10,7 @@
     <div class="fixed bottom-0 end-0 z-[60] sm:max-w-sm w-full mx-auto p-6">
         <!-- Card -->
         <div
-            class="p-4 backdrop-blur-lg rounded-xl shadow-2xl bg-neutral-900/60 shadow-black/70"
+            class="p-4 backdrop-blur-lg rounded-2xl shadow-2xl bg-neutral-900/60 shadow-black/70"
         >
             <div class="flex justify-between items-center gap-x-5 sm:gap-x-10">
                 <h2 class="font-semibold text-white">My Wallet</h2>
