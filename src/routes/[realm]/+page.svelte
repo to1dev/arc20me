@@ -56,7 +56,7 @@
         }
     }
 
-    onMount(() => {
+    onMount(async () => {
         onResize();
     });
 </script>

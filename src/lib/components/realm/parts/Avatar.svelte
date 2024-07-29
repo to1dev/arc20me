@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { afterUpdate, beforeUpdate, onMount } from "svelte";
+    import { onMount } from "svelte";
 
     export let image;
     //export let imageData;
@@ -38,7 +38,7 @@
         }
     });*/
 
-    beforeUpdate(() => {
+    onMount(async () => {
         if (img && img.complete) {
             handleImageLoad();
         }

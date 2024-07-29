@@ -1,6 +1,6 @@
 <script lang="ts">
     import { parseAtomicalIdfromURN } from "$lib/utils/ponytail";
-    import { afterUpdate, onMount } from "svelte";
+    import { onMount } from "svelte";
     import Swiper from "swiper/bundle";
     import "swiper/swiper-bundle.css";
 
