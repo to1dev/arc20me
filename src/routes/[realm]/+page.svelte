@@ -47,7 +47,7 @@
         }
     });*/
 
-    let isMobile: boolean = true;
+    let isMobile: boolean = false;
     function onResize() {
         if (window.innerWidth <= 640) {
             isMobile = true;
