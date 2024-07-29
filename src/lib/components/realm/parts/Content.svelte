@@ -13,11 +13,9 @@
 
 <div class="mt-2 text-slate-500 font-light leading-relaxed">
     <div class="m-2">
-        <p>
-            {#if sanitizedText}
-                {@html sanitizedText}
-            {/if}
-        </p>
+        {#if sanitizedText}
+            {@html sanitizedText}
+        {/if}
     </div>
 </div>
 
