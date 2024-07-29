@@ -26,7 +26,7 @@
     export let profile: any | null = null;
 
     let uname: string | null = null;
-    onMount(async () => {
+    onMount(() => {
         if (realm) {
             uname = toUnicode(realm);
         }

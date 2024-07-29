@@ -38,7 +38,7 @@
         }
     });*/
 
-    onMount(async () => {
+    onMount(() => {
         if (img && img.complete) {
             handleImageLoad();
         }

@@ -4,7 +4,7 @@
     import Swiper from "swiper/bundle";
     import "swiper/swiper-bundle.css";
 
-    onMount(async () => {
+    onMount(() => {
         var swiper = new Swiper("#swiper", {
             effect: "cards",
             grabCursor: true,

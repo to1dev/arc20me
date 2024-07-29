@@ -47,7 +47,7 @@
         }
     });*/
 
-    let isMobile: boolean = false;
+    let isMobile: boolean = true;
     function onResize() {
         if (window.innerWidth <= 640) {
             isMobile = true;
@@ -56,7 +56,7 @@
         }
     }
 
-    onMount(async () => {
+    onMount(() => {
         onResize();
     });
 </script>

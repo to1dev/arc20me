@@ -12,7 +12,7 @@
 
     /*let bannerSrc: string | null = null;
 
-    onMount(async () => {
+    onMount(() => {
         if (bannerData) {
             bannerSrc = bannerData;
         } else {
