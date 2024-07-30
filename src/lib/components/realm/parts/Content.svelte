@@ -1,21 +1,19 @@
 <script lang="ts">
     import { onMount, onDestroy } from "svelte";
-    import DOMPurify from "dompurify";
+    import DOMPurify from "isomorphic-dompurify";
 
     export let text;
 
-    let sanitizedText = "";
+    //let sanitizedText = "";
 
     onMount(() => {
-        sanitizedText = DOMPurify.sanitize(text);
+        //sanitizedText = DOMPurify.sanitize(text);
     });
 </script>
 
 <div class="mt-2 text-slate-500 font-light leading-relaxed">
     <div class="m-2">
-        {#if sanitizedText}
-            {@html sanitizedText}
-        {/if}
+        {@html DOMPurify.sanitize(text)}
     </div>
 </div>
 
