@@ -1,5 +1,6 @@
 <script lang="ts">
     import { onMount } from "svelte";
+    import DOMPurify from "isomorphic-dompurify";
     import Database from "$lib/components/db/Database.svelte";
     import LocalServer from "$lib/components/server/LocalServer.svelte";
 
@@ -51,7 +52,7 @@
         <div class="bg-white pt-3">
             <div class="text-center px-14 break-words">
                 <Title name={profile?.name} realm={realmData?.realm} {uname} />
-                <Content text={profile?.desc} />
+                <Content text={DOMPurify.sanitize(profile?.desc)} />
                 <Bingo {meta} />
                 <NoProfile {meta} />
             </div>
