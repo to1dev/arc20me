@@ -1,6 +1,7 @@
 <script lang="ts">
-    import { error } from "@sveltejs/kit";
-    import { marked } from "marked";
+    import { sanitize } from "@jill64/universal-sanitizer";
+    import DOMPurify from "isomorphic-dompurify";
+    //import { marked } from "marked";
 
     export let text;
 
@@ -8,7 +9,27 @@
 
     try {
         if (text) {
-            clean = marked.parse(text);
+            /*clean = sanitize(text, {
+                sanitizeHtml: {
+                    allowedTags: ["div", "video", "track"],
+                    allowedAttributes: {
+                        div: ["class"],
+                        video: [
+                            "class",
+                            "src",
+                            "autoplay",
+                            "muted",
+                            "loop",
+                            "controls",
+                        ],
+                        track: ["kind"],
+                    },
+                    allowedSchemes: ["http", "https"],
+                },
+            });*/
+            //clean = marked.parse(text);
+            // clean = sanitizeHtml(text, { allowedTags: ["br", "div", "video"] });
+            clean = DOMPurify.sanitize(text);
         }
     } catch (e) {
         console.error((e as Error).message);
