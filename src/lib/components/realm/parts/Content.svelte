@@ -3,12 +3,6 @@
     import DOMPurify from "isomorphic-dompurify";
 
     export let text;
-
-    //let sanitizedText = "";
-
-    onMount(() => {
-        //sanitizedText = DOMPurify.sanitize(text);
-    });
 </script>
 
 <div class="mt-2 text-slate-500 font-light leading-relaxed">
