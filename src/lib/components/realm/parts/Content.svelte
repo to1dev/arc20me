@@ -7,7 +7,9 @@
 
 <div class="mt-2 text-slate-500 font-light leading-relaxed">
     <div class="m-2">
-        {@html DOMPurify.sanitize(text)}
+        {#if text}
+            {@html DOMPurify.sanitize(text)}
+        {/if}
     </div>
 </div>
 
