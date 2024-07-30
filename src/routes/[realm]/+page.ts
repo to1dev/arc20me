@@ -14,6 +14,7 @@ export const load: PageLoad = async ({ fetch, params, url }) => {
         return {
             realm: realm,
             meta: result?.meta,
+            text: result?.text,
             profile: result?.profile,
             realmData: { realm },
             error: null,
@@ -22,6 +23,7 @@ export const load: PageLoad = async ({ fetch, params, url }) => {
         return {
             realm: realm,
             meta: null,
+            text: null,
             profile: null,
             realmData: { realm },
             error: (e as Error).message,

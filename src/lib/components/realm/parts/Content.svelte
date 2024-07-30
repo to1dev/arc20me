@@ -1,20 +1,13 @@
 <script lang="ts">
-    import DOMPurify from "isomorphic-dompurify";
-    import { onMount } from "svelte";
+    import { marked } from "marked";
 
-    export let text: string | null = null;
-
-    let clean: string | null = null;
-    if (text) {
-        clean = DOMPurify.sanitize(text);
-    }
+    export let text;
+    const clean = marked.parse(text);
 </script>
 
 <div class="mt-2 text-slate-500 font-light leading-relaxed">
     <div class="m-2">
-        {#if clean}
-            {@html clean}
-        {/if}
+        {@html clean}
     </div>
 </div>
 
