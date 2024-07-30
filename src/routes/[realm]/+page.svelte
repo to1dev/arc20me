@@ -8,19 +8,7 @@
     let { realm, meta, profile, realmData, error } = data;
 
     let background = meta?.background;
-
-    let dynamicStyles = `
-        .dynamic {
-            color: purple;
-            font-size: 18px;
-        }
-  `;
-
-    const backgroundStyle = `
-        background-image: url("${background ? background : "/images/background.svg"}");
-        background-attachment: fixed;
-        background-size: cover;
-    `;
+    let vars = `--background-image: url("${background || "/images/background.svg"}")`;
 
     import Base from "$lib/components/realm/themes/Base.svelte";
 
@@ -53,32 +41,17 @@
             isLoading = false;
         }
     });*/
-
-    let isMobile: boolean = false;
-    function onResize() {
-        if (window.innerWidth <= 640) {
-            isMobile = true;
-        } else {
-            isMobile = false;
-        }
-    }
-
-    onMount(() => {
-        onResize();
-    });
 </script>
 
-<svelte:window on:resize={onResize} />
-
 <div
-    class="flex flex-col lg:flex-row flex-auto min-h-screen bg-white"
-    style={isMobile ? "" : backgroundStyle}
+    class="flex flex-col lg:flex-row flex-auto min-h-screen bg-white bg-fixed bg-cover background"
+    style={vars}
 >
     <div class="flex-auto">
         <div class="mx-auto w-full">
             <div class="space-y-5">
                 <main class="flex-1 text-base-content">
-                    <div class="text-lg">
+                    <div class="text-lg dynamic">
                         <Base
                             {realm}
                             debug={dev}
@@ -94,4 +67,13 @@
 </div>
 
 <style>
+    .background {
+        background-image: var(--background-image);
+    }
+
+    @media (max-width: 640px) {
+        .background {
+            background-image: none;
+        }
+    }
 </style>
