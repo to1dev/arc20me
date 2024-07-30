@@ -15,7 +15,6 @@
         "@sveltejs/kit": "^2.0.0",
         "@sveltejs/vite-plugin-svelte": "^3.0.0",
         "@types/chai": "^4.3.16",
-        "@types/dompurify": "^3.0.5",
         "@types/punycode": "^2.1.4",
         "@types/semver": "^7.5.8",
         "autoprefixer": "^10.4.19",
