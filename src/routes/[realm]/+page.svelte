@@ -9,6 +9,13 @@
 
     let background = meta?.background;
 
+    let dynamicStyles = `
+        .dynamic {
+            color: purple;
+            font-size: 18px;
+        }
+  `;
+
     const backgroundStyle = `
         background-image: url("${background ? background : "/images/background.svg"}");
         background-attachment: fixed;
