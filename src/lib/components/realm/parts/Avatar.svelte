@@ -46,14 +46,21 @@
 </script>
 
 <div class="flex justify-center px-5 -mt-12 bg-white">
-    <img
-        bind:this={img}
-        class="object-cover h-24 w-24 sm:h-28 sm:w-28 bg-white ring-8 ring-white rounded-full {imgClass}"
-        src={image || fallbackImage}
-        alt=""
-        on:error={handleImageError}
-        on:load={handleImageLoad}
-    />
+    <div class="indicator">
+        <img
+            bind:this={img}
+            class="object-cover h-24 w-24 sm:h-28 sm:w-28 bg-white ring-8 ring-white rounded-full {imgClass}"
+            src={image || fallbackImage}
+            alt=""
+            on:error={handleImageError}
+            on:load={handleImageLoad}
+        />
+        <!--img
+            src="/images/check.svg"
+            alt="Icon"
+            class="absolute top-0 right-0 w-6 h-6 transform translate-x-0 translate-y-0 bg-white rounded-full"
+        /-->
+    </div>
 </div>
 
 <style>
