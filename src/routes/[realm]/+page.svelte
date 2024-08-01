@@ -9,8 +9,6 @@
     let background = meta?.background;
     let vars = `--background-image: url("${background || "/images/background.svg"}")`;
 
-    //import Base from "$lib/components/realm/themes/Base.svelte";
-
     /*$: realm = toASCII($page.params.realm).trim().toLowerCase();
     const search = $page.url.search;
 
