@@ -6,8 +6,6 @@
 
     let background = meta?.background;
     let vars = `--background-image: url("${background || "/images/background.svg"}")`;
-
-    console.log(result2);
 </script>
 
 <div
