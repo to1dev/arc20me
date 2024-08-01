@@ -1,5 +1,4 @@
 <script lang="ts">
-    import { onMount } from "svelte";
     import Database from "$lib/components/db/Database.svelte";
     import LocalServer from "$lib/components/server/LocalServer.svelte";
 
@@ -26,11 +25,9 @@
     export let profile: any | null = null;
 
     let uname: string | null = null;
-    onMount(() => {
-        if (realm) {
-            uname = toUnicode(realm);
-        }
-    });
+    if (realm) {
+        uname = toUnicode(realm);
+    }
 </script>
 
 <svelte:head>
