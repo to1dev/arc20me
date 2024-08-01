@@ -7,10 +7,15 @@ declare global {
         // interface PageData {}
         // interface PageState {}
         // interface Platform {}
-        interface Platform {
+        /*interface Locals {
             env: Env;
             cf: CfProperties;
             ctx: ExecutionContext;
+        }*/
+        interface Platform {
+            env?: {
+                MY_SERVICE: Fetcher;
+            };
         }
     }
 }
