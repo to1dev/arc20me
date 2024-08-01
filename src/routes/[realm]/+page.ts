@@ -11,8 +11,23 @@ export const load: PageLoad = async ({ fetch, params, url }) => {
         );
         const result = await response.json();
 
+        const themeMap: { [key: string]: () => Promise<any> } = {
+            Base: () =>
+                import("$lib/components/realm/themes/Base/index.svelte"),
+        };
+
+        let ThemeComponent: any;
+        const theme = result?.meta?.theme;
+
+        if (theme && themeMap[theme]) {
+            ThemeComponent = (await themeMap[theme]()).default;
+        } else {
+            ThemeComponent = (await themeMap.Base()).default;
+        }
+
         return {
-            realm: realm,
+            ThemeComponent,
+            realm,
             meta: result?.meta,
             profile: result?.profile,
             realmData: { realm },

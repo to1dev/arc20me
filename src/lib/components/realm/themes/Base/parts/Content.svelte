@@ -1,6 +1,6 @@
 <script lang="ts">
     import { sanitize } from "@jill64/universal-sanitizer";
-    import type { IOptions, IDefaults } from "sanitize-html";
+    import type { IOptions } from "sanitize-html";
     //import { marked } from "marked";
 
     export let text;

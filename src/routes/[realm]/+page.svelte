@@ -4,12 +4,12 @@
     //import { toASCII } from "punycode";
 
     export let data;
-    let { realm, meta, profile, realmData, error } = data;
+    let { ThemeComponent, realm, meta, profile, realmData, error } = data;
 
     let background = meta?.background;
     let vars = `--background-image: url("${background || "/images/background.svg"}")`;
 
-    import Base from "$lib/components/realm/themes/Base.svelte";
+    //import Base from "$lib/components/realm/themes/Base.svelte";
 
     /*$: realm = toASCII($page.params.realm).trim().toLowerCase();
     const search = $page.url.search;
@@ -51,13 +51,16 @@
             <div class="space-y-5">
                 <main class="flex-1 text-base-content">
                     <div class="text-lg dynamic">
-                        <Base
-                            {realm}
-                            debug={dev}
-                            {realmData}
-                            {meta}
-                            {profile}
-                        />
+                        {#if ThemeComponent}
+                            <svelte:component
+                                this={ThemeComponent}
+                                {realm}
+                                debug={dev}
+                                {realmData}
+                                {meta}
+                                {profile}
+                            />
+                        {/if}
                     </div>
                 </main>
             </div>
