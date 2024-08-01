@@ -7,9 +7,12 @@
         "build": "vite build",
         "preview": "vite preview",
         "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-        "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
+        "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+        "deploy": "npm run build && wrangler pages deploy",
+        "cf-typegen": "wrangler types && move worker-configuration.d.ts src/"
     },
     "devDependencies": {
+        "@cloudflare/workers-types": "^4.20240725.0",
         "@jill64/universal-sanitizer": "^1.3.0",
         "@scure/btc-signer": "^1.3.2",
         "@sveltejs/adapter-auto": "^3.0.0",
@@ -32,7 +35,7 @@
         "tslib": "^2.4.1",
         "typescript": "^5.0.0",
         "vite": "^5.0.3",
-        "wrangler": "^3.67.1"
+        "wrangler": "^3.68.0"
     },
     "type": "module"
 }
