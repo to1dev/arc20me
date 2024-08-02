@@ -31,10 +31,9 @@
             <Title name={profile?.name} realm={realmData?.realm} {uname} />
         </div>
         <section class="mb-8">
-            <h2 class="text-2xl font-semibold mb-4">Scoped styles</h2>
-            <p class="mb-4">
+            <div class="mb-4">
                 <Content text={profile?.desc} />
-            </p>
+            </div>
         </section>
     </div>
 </div>

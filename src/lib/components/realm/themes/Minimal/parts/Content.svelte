@@ -324,15 +324,33 @@
         allowedAttributes: {
             ...defaultConfig.allowedAttributes,
             div: ["class"],
+            h1: ["class"],
+            h2: ["class"],
             video: ["class", "src", "autoplay", "muted", "loop", "controls"],
             track: ["kind"],
         },
         allowedSchemes: ["http", "https"],
     };
 
-    text = `<div class="mb-2 italic">Bitcoin the digital asset has a market value determined by supply and demand. In the early days of Bitcoin, there wasn’t any demand so bitcoins were worth nothing. As of July 2024, one can sell a bitcoin for around $60,000 USD, which means all 21 million bitcoins would have a market cap of around $1.2 trillion USD.</div>
+    text = `<h2 class='text-xl font-semibold mb-2'>Introduction</h2>
 
-        <div>As a new asset that’s neither backed by anything nor forced on people by their government, it’s inevitable that its market price will be very volatile. Below is a graph of bitcoin price in USD on a log scale. You can see it has been trending up with distinct four-year cycles that correlate with the halvings.</div>`
+            <div class='mb-4'>In this article, we review some important history and features of Bitcoin for newcomers. We also look at how Bitcoin enables financial sovereignty and freedom. Finally, we explore the challenges facing Bitcoin and its future potential.</div>
+
+            <h2 class='text-xl font-semibold mb-2'>The Bitcoin network</h2>
+
+            <div class='mb-4'>Bitcoin the network officially started on January 3, 2009, when the pseudonymous developer Satoshi Nakamoto created the first block of the Bitcoin blockchain.</div>
+
+            <div class='mb-4'>The Bitcoin blockchain is the public ledger that records all historic transactions. Satoshi received the first 50 bitcoins (BTC), the network's token asset, as a reward for mining this block. Since then, over 840,000 blocks have been added, resulting in over 19 million bitcoins, all created through mining.</div>
+
+            <div class='mb-4'>There are four main players in the Bitcoin network: developers, full nodes, miners, and bitcoin users.</div>
+
+            <div role="alert" class="alert bg-white shadow-lg rounded-2xl border-2 border-purple-100 hover:border-purple-500">
+                <div>
+                    <h3 class="font-bold">Developers</h3>
+                    Developers write the open source code for Bitcoin, which implements rules, such as what is a valid transaction, how a block of transactions should be added to the blockchain, and how miners are rewarded with new bitcoins. They publish their code and anyone else can take that code for free and modify or use it.
+                </div>
+            </div>
+    `;
     try {
         if (text) {
             clean = sanitize(text, {

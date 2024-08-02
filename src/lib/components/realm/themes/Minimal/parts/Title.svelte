@@ -4,7 +4,7 @@
     export let uname;
 </script>
 
-<h2 class="text-gray-800 text-3xl font-bold mb-2">
+<h2 class="text-gray-800 text-3xl font-bold mb-2 title">
     {#if uname || name}
         <span>{name || uname}</span>
     {:else}
@@ -16,3 +16,11 @@
 {:else}
     <span class="lowercase italic text-white">...</span>
 {/if}
+
+<style>
+    .title {
+        font-family: milk-script-alternate, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+</style>
