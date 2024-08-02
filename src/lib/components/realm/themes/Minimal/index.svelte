@@ -52,8 +52,7 @@
         --gray-bg: #f9f9f9;
         --gray-border: #eee;
         --gray-text: #777;
-        --font-body: "stern-pro", "LXGW WenKai TC", system-ui, sans-serif;
-        --font-code: "input-mono", monospace;
+        --font-body: stern-pro, "LXGW WenKai TC", system-ui, sans-serif;
         --text-base: 36px;
         --text-code: 0.68em;
         --text-inline-code: 0.74em;
