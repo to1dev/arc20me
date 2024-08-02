@@ -332,13 +332,16 @@
         allowedSchemes: ["http", "https"],
     };
 
-    text = `<h2 class='font-semibold mb-2'>Introduction</h2>
+    text = `
+            <div class='mb-4'>
+                <h2 class='font-bold mb-2'>Introduction</h2>
+                    In this article, we review some important history and features of Bitcoin for newcomers. We also look at how Bitcoin enables financial sovereignty and freedom. Finally, we explore the challenges facing Bitcoin and its future potential.
+            </div>
 
-            <div class='mb-4'>In this article, we review some important history and features of Bitcoin for newcomers. We also look at how Bitcoin enables financial sovereignty and freedom. Finally, we explore the challenges facing Bitcoin and its future potential.</div>
-
-            <h2 class='font-semibold mb-2'>The Bitcoin network</h2>
-
-            <div class='mb-4'>Bitcoin the network officially started on January 3, 2009, when the pseudonymous developer Satoshi Nakamoto created the first block of the Bitcoin blockchain.</div>
+            <div class='mb-4'>
+                <h2 class='font-bold mb-2'>The Bitcoin network</h2>
+                Bitcoin the network officially started on January 3, 2009, when the pseudonymous developer Satoshi Nakamoto created the first block of the Bitcoin blockchain.
+            </div>
 
             <div class='mb-4'>The Bitcoin blockchain is the public ledger that records all historic transactions. Satoshi received the first 50 bitcoins (BTC), the network's token asset, as a reward for mining this block. Since then, over 840,000 blocks have been added, resulting in over 19 million bitcoins, all created through mining.</div>
 
@@ -364,11 +367,12 @@
                 Users can hold BTC and use it for transactions. They do this by using a cryptographic public key to generate Bitcoin addresses and receive BTC at those addresses. To send BTC to another address, they use the private key to sign the transaction. Thus, whoever owns the private key owns the associated BTC. Users can either trust third-party services like exchanges to hold their bitcoin, or use a self-custodial Bitcoin wallet like Proton Wallet to store the key themselves. When users want their transactions added to the blockchain, they will often pay transaction fees that go to the miners as another incentive to include their transaction. This network fee goes up when there is more demand for Bitcoin transactions.
             </div>
 
-            <div class='text-md text-center mb-4 px-12 italic'>In the early days, Satoshi played all the roles to kickstart the network. But because Bitcoin is an open permissionless network, more and more people joined by contributing to the codebase, running full nodes, mining, or transacting with bitcoin. By the end of 2010, Satoshi voluntarily disappeared, never again moving the 1 million bitcoins that he had mined and ending his influence on how Bitcoin develops. The Bitcoin network has now grown to tens of thousands of nodes run by individuals and organizations around the world with tens of millions of users. This decentralized network is the key to Bitcoin’s long-term security and reliability.</div>
+            <div class='text-center mb-4 px-12 italic'>In the early days, Satoshi played all the roles to kickstart the network. But because Bitcoin is an open permissionless network, more and more people joined by contributing to the codebase, running full nodes, mining, or transacting with bitcoin. By the end of 2010, Satoshi voluntarily disappeared, never again moving the 1 million bitcoins that he had mined and ending his influence on how Bitcoin develops. The Bitcoin network has now grown to tens of thousands of nodes run by individuals and organizations around the world with tens of millions of users. This decentralized network is the key to Bitcoin’s long-term security and reliability.</div>
 
-            <h2 class='font-semibold mb-2'>Importance of decentralization</h2>
-
-            <div class='mb-4'>Bitcoin has a system of checks and balances among the developers, full node operators, and mining node operators. Developers can update the open source Bitcoin code but cannot force their updates on the node operators. Miners are needed to keep adding new blocks that confirm new transactions. Full nodes have the most power over the state of the network by enforcing rules and approving new blocks from miners.</div>
+            <div class='mb-4'>
+                <h2 class='font-bold mb-2'>Importance of decentralization</h2>
+                    Bitcoin has a system of checks and balances among the developers, full node operators, and mining node operators. Developers can update the open source Bitcoin code but cannot force their updates on the node operators. Miners are needed to keep adding new blocks that confirm new transactions. Full nodes have the most power over the state of the network by enforcing rules and approving new blocks from miners.
+            </div>
     `;
     try {
         if (text) {
