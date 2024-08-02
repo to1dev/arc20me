@@ -1,12 +1,7 @@
 <script lang="ts">
-    import { browser } from "$app/environment";
     import { toUnicode } from "punycode";
 
     export let realm: string | null = null;
-
-    /*if (browser) {
-        document.body.setAttribute("data-theme", "retro");
-    }*/
 
     let uname: string | null = null;
     if (realm) {
