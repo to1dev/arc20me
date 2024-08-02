@@ -34,36 +34,13 @@
 </script>
 
 <svelte:head>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin="anonymous"
-    />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap"
-        rel="stylesheet"
-    />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playwrite+FR+Moderne:wght@100..400&display=swap"
-        rel="stylesheet"
-    />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Alkatra:wght@400..700&display=swap"
-        rel="stylesheet"
-    />
-    <link
-        href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+Mono+TC&family=LXGW+WenKai+TC&display=swap"
-        rel="stylesheet"
-    />
-
     <title
         >{uname ? uname : ""} | Your Personal Gateway on the Bitcoin Blockchain</title
     >
 </svelte:head>
 
 <div
-    data-theme="dark"
+    data-theme="business"
     class="flex flex-col lg:flex-row flex-auto min-h-screen bg-white bg-fixed bg-cover background"
     style={vars}
 >

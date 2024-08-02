@@ -1,0 +1,27 @@
+:root {
+    --orange: #fc2507;
+    --gray-bg: #f9f9f9;
+    --gray-border: #eee;
+    --gray-text: #777;
+    --font-body: "capitolina", system-ui, sans-serif;
+    --font-code: "input-mono", monospace;
+    --text-base: 18px;
+    --text-code: 0.68em;
+    --text-inline-code: 0.74em;
+    --baseline: calc(var(--text-base) * 1.4);
+    --spacing: 0.5rem;
+}
+
+body {
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: var(--text-base);
+    line-height: var(--baseline);
+}
+
+pre,
+code,
+kbd {
+    font-family: var(--font-code);
+    font-weight: 400;
+}

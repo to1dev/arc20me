@@ -2,11 +2,18 @@
     import { page } from "$app/stores";
 </script>
 
+<svelte:head>
+    <link rel="stylesheet" href="https://use.typekit.net/fcb2rob.css" />
+</svelte:head>
+
 {#if $page}
-    <div class="flex items-center justify-center min-h-screen bg-gray-800">
+    <div
+        class="flex items-center justify-center min-h-screen bg-gray-800 capitolina"
+        data-theme="business"
+    >
         <div class="text-center space-y-4">
             <h1 class="text-info text-lg">
-                {$page.status}:{#if $page.error}
+                {$page.status}: {#if $page.error}
                     {$page.error.message}
                 {/if}
             </h1>
@@ -36,3 +43,26 @@
         </div>
     </div>
 {/if}
+
+<style lang="postcss">
+    :root {
+        --orange: #fc2507;
+        --gray-bg: #f9f9f9;
+        --gray-border: #eee;
+        --gray-text: #777;
+        --font-body: "capitolina", system-ui, sans-serif;
+        --font-code: "input-mono", monospace;
+        --text-base: 18px;
+        --text-code: 0.68em;
+        --text-inline-code: 0.74em;
+        --baseline: calc(var(--text-base) * 1.4);
+        --spacing: 0.5rem;
+    }
+
+    .capitolina {
+        font-family: var(--font-body);
+        font-weight: 300;
+        font-size: var(--text-base);
+        line-height: var(--baseline);
+    }
+</style>
