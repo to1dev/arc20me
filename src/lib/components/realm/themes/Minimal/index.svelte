@@ -24,7 +24,10 @@
     >
 </svelte:head>
 
-<div data-theme="retro" class="min-h-screen p-5 theme-minial bg-white">
+<div
+    data-theme="retro"
+    class="min-h-screen p-5 theme-minial bg-white text-4xl leading-relaxed"
+>
     <div class="max-w-4xl mx-auto p-5 break-words">
         <Avatar image={meta?.image} />
         <div class="mb-4">
@@ -47,23 +50,8 @@
         }
     }
 
-    :root {
-        --orange: #fc2507;
-        --gray-bg: #f9f9f9;
-        --gray-border: #eee;
-        --gray-text: #777;
-        --font-body: stern-pro, "LXGW WenKai TC", system-ui, sans-serif;
-        --text-base: 36px;
-        --text-code: 0.68em;
-        --text-inline-code: 0.74em;
-        --baseline: calc(var(--text-base) * 1.8);
-        --spacing: 0.5rem;
-    }
-
     .theme-minial {
         font-family: stern-pro, "LXGW WenKai TC", system-ui, sans-serif;
         font-weight: 400;
-        font-size: var(--text-base);
-        line-height: var(--baseline);
     }
 </style>
