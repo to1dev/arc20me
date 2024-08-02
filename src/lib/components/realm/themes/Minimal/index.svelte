@@ -1,7 +1,14 @@
 <script lang="ts">
     import { toUnicode } from "punycode";
 
+    import Title from "./parts/Title.svelte";
+    import Content from "./parts/Content.svelte";
+
     export let realm: string | null = null;
+    export let debug: boolean = false;
+    export let realmData: any | null = null;
+    export let meta: any | null = null;
+    export let profile: any | null = null;
 
     let uname: string | null = null;
     if (realm) {
@@ -11,6 +18,7 @@
 
 <svelte:head>
     <link rel="stylesheet" href="https://use.typekit.net/fcb2rob.css" />
+    <link rel="stylesheet" href="https://cdn.tailwindcss.com" />
     <title
         >{uname ? uname : ""} | Your Personal Gateway on the Bitcoin Blockchain</title
     >
@@ -18,35 +26,15 @@
 
 <div data-theme="retro" class="min-h-screen p-5 theme-minial bg-white">
     <div class="max-w-4xl mx-auto p-5 rounded-md leading-relaxed">
-        <h1 class="text-3xl font-bold mb-6">Svelte by Example: Styles & CSS</h1>
+        <div class="text-center px-14 break-words"></div>
+        <div class="mb-4">
+            <Title name={profile?.name} realm={realmData?.realm} {uname} />
+        </div>
         <section class="mb-8">
             <h2 class="text-2xl font-semibold mb-4">Scoped styles</h2>
-            <p class="mb-4 italic">
-                In this example, we'll explore Svelte's styling options on a
-                simplified Todo component.
-            </p>
-            <p class="mb-4">Example:</p>
-        </section>
-
-        <section class="mb-8">
-            <h2 class="text-2xl font-semibold mb-4">Global styles</h2>
             <p class="mb-4">
-                Global styles can be defined using the <code
-                    class="bg-gray-200 px-1 rounded">:global</code
-                > keyword.
+                <Content text={profile?.desc} />
             </p>
-            <p class="mb-4">Example:</p>
-        </section>
-
-        <section class="mb-8">
-            <h2 class="text-2xl font-semibold mb-4">
-                Component-specific styles
-            </h2>
-            <p class="mb-4">
-                Svelte automatically scopes styles to the component. You can
-                still define global styles if necessary.
-            </p>
-            <p class="mb-4">Example:</p>
         </section>
     </div>
 </div>
@@ -65,7 +53,7 @@
         --gray-bg: #f9f9f9;
         --gray-border: #eee;
         --gray-text: #777;
-        --font-body: "capitolina", system-ui, sans-serif;
+        --font-body: "capitolina", "LXGW WenKai TC", system-ui, sans-serif;
         --font-code: "input-mono", monospace;
         --text-base: 18px;
         --text-code: 0.68em;
