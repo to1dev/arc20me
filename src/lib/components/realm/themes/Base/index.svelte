@@ -28,46 +28,103 @@
     if (realm) {
         uname = toUnicode(realm);
     }
+
+    let background = meta?.background;
+    let vars = `--background-image: url("${background || "/images/background.svg"}")`;
 </script>
 
 <svelte:head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin="anonymous"
+    />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap"
+        rel="stylesheet"
+    />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playwrite+FR+Moderne:wght@100..400&display=swap"
+        rel="stylesheet"
+    />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alkatra:wght@400..700&display=swap"
+        rel="stylesheet"
+    />
+    <link
+        href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+Mono+TC&family=LXGW+WenKai+TC&display=swap"
+        rel="stylesheet"
+    />
+
     <title
         >{uname ? uname : ""} | Your Personal Gateway on the Bitcoin Blockchain</title
     >
 </svelte:head>
 
-<div class="flex items-center justify-center">
-    <!--div class="container m-4 lg:w-2/6 xl:w-2/7 sm:w-full md:w-2/3 shadow-2xl transform border-2 border-white rounded-t-xl"></div-->
-    <div
-        class="container m-0 sm:m-8 sm:w-full md:w-2/3 2xl:w-2/6 xl:w-2/5 lg:w-3/6 sm:shadow-2xl transform ring-8 ring-white"
-    >
-        <Banner banner={meta?.banner} />
-        <Avatar image={meta?.image} />
-        <Menu />
+<div
+    data-theme="dark"
+    class="flex flex-col lg:flex-row flex-auto min-h-screen bg-white bg-fixed bg-cover background"
+    style={vars}
+>
+    <div class="flex-auto">
+        <div class="mx-auto w-full">
+            <div class="space-y-5">
+                <main class="flex-1 text-base-content">
+                    <div class="text-lg dynamic">
+                        <div class="flex items-center justify-center">
+                            <!--div class="container m-4 lg:w-2/6 xl:w-2/7 sm:w-full md:w-2/3 shadow-2xl transform border-2 border-white rounded-t-xl"></div-->
+                            <div
+                                class="container m-0 sm:m-8 sm:w-full md:w-2/3 2xl:w-2/6 xl:w-2/5 lg:w-3/6 sm:shadow-2xl transform ring-8 ring-white"
+                            >
+                                <Banner banner={meta?.banner} />
+                                <Avatar image={meta?.image} />
+                                <Menu />
 
-        <div class="bg-white pt-3">
-            <div class="text-center px-14 break-words">
-                <Title name={profile?.name} realm={realmData?.realm} {uname} />
-                <Content text={profile?.desc} />
-                <Bingo {meta} />
-                <NoProfile {meta} />
+                                <div class="bg-white pt-3">
+                                    <div class="text-center px-14 break-words">
+                                        <Title
+                                            name={profile?.name}
+                                            realm={realmData?.realm}
+                                            {uname}
+                                        />
+                                        <Content text={profile?.desc} />
+                                        <Bingo {meta} />
+                                        <NoProfile {meta} />
+                                    </div>
+                                    <Links links={profile?.links} />
+                                    <Collections
+                                        collections={profile?.collections}
+                                    />
+                                    {#if debug}
+                                        <Wallets wallets={profile?.wallets} />
+                                    {/if}
+                                    <Shortcuts />
+                                </div>
+
+                                <Love />
+                                {#if debug}
+                                    <Debug {meta} />
+                                    <LocalServer />
+                                    <Database />
+                                {/if}
+                            </div>
+                        </div>
+                    </div>
+                </main>
             </div>
-            <Links links={profile?.links} />
-            <Collections collections={profile?.collections} />
-            {#if debug}
-                <Wallets wallets={profile?.wallets} />
-            {/if}
-            <Shortcuts />
         </div>
-
-        <Love />
-        {#if debug}
-            <Debug {meta} />
-            <LocalServer />
-            <Database />
-        {/if}
     </div>
 </div>
 
 <style lang="postcss">
+    .background {
+        background-image: var(--background-image);
+    }
+
+    @media (max-width: 640px) {
+        .background {
+            background-image: none;
+        }
+    }
 </style>

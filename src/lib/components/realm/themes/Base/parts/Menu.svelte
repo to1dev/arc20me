@@ -17,7 +17,7 @@
     <button
         on:click={toggleMenu}
         tabindex="-1"
-        class="btn btn-ghost btn-sm w-8 h-8 no-animation text-white p-1"
+        class="btn btn-ghost btn-sm w-8 h-8 no-animation text-white p-1 rounded-sm"
     >
         <svg
             xmlns="http://www.w3.org/2000/svg"
