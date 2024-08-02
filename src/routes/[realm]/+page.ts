@@ -3,7 +3,7 @@ import type { ComponentType } from "svelte";
 
 export const load: PageLoad = async ({ fetch, parent }) => {
     try {
-        const parentData = await parent();
+        const { realm, query, meta } = await parent();
 
         const themeMap: { [key: string]: () => Promise<any> } = {
             Base: () =>
@@ -13,7 +13,7 @@ export const load: PageLoad = async ({ fetch, parent }) => {
         };
 
         let ThemeComponent: ComponentType | null = null;
-        const theme = parentData?.meta?.theme || "Base";
+        const theme = meta?.theme || query?.theme || "Base";
 
         if (theme && themeMap[theme]) {
             ThemeComponent = (await themeMap[theme]()).default;

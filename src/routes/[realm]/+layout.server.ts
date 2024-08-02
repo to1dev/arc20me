@@ -35,7 +35,7 @@ export const load: LayoutServerLoad = async ({
         let response: any | null = null;
         let result: any | null = null;
 
-        if (platform) {
+        /*if (platform) {
             response = await platform?.env?.MY_SERVICE.realm(realm, query);
             result = JSON.parse(response);
         } else {
@@ -43,10 +43,16 @@ export const load: LayoutServerLoad = async ({
                 `https://ep.arc20.me/api/realm/${realm}${search}`
             );
             result = await response.json();
-        }
+        }*/
+
+        response = await fetch(
+            `https://ep.arc20.me/api/realm/${realm}${search}`
+        );
+        result = await response.json();
 
         return {
             realm,
+            query,
             meta: result?.meta,
             profile: result?.profile,
             realmData: { realm },

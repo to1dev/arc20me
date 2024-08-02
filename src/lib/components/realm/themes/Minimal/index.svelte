@@ -15,7 +15,7 @@
     >
 </svelte:head>
 
-<div data-theme="retro" class="min-h-screen">
+<div data-theme="retro" class="min-h-screen p-5">
     <div class="max-w-4xl mx-auto p-4 bg-white">
         <h1 class="text-4xl font-bold mb-6">Styles and CSS</h1>
         <section class="mb-8">
