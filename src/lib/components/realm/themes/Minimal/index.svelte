@@ -61,7 +61,7 @@
     }
 
     .theme-minial {
-        font-family: var(--font-body);
+        font-family: stern-pro, "LXGW WenKai TC", system-ui, sans-serif;
         font-weight: 400;
         font-size: var(--text-base);
         line-height: var(--baseline);
