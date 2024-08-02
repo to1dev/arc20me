@@ -332,11 +332,11 @@
         allowedSchemes: ["http", "https"],
     };
 
-    text = `<h2 class='text-xl font-semibold mb-2'>Introduction</h2>
+    text = `<h2 class='font-semibold mb-2'>Introduction</h2>
 
             <div class='mb-4'>In this article, we review some important history and features of Bitcoin for newcomers. We also look at how Bitcoin enables financial sovereignty and freedom. Finally, we explore the challenges facing Bitcoin and its future potential.</div>
 
-            <h2 class='text-xl font-semibold mb-2'>The Bitcoin network</h2>
+            <h2 class='font-semibold mb-2'>The Bitcoin network</h2>
 
             <div class='mb-4'>Bitcoin the network officially started on January 3, 2009, when the pseudonymous developer Satoshi Nakamoto created the first block of the Bitcoin blockchain.</div>
 
@@ -344,12 +344,39 @@
 
             <div class='mb-4'>There are four main players in the Bitcoin network: developers, full nodes, miners, and bitcoin users.</div>
 
-            <div role="alert" class="alert bg-white shadow-lg rounded-2xl border-2 border-purple-100 hover:border-purple-500">
+            <div role="alert" class="alert transition-all duration-150 shadow-lg hover:shadow-xl rounded-2xl border-4 ring-4 ring-purple-300 border-white hover:ring-purple-500 mb-5">
                 <div>
-                    <h3 class="font-bold">Developers</h3>
+                    <h2 class="font-bold mb-2">Developers</h2>
                     Developers write the open source code for Bitcoin, which implements rules, such as what is a valid transaction, how a block of transactions should be added to the blockchain, and how miners are rewarded with new bitcoins. They publish their code and anyone else can take that code for free and modify or use it.
                 </div>
             </div>
+
+            <div role="alert" class="alert transition-all duration-150 shadow-lg hover:shadow-xl rounded-2xl border-4 ring-4 ring-purple-300 border-white hover:ring-purple-500 mb-5">
+                <div>
+                    <h2 class="font-bold mb-2">Full Nodes</h2>
+                    Full nodes are servers on the internet that run Bitcoin code and enforce the network rules by rejecting invalid transactions and blocks. In order to verify any transaction without trusting a third party, each full node builds and stores the complete history of all Bitcoin transactions, starting with the first block. Full nodes also maintain the mempool, which is where all valid but unconfirmed transactions wait to be added to a new block.
+                </div>
+            </div>
+
+            <div role="alert" class="alert transition-all duration-150 shadow-lg hover:shadow-xl rounded-2xl border-4 ring-4 ring-purple-300 border-white hover:ring-purple-500 mb-5">
+                <div>
+                    <h2 class="font-bold mb-2">Miners</h2>
+                    Miners are a special type of full node that take the pending transactions from the mempool and try to create the next valid block of transactions through the proof-of-work (PoW) process. Once a miner succeeds in the computational challenge before other miners, it tells other full nodes, which verify if the miner followed all the rules. If yes, each full node then adds the valid block to its copy of the blockchain and tells other full nodes, until the network reaches consensus. The miner that solved the PoW challenge for the new block gets some new bitcoins as a reward for their computational contribution. Miners basically convert computing power into new bitcoins and secure the network from attacks. On average, a new block is added every 10 minutes and each block can contain thousands of transactions. A difficulty adjustment on mining happens every 2,016 blocks to try to maintain the 10 minute tempo.
+                </div>
+            </div>
+
+            <div role="alert" class="alert transition-all duration-150 shadow-lg hover:shadow-xl rounded-2xl border-4 ring-4 ring-purple-300 border-white hover:ring-purple-500 mb-5">
+                <div>
+                    <h2 class="font-bold mb-2">Bitcoin users</h2>
+                    Users can hold BTC and use it for transactions. They do this by using a cryptographic public key to generate Bitcoin addresses and receive BTC at those addresses. To send BTC to another address, they use the private key to sign the transaction. Thus, whoever owns the private key owns the associated BTC. Users can either trust third-party services like exchanges to hold their bitcoin, or use a self-custodial Bitcoin wallet like Proton Wallet to store the key themselves. When users want their transactions added to the blockchain, they will often pay transaction fees that go to the miners as another incentive to include their transaction. This network fee goes up when there is more demand for Bitcoin transactions.
+                </div>
+            </div>
+
+            <div class='text-md text-center mb-4 px-12 italic'>In the early days, Satoshi played all the roles to kickstart the network. But because Bitcoin is an open permissionless network, more and more people joined by contributing to the codebase, running full nodes, mining, or transacting with bitcoin. By the end of 2010, Satoshi voluntarily disappeared, never again moving the 1 million bitcoins that he had mined and ending his influence on how Bitcoin develops. The Bitcoin network has now grown to tens of thousands of nodes run by individuals and organizations around the world with tens of millions of users. This decentralized network is the key to Bitcoin’s long-term security and reliability.</div>
+
+            <h2 class='font-semibold mb-2'>Importance of decentralization</h2>
+
+            <div class='mb-4'>Bitcoin has a system of checks and balances among the developers, full node operators, and mining node operators. Developers can update the open source Bitcoin code but cannot force their updates on the node operators. Miners are needed to keep adding new blocks that confirm new transactions. Full nodes have the most power over the state of the network by enforcing rules and approving new blocks from miners.</div>
     `;
     try {
         if (text) {
@@ -363,7 +390,7 @@
     }
 </script>
 
-<div class="mt-2 font-light leading-relaxed">
+<div class="mt-2 text-purple-800">
     {#if clean}
         {@html clean}
     {/if}

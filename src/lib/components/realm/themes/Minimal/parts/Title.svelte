@@ -4,7 +4,7 @@
     export let uname;
 </script>
 
-<h2 class="text-gray-800 text-3xl font-bold mb-2 title">
+<h2 class="text-gray-800 text-4xl font-bold mb-2 title">
     {#if uname || name}
         <span>{name || uname}</span>
     {:else}
@@ -12,14 +12,14 @@
     {/if}
 </h2>
 {#if realm}
-    <span class="lowercase italic">+{realm}</span>
+    <span class="lowercase">+{realm}</span>
 {:else}
-    <span class="lowercase italic text-white">...</span>
+    <span class="lowercase text-white">...</span>
 {/if}
 
 <style>
     .title {
-        font-family: milk-script-alternate, sans-serif;
+        font-family: milk-script-alternate, "LXGW WenKai TC", sans-serif;
         font-weight: 400;
         font-style: normal;
     }
