@@ -34,11 +34,9 @@
         <div class="mb-4">
             <Title name={profile?.name} realm={realmData?.realm} {uname} />
         </div>
-        <section class="mb-8">
-            <div class="mb-4">
-                <Content text={profile?.desc} />
-            </div>
-        </section>
+        <div class="mb-4">
+            <Content text={profile?.desc} />
+        </div>
     </div>
 </div>
 

@@ -324,7 +324,7 @@
         allowedAttributes: {
             ...defaultConfig.allowedAttributes,
             div: ["class"],
-            a: ["class"],
+            a: ["class", "href", "target"],
             h1: ["class"],
             h2: ["class"],
             video: ["class", "src", "autoplay", "muted", "loop", "controls"],
@@ -333,7 +333,10 @@
         allowedSchemes: ["http", "https"],
     };
 
-    text = `<div class='text-purple-950'>
+    text = `
+            <div class='mb-4'>
+                from <a class='text-purple-800' href='https://proton.me/wallet/bitcoin-guide-for-newcomers' target='_blank'>https://proton.me/wallet/bitcoin-guide-for-newcomers</a>
+            </div>
             <div class='mb-4'>
                 <h2 class='font-bold mb-2'>Introduction</h2>
                     In this article, we review some important history and features of Bitcoin for newcomers. We also look at how Bitcoin enables financial sovereignty and freedom. Finally, we explore the challenges facing Bitcoin and its future potential.
@@ -374,7 +377,6 @@
                 <h2 class='font-bold mb-2'>Importance of decentralization</h2>
                     Bitcoin has a system of checks and balances among the developers, full node operators, and mining node operators. Developers can update the open source Bitcoin code but cannot force their updates on the node operators. Miners are needed to keep adding new blocks that confirm new transactions. Full nodes have the most power over the state of the network by enforcing rules and approving new blocks from miners.
             </div>
-            </div>
     `;
     try {
         if (text) {
@@ -386,13 +388,19 @@
         console.error((e as Error).message);
         clean = null;
     }
+
+    function scrollToSection(sectionId: string) {
+        document
+            .getElementById(sectionId)
+            ?.scrollIntoView({ behavior: "smooth" });
+    }
 </script>
 
-<div class="mt-2">
+<div class="mt-2 text-black">
     {#if clean}
         {@html clean}
     {/if}
 </div>
 
-<style>
+<style lang="postcss">
 </style>
