@@ -332,7 +332,7 @@
         allowedSchemes: ["http", "https"],
     };
 
-    text = `
+    text = `<div class='text-purple-950'>
             <div class='mb-4'>
                 <h2 class='font-bold mb-2'>Introduction</h2>
                     In this article, we review some important history and features of Bitcoin for newcomers. We also look at how Bitcoin enables financial sovereignty and freedom. Finally, we explore the challenges facing Bitcoin and its future potential.
@@ -373,6 +373,7 @@
                 <h2 class='font-bold mb-2'>Importance of decentralization</h2>
                     Bitcoin has a system of checks and balances among the developers, full node operators, and mining node operators. Developers can update the open source Bitcoin code but cannot force their updates on the node operators. Miners are needed to keep adding new blocks that confirm new transactions. Full nodes have the most power over the state of the network by enforcing rules and approving new blocks from miners.
             </div>
+            </div>
     `;
     try {
         if (text) {
@@ -386,7 +387,7 @@
     }
 </script>
 
-<div class="mt-2 text-purple-800">
+<div class="mt-2">
     {#if clean}
         {@html clean}
     {/if}
