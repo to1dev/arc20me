@@ -324,6 +324,7 @@
         allowedAttributes: {
             ...defaultConfig.allowedAttributes,
             div: ["class"],
+            a: ["class"],
             h1: ["class"],
             h2: ["class"],
             video: ["class", "src", "autoplay", "muted", "loop", "controls"],

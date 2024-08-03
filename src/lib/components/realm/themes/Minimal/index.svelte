@@ -4,6 +4,7 @@
     import Title from "./parts/Title.svelte";
     import Avatar from "./parts/Avatar.svelte";
     import Content from "./parts/Content.svelte";
+    import Wallet from "./wallet/Wallet.svelte";
 
     export let realm: string | null = null;
     export let debug: boolean = false;
@@ -42,14 +43,6 @@
 </div>
 
 <style>
-    @media (min-width: 640px) {
-        :root {
-            --text-base: 19px;
-            --baseline: calc(var(--text-base) * 1.5);
-            --spacing: 1rem;
-        }
-    }
-
     .theme-minial {
         font-family: stern-pro, "LXGW WenKai TC", system-ui, sans-serif;
         font-weight: 400;
