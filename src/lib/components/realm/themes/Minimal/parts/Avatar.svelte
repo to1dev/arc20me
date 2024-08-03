@@ -34,11 +34,30 @@
     let selected: boolean = false;
 </script>
 
-<div class="flex justify-center mb-16">
+<div class="flex justify-center my-8">
     <div class="indicator">
+        <!--img
+            src="/images/decor/decor1.webp"
+            alt="Icon"
+            class="absolute w-32 h-32"
+            style="top: 50%; left: 50%; max-width: none; transform: translate(-50%, -50%); width: calc(130%); height: calc(130%); z-index: 1;"
+        /-->
+
+        <!--div class="h-24 w-24 circle-border gradient-border">
+            <img
+                bind:this={img}
+                class="object-cover {imgClass}"
+                aria-current={selected}
+                src={image || fallbackImage}
+                alt=""
+                on:error={handleImageError}
+                on:load={handleImageLoad}
+            />
+        </div-->
+
         <img
             bind:this={img}
-            class="object-contain h-24 w-24 rounded-full {imgClass}"
+            class="object-cover size-24 rounded-full {imgClass}"
             aria-current={selected}
             src={image || fallbackImage}
             alt=""
@@ -46,27 +65,10 @@
             on:load={handleImageLoad}
         />
 
-        <!-- svelte-ignore a11y-click-events-have-key-events -->
-        <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-        <!--img
-            bind:this={img}
-            class="object-cover cursor-pointer h-24 w-24 sm:h-28 sm:w-28 border-4 border-white ring-4
-             ring-purple-300 rounded-full hover:ring-purple-500 transition-all duration-200
-             shadow-xl hover:shadow-2xl {imgClass}"
-            aria-current={selected}
-            src={image || fallbackImage}
-            on:click={() => {
-                selected = !selected;
-            }}
-            alt=""
-            on:error={handleImageError}
-            on:load={handleImageLoad}
-        /-->
-
         <!--img
             src="/images/check.svg"
             alt="Icon"
-            class="absolute top-0 right-0 w-6 h-6 transform translate-x-0 translate-y-0 bg-white rounded-full"
+            class="absolute top-3 right-3 w-6 h-6 transform translate-x-0 translate-y-0 bg-white rounded-full z-10"
         /-->
         <!--span class="absolute flex h-4 w-4 top-1 right-1">
             <span
@@ -85,12 +87,68 @@
     .high-res-image {
         image-rendering: auto;
     }
-    /*.avatarButton {
-        transform: translate(-2px, -2px);
+
+    /*@keyframes rotate {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
     }
 
-    .avatarButton[aria-current="true"] {
-        transform: none;
-        filter: none;
+    .circle-border {
+        border-radius: 50%;
+        position: relative;
+        display: inline-block;
+        margin: 10px;
+    }
+
+    .circle-border::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 50%;
+        z-index: 1;
+        animation: rotate 12s linear infinite;
+    }
+
+    .circle-border::after {
+        content: "";
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        right: 6px;
+        bottom: 6px;
+        background: white;
+        border-radius: 50%;
+        z-index: 2;
+    }
+
+    .circle-border img {
+        width: calc(100% - 10px);
+        height: calc(100% - 10px);
+        object-fit: cover;
+        border-radius: 50%;
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        z-index: 3;
+    }
+
+    .gradient-border::before {
+        background: conic-gradient(
+            red,
+            orange,
+            yellow,
+            green,
+            blue,
+            indigo,
+            violet,
+            red
+        );
     }*/
 </style>

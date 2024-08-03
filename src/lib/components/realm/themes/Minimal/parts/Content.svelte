@@ -333,7 +333,51 @@
         allowedSchemes: ["http", "https"],
     };
 
-    text = `
+    const blocks = {
+        metadata: {
+            timestamp: "2024-08-03T12:00:00Z",
+            author: "author1",
+        },
+        blocks: [
+            {
+                id: 0,
+                name: "block1",
+                type: "text",
+                content: "This is the content of block1",
+                metadata: {
+                    timestamp: "2024-08-03T12:00:00Z",
+                },
+                children: [],
+            },
+            {
+                id: 1,
+                name: "block2",
+                type: "text",
+                content: "This is the content of block2",
+                metadata: {},
+                children: [],
+            },
+            {
+                id: 2,
+                name: "block3",
+                type: "container",
+                content: null,
+                metadata: {},
+                children: [
+                    {
+                        id: 0,
+                        name: "sub-block1",
+                        type: "text",
+                        content: "This is a sub-block within block3",
+                        metadata: {},
+                        children: [],
+                    },
+                ],
+            },
+        ],
+    };
+
+    const text2 = `
             <div class='mb-4'>
                 from <a class='text-purple-800' href='https://proton.me/wallet/bitcoin-guide-for-newcomers' target='_blank'>https://proton.me/wallet/bitcoin-guide-for-newcomers</a>
             </div>
@@ -371,7 +415,7 @@
                 Users can hold BTC and use it for transactions. They do this by using a cryptographic public key to generate Bitcoin addresses and receive BTC at those addresses. To send BTC to another address, they use the private key to sign the transaction. Thus, whoever owns the private key owns the associated BTC. Users can either trust third-party services like exchanges to hold their bitcoin, or use a self-custodial Bitcoin wallet like Proton Wallet to store the key themselves. When users want their transactions added to the blockchain, they will often pay transaction fees that go to the miners as another incentive to include their transaction. This network fee goes up when there is more demand for Bitcoin transactions.
             </div>
 
-            <div class='text-center mb-4 px-12 italic'>In the early days, Satoshi played all the roles to kickstart the network. But because Bitcoin is an open permissionless network, more and more people joined by contributing to the codebase, running full nodes, mining, or transacting with bitcoin. By the end of 2010, Satoshi voluntarily disappeared, never again moving the 1 million bitcoins that he had mined and ending his influence on how Bitcoin develops. The Bitcoin network has now grown to tens of thousands of nodes run by individuals and organizations around the world with tens of millions of users. This decentralized network is the key to Bitcoin’s long-term security and reliability.</div>
+            <div class='text-center mb-4 px-4 italic'>In the early days, Satoshi played all the roles to kickstart the network. But because Bitcoin is an open permissionless network, more and more people joined by contributing to the codebase, running full nodes, mining, or transacting with bitcoin. By the end of 2010, Satoshi voluntarily disappeared, never again moving the 1 million bitcoins that he had mined and ending his influence on how Bitcoin develops. The Bitcoin network has now grown to tens of thousands of nodes run by individuals and organizations around the world with tens of millions of users. This decentralized network is the key to Bitcoin’s long-term security and reliability.</div>
 
             <div class='mb-4'>
                 <h2 class='font-bold mb-2'>Importance of decentralization</h2>
@@ -379,8 +423,8 @@
             </div>
     `;
     try {
-        if (text) {
-            clean = sanitize(text, {
+        if (text2) {
+            clean = sanitize(text2, {
                 sanitizeHtml: customConfig,
             });
         }

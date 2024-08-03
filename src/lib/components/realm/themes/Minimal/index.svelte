@@ -3,6 +3,7 @@
 
     import Title from "./parts/Title.svelte";
     import Avatar from "./parts/Avatar.svelte";
+    import Share from "./parts/Share.svelte";
     import Content from "./parts/Content.svelte";
     import Wallet from "./wallet/Wallet.svelte";
 
@@ -29,8 +30,9 @@
     data-theme="retro"
     class="min-h-screen p-5 theme-minial bg-white text-4xl leading-relaxed"
 >
-    <div class="max-w-4xl mx-auto p-5 break-words">
+    <div class="relative max-w-4xl mx-auto p-5 break-words">
         <Avatar image={meta?.image} />
+        <Share />
         <div class="mb-4">
             <Title name={profile?.name} realm={realmData?.realm} {uname} />
         </div>
