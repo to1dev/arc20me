@@ -5,6 +5,9 @@
     import Avatar from "./parts/Avatar.svelte";
     import Share from "./parts/Share.svelte";
     import Content from "./parts/Content.svelte";
+    import Debug from "./parts/Debug.svelte";
+    import LocalServer from "./server/LocalServer.svelte";
+    import Database from "./db/Database.svelte";
     import Wallet from "./wallet/Wallet.svelte";
 
     export let realm: string | null = null;
@@ -28,7 +31,7 @@
 
 <div
     data-theme="retro"
-    class="min-h-screen p-5 theme-minial bg-white text-4xl leading-relaxed"
+    class="min-h-screen p-5 -minial bg-white text-4xl leading-relaxed"
 >
     <div class="relative max-w-4xl mx-auto p-5 break-words">
         <Avatar image={meta?.image} />
@@ -39,11 +42,17 @@
         <div class="mb-4">
             <Content text={profile?.desc} />
         </div>
+
+        {#if debug}
+            <Debug {meta} />
+            <LocalServer />
+            <Database />
+        {/if}
     </div>
 </div>
 
 <style>
-    .theme-minial {
+    .-minial {
         font-family: stern-pro, "LXGW WenKai TC", system-ui, sans-serif;
         font-weight: 400;
     }

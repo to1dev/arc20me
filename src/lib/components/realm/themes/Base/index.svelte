@@ -1,6 +1,6 @@
 <script lang="ts">
-    import Database from "$lib/components/db/Database.svelte";
-    import LocalServer from "$lib/components/server/LocalServer.svelte";
+    import Database from "$lib/components/realm/themes/Base/db/Database.svelte";
+    import LocalServer from "$lib/components/realm/themes/Base/server/LocalServer.svelte";
 
     import { toUnicode } from "punycode";
 
