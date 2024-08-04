@@ -5,6 +5,9 @@
     import Avatar from "./parts/Avatar.svelte";
     import Share from "./parts/Share.svelte";
     import Content from "./parts/Content.svelte";
+    import Bingo from "./parts/Bingo.svelte";
+    import NoProfile from "./parts/NoProfile.svelte";
+    import Top from "./parts/Top.svelte";
     import Debug from "./parts/Debug.svelte";
     import LocalServer from "./server/LocalServer.svelte";
     import Database from "./db/Database.svelte";
@@ -41,6 +44,8 @@
         </div>
         <div class="mb-4">
             <Content text={profile?.desc} />
+            <Bingo {meta} />
+            <NoProfile {meta} />
         </div>
 
         {#if debug}
@@ -49,6 +54,7 @@
             <Database />
         {/if}
     </div>
+    <Top />
 </div>
 
 <style>
