@@ -195,6 +195,46 @@
                     "content": "<div class='mb-4'>Since Bitcoin is free open source software, anyone can take the code, modify it, and run their own network. The tokens of these alternative networks are known as altcoins. Some of these altcoins tried to improve on Bitcoin, such as by increasing the blocksize as discussed with Bitcoin Cash. Others were simply ponzi schemes pumped up by individuals looking to defraud people who didn't understand the difference, leading to the term “shitcoins”.</div><div class='mb-4'>Many altcoins were pre-mined by their creators, who got a large fraction of the tokens, before launching to the general public. The creators of these altcoins were then extremely financially motivated to market their coins. Most altcoins were centrally controlled and quickly changed, in contrast to Bitcoin, which by design has been incredibly difficult to change. This proliferation of altcoins and other unsustainable businesses became known as “crypto” and has taken attention and market share away from Bitcoin. Most of these altcoins provided no value to the world, could not find market fit, and collapsed, causing millions of individuals to lose billions.</div><div class='mb-4'>The key things that differentiate Bitcoin are the network and protocol. Bitcoin has the largest network and its network effect draws in more users, further increasing its utility as a global monetary network and the value of BTC. Altcoins simply cannot compete even if they have some perceived advantages such as higher throughput or privacy. As more merchants and consumers around the world adopt Bitcoin, the network effect should continue to strengthen.</div><div class='mb-4'>Bitcoin is also a digital protocol for money on the internet, and with protocols, it's almost always winner-takes-all. In the early decades of the internet, there were the Protocol Wars and eventually the world converged to use the same protocols to communicate. For example, we all use TCP/IP to send traffic over the internet, we all use HTTP to browse the web, and we all use SMTP to send emails. Bitcoin, and its higher layers such as the Lightning Network, is currently the dominant open protocol for sending value on the internet.</div>"
                 }
             ]
+        },
+        {
+            "type": "hbox",
+            "title": "The web of value",
+            "children": [
+                {
+                    "type": "text",
+                    "children": [
+                        {
+                            "type": "text",
+                            "content": "In the 1990's, the invention of the World Wide Web by Tim Berners-Lee allowed information to easily flow on the internet. It introduced the masses to use websites to read the news, play games, or send emails."
+                        },
+                        {
+                            "type": "text",
+                            "content": "Individuals and organizations could easily set up web servers and mail servers and be connected on a global information network that was open to all."
+                        },
+                        {
+                            "type": "text",
+                            "content": "What was missing was a permission less way for people to freely send value over the internet. Unfortunately, without easy-to-use digital money to pay for services, we ended up paying for “free” products with our attention and data. Many internet companies adopted the advertising business model, which inevitably pressured them to invade users' privacy in order to maximize profits."
+                        }
+                    ]
+                },
+                {
+                    "type": "text",
+                    "children": [
+                        {
+                            "type": "text",
+                            "content": "The reason many people are excited about Bitcoin is because of its potential to become the global value network that would allow us to freely send value and payments on the internet."
+                        },
+                        {
+                            "type": "text",
+                            "content": "The first part of this process is making a valuable digital asset that people will want. This has mostly been accomplished in the 15 years since Satoshi mined the first BTC in 2009."
+                        },
+                        {
+                            "type": "text",
+                            "content": "The second part of this process is making it easy for anyone to adopt Bitcoin and use it for payments. This is the main challenge in the next 15 years that will determine whether or not Bitcoin can succeed."
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }
