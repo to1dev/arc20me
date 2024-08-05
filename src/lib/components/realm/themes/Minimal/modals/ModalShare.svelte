@@ -28,7 +28,7 @@
 
 <!-- svelte-ignore a11y-click-events-have-key-events a11y-no-noninteractive-element-interactions -->
 <dialog
-    class="z-[999] shadow-2xl w-52 rounded-md ring-4 ring-white focus:outline-none backdrop:bg-black/25 backdrop:backdrop-blur-sm"
+    class="z-[999] shadow-2xl w-52 rounded-md ring-4 ring-white focus:outline-none"
     bind:this={dialog}
     on:close={() => {
         showModal = false;
@@ -80,38 +80,7 @@
         scrollbar-gutter: stable;
     }
 
-    @keyframes fadeIn {
-        0% {
-            opacity: 0;
-        }
-        100% {
-            opacity: 1;
-        }
-    }
-
-    @keyframes fadeOut {
-        0% {
-            opacity: 1;
-        }
-        100% {
-            opacity: 0;
-        }
-    }
-
     dialog::backdrop {
-        animation: fadeIn 200ms ease-in forwards;
-    }
-
-    @keyframes zoom {
-        from {
-            transform: scale(0.95);
-        }
-        to {
-            transform: scale(1);
-        }
-    }
-
-    dialog[open]::backdrop {
         animation: fade 0.2s ease-out;
     }
 
@@ -123,12 +92,4 @@
             opacity: 1;
         }
     }
-
-    /*button {
-        aspect-ratio: 1;
-        border-radius: 50%;
-        transform: translate(-2px, -2px);
-        filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.2));
-        transition: all 0.1s;
-    }*/
 </style>
