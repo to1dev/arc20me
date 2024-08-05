@@ -54,7 +54,6 @@
             <Database />
         {/if}
     </div>
-    <Top />
 </div>
 
 <style>
