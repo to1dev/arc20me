@@ -5,7 +5,7 @@
     export let columns: number = 2;
 
     const getColumnClass = (columns: number) => {
-        return `w-full md:w-1/${columns}`;
+        return `w-full md:w-1/${columns} px-2`;
     };
 </script>
 
