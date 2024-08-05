@@ -1,10 +1,16 @@
 <script lang="ts">
+    import ModalTest from "../modals/ModalTest.svelte";
+
+    let showModal: boolean = false;
 </script>
 
 <div class="absolute top-0 right-0 p-1">
     <button
         tabindex="-1"
         class="btn btn-circle btn-sm no-animation bg-gray-200 hover:bg-gray-300 border-none"
+        on:click={() => {
+            showModal = true;
+        }}
     >
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -25,3 +31,9 @@
         >
     </button>
 </div>
+
+<ModalTest bind:showModal>
+    <div class="card bg-base-100 shadow-xl p-2">
+        <figure></figure>
+    </div>
+</ModalTest>

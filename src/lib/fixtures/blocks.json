@@ -1,21 +1,9 @@
 {
     "v": "1.2",
-    "name": "to1dev",
-    "image": "https://s1.to1.dev/dog-400.png",
-    "banner": "https://s1.to1.dev/to1devbanner-1500.png",
-    "background": "https://s1.to1.dev/00015-3090223649.jpg",
-    "desc": null,
-    "wallets": {
-        "btc": {
-            "address": "bc1p5l4d7lz4pcjeh795g443ldh27ls7hxzswtjwcgtad00r3htzj0xsk0jqrd"
-        },
-        "nostr": {
-            "address": "b07002250150dd372002d3ff6fa06d3fac39d6f7973a6030f68671e90074a848"
-        }
-    },
+    "name": "Beginner's Guide to Bitcoin",
+    "image": "https://s1.to1.dev/bitcoin.svg",
     "metadata": {
-        "timestamp": "2024-08-03T12:00:00Z",
-        "author": "author1"
+        "author": ["Proton Wallet", "to1dev"]
     },
     "blocks": [
         {
