@@ -11,7 +11,7 @@
     {#if block?.children}
         {#each block.children as childBlock}
             <div
-                class="collapse collapse-plus border-2 rounded-2xl my-4 px-4 shadow-s hover:border-purple-500 border-purple-100"
+                class="collapse collapse-plus transition-none border-2 rounded-2xl my-4 px-4 shadow-s hover:border-purple-500 border-purple-100"
             >
                 <input type="checkbox" />
                 <div class="collapse-title font-bold overflow-hidden">
