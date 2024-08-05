@@ -7,7 +7,7 @@
 <div class="mb-4">
     {#if block?.image}
         <img
-            class="ring-1 ring-purple-100 p-1 shadow-lg"
+            class="ring-1 ring-purple-100 p-1 shadow-md"
             src={block.image}
             alt=""
         />
