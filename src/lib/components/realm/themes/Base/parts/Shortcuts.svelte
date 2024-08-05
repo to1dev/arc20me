@@ -63,9 +63,9 @@
 </div>
 
 <ModalTest bind:showModal>
-    <div class="card bg-base-100 shadow-xl p-2">
-        <figure></figure>
-    </div>
+    <div class="bg-blue-300 p-2 w-52">share this</div>
+    <div class="bg-blue-300 p-2 w-52">share this</div>
+    <div class="bg-blue-300 p-2 w-52">share this</div>
 </ModalTest>
 
 <!-- svelte-ignore css-unused-selector -->

@@ -12,7 +12,6 @@
         }
     } else if (dialog) {
         dialog.close();
-        document.body.classList.remove("modal-popup", "keep-gutter");
     }
 
     function hasScrollbar(): boolean {
@@ -29,30 +28,44 @@
 
 <!-- svelte-ignore a11y-click-events-have-key-events a11y-no-noninteractive-element-interactions -->
 <dialog
-    class="z-10 shadow-2xl rounded-md ring-4 ring-white focus:outline-none backdrop:bg-black/25 backdrop:backdrop-blur-sm"
+    class="z-[999] shadow-2xl rounded-md ring-2 ring-white focus:outline-none bg-white"
     bind:this={dialog}
     on:close={() => {
         showModal = false;
         document.body.classList.remove("modal-popup", "keep-gutter");
     }}
+    on:click|self={() => {
+        dialog.close();
+    }}
     on:keydown={handleKeyDown}
 >
     <!-- svelte-ignore a11y-no-static-element-interactions -->
-    <div class="bg-base-100">
-        <slot />
-        <div class="p-5 flex justify-end">
+    <div class="p-5">
+        <div class="flex">
             <button
-                type="button"
-                class="bg-base-300 btn btn-ghost no-animation"
+                class="absolute top-0 right-0 p-1 m-2 bg-white hover:hover:bg-gray-200 rounded-full transition-all duration-150"
                 on:click={() => {
                     dialog.close();
-                    document.body.classList.remove(
-                        "modal-popup",
-                        "keep-gutter"
-                    );
                 }}
-                >Close
-            </button>
+                ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="stroke-1 stroke-black icon icon-tabler icons-tabler-outline icon-tabler-x"
+                    ><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path
+                        d="M18 6l-12 12"
+                    /><path d="M6 6l12 12" /></svg
+                ></button
+            >
+        </div>
+        <div class="flex flex-col space-y-4 mt-9">
+            <slot />
         </div>
     </div>
 </dialog>
@@ -67,33 +80,16 @@
         scrollbar-gutter: stable;
     }
 
-    @keyframes fadeIn {
-        0% {
-            opacity: 0;
-        }
-        100% {
-            opacity: 1;
-        }
-    }
-
-    @keyframes fadeOut {
-        0% {
-            opacity: 1;
-        }
-        100% {
-            opacity: 0;
-        }
-    }
-
     dialog::backdrop {
-        animation: fadeIn 200ms ease-in forwards;
+        animation: fade 0.2s ease-out;
     }
 
-    button {
-        aspect-ratio: 1;
-        border-radius: 50%;
-        transform: translate(-2px, -2px);
-        filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.2));
-        transition: all 0.1s;
+    @keyframes fade {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
     }
 </style>
