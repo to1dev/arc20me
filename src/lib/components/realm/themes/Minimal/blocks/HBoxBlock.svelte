@@ -15,7 +15,7 @@
     </div>
 {/if}
 
-<div class="flex flex-wrap">
+<div class="flex flex-wrap -mx-4">
     {#if block?.children}
         {#each block.children as childBlock}
             <div class={getColumnClass(columns)}>
