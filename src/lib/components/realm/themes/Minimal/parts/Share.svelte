@@ -1,5 +1,5 @@
 <script lang="ts">
-    import ModalTest from "../modals/ModalTest.svelte";
+    import ModalShare from "../modals/ModalShare.svelte";
 
     let showModal: boolean = false;
 </script>
@@ -32,8 +32,8 @@
     </button>
 </div>
 
-<ModalTest bind:showModal>
-    <div class="card bg-base-100 shadow-xl p-2">
-        <figure></figure>
-    </div>
-</ModalTest>
+<ModalShare bind:showModal>
+    <div class="bg-blue-300 p-2">share this</div>
+    <div class="bg-blue-300 p-2">share this</div>
+    <div class="bg-blue-300 p-2">share this</div>
+</ModalShare>

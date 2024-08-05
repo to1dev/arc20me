@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Alkatra:wght@400..700&family=LXGW+WenKai+Mono+TC&family=LXGW+WenKai+TC&family=Noto+Color+Emoji&family=Playwrite+FR+Moderne:wght@100..400&display=swap');
+
+@layer base {
+    :root {
+        --primary-main-font: "LXGW WenKai TC";
+        --primary-mono-font: "LXGW WenKai Mono TC";
+        --primary-second-font: "Playwrite DE Grund";
+    }
+
+    html {
+        font-family: var(--primary-main-font), sans-serif;
+        font-optical-sizing: auto;
+    }
+
+    pre, code {
+        font-family: var(--primary-mono-font), sans-serif;
+    }
+
+    pre {
+        white-space: pre-wrap;
+        /* Wrap long lines */
+        word-wrap: break-word;
+        /* Break long words */
+    }
+
+    .alkatra {
+        font-family: "Alkatra", var(--primary-main-font), system-ui;
+        font-optical-sizing: auto;
+    }
+
+    .lxgw-wenkai-mono-tc-regular {
+        font-family: "LXGW WenKai Mono TC", monospace;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    .lxgw-wenkai-tc-regular {
+        font-family: "LXGW WenKai TC", cursive;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    .playwrite-fr-moderne {
+        font-family: "Playwrite FR Moderne", var(--primary-main-font), cursive;
+        font-optical-sizing: auto;
+    }
+
+    .emoji {
+        font-family: "Noto Color Emoji", sans-serif;
+    }
+}

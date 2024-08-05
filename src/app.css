@@ -1,2 +1,2 @@
 @import "tailwind.css";
-@import "../static/themes/Base/style.css";
+@import "./lib/components/realm/themes/Base/static/style.css";
