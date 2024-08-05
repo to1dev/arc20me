@@ -34,7 +34,7 @@
 <svelte:window bind:scrollY={scrollHeight} />
 
 {#if showGotoTop}
-    <button on:click={gotoTop} class="goto__top">
+    <button on:click={gotoTop} class="top">
         <svg
             xmlns="http://www.w3.org/2000/svg"
             width="32"
@@ -57,7 +57,7 @@
 {/if}
 
 <style>
-    .goto__top {
+    .top {
         position: fixed;
         right: 1rem;
         bottom: 1rem;
@@ -70,7 +70,7 @@
         border: none;
         padding: 0;
     }
-    .goto__top:hover {
+    .top:hover {
         transform: translateY(-10px);
         color: #000;
     }

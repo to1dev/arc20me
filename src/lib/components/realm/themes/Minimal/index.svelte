@@ -46,6 +46,7 @@
             <Content text={profile?.desc} />
             <Bingo {meta} />
             <NoProfile {meta} />
+            <Top />
         </div>
 
         {#if debug}
