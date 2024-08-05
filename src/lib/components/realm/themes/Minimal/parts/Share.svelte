@@ -33,7 +33,7 @@
 </div>
 
 <ModalShare bind:showModal>
-    <div class="bg-blue-300 p-2">share this</div>
-    <div class="bg-blue-300 p-2">share this</div>
-    <div class="bg-blue-300 p-2">share this</div>
+    <div class="bg-blue-300 p-2 w-52">share this</div>
+    <div class="bg-blue-300 p-2 w-52">share this</div>
+    <div class="bg-blue-300 p-2 w-52">share this</div>
 </ModalShare>

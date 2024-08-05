@@ -28,7 +28,7 @@
 
 <!-- svelte-ignore a11y-click-events-have-key-events a11y-no-noninteractive-element-interactions -->
 <dialog
-    class="z-[999] shadow-2xl w-52 rounded-md ring-4 ring-white focus:outline-none"
+    class="z-[999] shadow-2xl rounded-md ring-4 ring-white focus:outline-none"
     bind:this={dialog}
     on:close={() => {
         showModal = false;
@@ -40,10 +40,10 @@
     on:keydown={handleKeyDown}
 >
     <!-- svelte-ignore a11y-no-static-element-interactions -->
-    <div class="bg-white p-2">
+    <div class="bg-white p-5">
         <div class="flex">
             <button
-                class="absolute top-0 right-0 p-1 m-1 bg-white hover:bg-gray-200 rounded-full transition-all duration-150"
+                class="absolute top-0 right-0 p-1 m-2 bg-white hover:bg-gray-200 rounded-full transition-all duration-150"
                 on:click={() => {
                     dialog.close();
                 }}
