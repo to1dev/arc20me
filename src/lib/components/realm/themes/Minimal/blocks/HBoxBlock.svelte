@@ -5,7 +5,7 @@
     export let columns: number = 2;
 
     const getColumnClass = (columns: number) => {
-        return `w-full md:w-1/${columns} px-2`;
+        return `w-full md:w-1/${columns}`;
     };
 </script>
 
@@ -15,7 +15,7 @@
     </div>
 {/if}
 
-<div class="flex flex-wrap -mx-4">
+<div class="flex flex-wrap">
     {#if block?.children}
         {#each block.children as childBlock}
             <div class={getColumnClass(columns)}>
