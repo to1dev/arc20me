@@ -24,7 +24,7 @@
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <div class="flex justify-between w-full" on:click={copyToClipboard}>
     <span
-        class="whitespace-nowrap overflow-hidden max-w-64 md:max-w-80 text-ellipsis"
+        class="whitespace-nowrap overflow-hidden max-w-48 md:max-w-80 text-ellipsis"
         >{url}
     </span>
     <span
