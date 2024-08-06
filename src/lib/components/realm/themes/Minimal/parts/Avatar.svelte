@@ -17,11 +17,6 @@
             const width = img.naturalWidth;
             const height = img.naturalHeight;
 
-            if (width === 0 && height === 0) {
-                console.log("fuck off");
-                return;
-            }
-
             if (width <= 64 && height <= 64) {
                 imgClass = "pixel-image";
             } else {
@@ -30,39 +25,7 @@
         }
     }
 
-    let isSvg = false;
-    let imgSrc = "";
-
-    async function fetchImage(imageUrl: string) {
-        try {
-            const response = await fetch(imageUrl);
-            if (response.ok) {
-                const contentType = response.headers.get("content-type");
-                console.log(contentType);
-
-                if (contentType && contentType.includes("image/svg+xml")) {
-                    isSvg = true;
-                    imgSrc = imageUrl;
-                } else {
-                    const text = await response.text();
-                    if (text.includes("<svg")) {
-                        isSvg = true;
-                        imgSrc =
-                            "data:image/svg+xml;charset=utf-8," +
-                            encodeURIComponent(text);
-                    } else {
-                        imgSrc = imageUrl;
-                    }
-                }
-            }
-        } catch (error) {
-            console.error("Error fetching the image:", error);
-        }
-    }
-
     onMount(async () => {
-        await fetchImage(image);
-
         if (img && img.complete) {
             handleImageLoad();
         }

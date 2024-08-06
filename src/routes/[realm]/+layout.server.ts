@@ -21,6 +21,35 @@ function parseQueryString(queryString: string): {
     return query;
 }
 
+let isSvg = false;
+let imgSrc = "";
+
+async function fetchImage(imageUrl: string) {
+    try {
+        const response = await fetch(imageUrl);
+        if (response.ok) {
+            const contentType = response.headers.get("content-type");
+
+            if (contentType && contentType.includes("image/svg+xml")) {
+                isSvg = true;
+                imgSrc = imageUrl;
+            } else {
+                const text = await response.text();
+                if (text.includes("<svg")) {
+                    isSvg = true;
+                    imgSrc =
+                        "data:image/svg+xml;charset=utf-8," +
+                        encodeURIComponent(text);
+                } else {
+                    imgSrc = imageUrl;
+                }
+            }
+        }
+    } catch (error) {
+        console.error("Error fetching the image:", error);
+    }
+}
+
 export const load: LayoutServerLoad = async ({
     fetch,
     params,
@@ -43,6 +72,11 @@ export const load: LayoutServerLoad = async ({
                 `https://ep.arc20.me/api/realm/${realm}${search}`
             );
             result = await response.json();
+        }
+
+        if (result?.meta?.image) {
+            await fetchImage(result?.meta?.image);
+            result.meta.image = imgSrc;
         }
 
         return {
