@@ -18,7 +18,7 @@
 <div class="flex flex-wrap">
     {#if block?.children}
         {#each block.children as childBlock}
-            <div class={getColumnClass(columns)}>
+            <div class="w-full md:w-1/2 px-2">
                 <div>
                     <svelte:component
                         this={getBlock(childBlock?.type)}

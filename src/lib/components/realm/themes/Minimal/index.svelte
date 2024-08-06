@@ -43,7 +43,7 @@
             <Title name={profile?.name} realm={realmData?.realm} {uname} />
         </div>
         <div class="mb-4">
-            <Content text={profile?.desc} />
+            <Content {profile} />
             <Bingo {meta} />
             <NoProfile {meta} />
             <Top />

@@ -1,9 +1,8 @@
 <script lang="ts">
     export let url;
-    export let text;
 
     $: href = encodeURI(
-        `https://x.com/intent/post/?text=${text}&hashtags=Bitcoin,Atomicals,Realm,ARC20ME&via=to1dev&related=""other,users""&url=${url}`
+        `https://www.linkedin.com/sharing/share-offsite/?url=${url}`
     );
 
     function redirectToUrl(): void {
@@ -26,11 +25,13 @@
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="mr-2 flex-shrink-0 icon icon-tabler icons-tabler-outline icon-tabler-brand-x"
+            class="mr-2 flex-shrink-0 icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"
             ><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path
-                d="M4 4l11.733 16h4.267l-11.733 -16z"
-            /><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" /></svg
-        >Share on X
+                d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"
+            /><path d="M8 11l0 5" /><path d="M8 8l0 .01" /><path
+                d="M12 16l0 -5"
+            /><path d="M16 16v-3a2 2 0 0 0 -4 0" /></svg
+        >Share on LinkedIn
     </span>
     <span class="whitespace-nowrap text-right"
         ><svg

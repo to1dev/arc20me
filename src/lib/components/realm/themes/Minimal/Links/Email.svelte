@@ -1,10 +1,8 @@
 <script lang="ts">
     export let url;
-    export let text;
+    export let subject;
 
-    $: href = encodeURI(
-        `https://x.com/intent/post/?text=${text}&hashtags=Bitcoin,Atomicals,Realm,ARC20ME&via=to1dev&related=""other,users""&url=${url}`
-    );
+    $: href = encodeURI(`mailto:?subject=${subject}&body=${url}`);
 
     function redirectToUrl(): void {
         window.open(href, "_blank");
@@ -26,11 +24,13 @@
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="mr-2 flex-shrink-0 icon icon-tabler icons-tabler-outline icon-tabler-brand-x"
+            class="mr-2 flex-shrink-0 icon icon-tabler icons-tabler-outline icon-tabler-at"
             ><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path
-                d="M4 4l11.733 16h4.267l-11.733 -16z"
-            /><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" /></svg
-        >Share on X
+                d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"
+            /><path
+                d="M16 12v1.5a2.5 2.5 0 0 0 5 0v-1.5a9 9 0 1 0 -5.5 8.28"
+            /></svg
+        >Share by Email
     </span>
     <span class="whitespace-nowrap text-right"
         ><svg
