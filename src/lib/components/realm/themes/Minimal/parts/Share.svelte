@@ -1,5 +1,6 @@
 <script lang="ts">
     import ModalShare from "../modals/ModalShare.svelte";
+    import Links from "../Links/Links.svelte";
 
     let showModal: boolean = false;
 </script>
@@ -32,8 +33,6 @@
     </button>
 </div>
 
-<ModalShare bind:showModal>
-    <div class="bg-blue-300 p-2 w-52">share this</div>
-    <div class="bg-blue-300 p-2 w-52">share this</div>
-    <div class="bg-blue-300 p-2 w-52">share this</div>
+<ModalShare bind:showModal title="Share this Realm">
+    <Links />
 </ModalShare>

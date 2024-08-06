@@ -1,5 +1,6 @@
 <script lang="ts">
     export let showModal: boolean;
+    export let title;
 
     let dialog: HTMLDialogElement;
 
@@ -28,7 +29,7 @@
 
 <!-- svelte-ignore a11y-click-events-have-key-events a11y-no-noninteractive-element-interactions -->
 <dialog
-    class="z-[999] shadow-2xl rounded-md ring-8 ring-black focus:outline-none ring-opacity-35"
+    class="z-[999] shadow-2xl rounded-md ring-8 ring-black focus:outline-none ring-opacity-35 w-full sm:max-w-lg"
     bind:this={dialog}
     on:close={() => {
         showModal = false;
@@ -41,6 +42,9 @@
 >
     <!-- svelte-ignore a11y-no-static-element-interactions -->
     <div class="bg-white p-5">
+        {#if title}
+            <div class="text-center">{title}</div>
+        {/if}
         <div class="flex">
             <button
                 class="absolute top-0 right-0 p-1 m-2 hover:bg-gray-200 rounded-full transition-all duration-150"
