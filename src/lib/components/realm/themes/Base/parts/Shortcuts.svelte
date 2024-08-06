@@ -1,5 +1,5 @@
 <script lang="ts">
-    import ModalTest from "../modals/ModalTest.svelte";
+    import ModalBase from "../modals/ModalBase.svelte";
 
     let showModal: boolean = false;
 </script>
@@ -62,11 +62,11 @@
     </button>
 </div>
 
-<ModalTest bind:showModal>
+<ModalBase bind:showModal>
     <div class="bg-blue-300 p-2 w-52">share this</div>
     <div class="bg-blue-300 p-2 w-52">share this</div>
     <div class="bg-blue-300 p-2 w-52">share this</div>
-</ModalTest>
+</ModalBase>
 
 <!-- svelte-ignore css-unused-selector -->
 <style lang="postcss">
