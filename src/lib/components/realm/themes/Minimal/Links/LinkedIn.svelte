@@ -31,7 +31,7 @@
             /><path d="M8 11l0 5" /><path d="M8 8l0 .01" /><path
                 d="M12 16l0 -5"
             /><path d="M16 16v-3a2 2 0 0 0 -4 0" /></svg
-        >Share on LinkedIn
+        >LinkedIn
     </span>
     <span class="whitespace-nowrap text-right"
         ><svg

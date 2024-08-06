@@ -30,7 +30,7 @@
             /><path
                 d="M16 12v1.5a2.5 2.5 0 0 0 5 0v-1.5a9 9 0 1 0 -5.5 8.28"
             /></svg
-        >Share by Email
+        >Email
     </span>
     <span class="whitespace-nowrap text-right"
         ><svg
