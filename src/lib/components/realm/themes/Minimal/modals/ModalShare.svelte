@@ -28,7 +28,7 @@
 
 <!-- svelte-ignore a11y-click-events-have-key-events a11y-no-noninteractive-element-interactions -->
 <dialog
-    class="z-[999] shadow-2xl rounded-md ring-4 ring-white focus:outline-none"
+    class="z-[999] shadow-2xl rounded-md ring-8 ring-black focus:outline-none ring-opacity-35"
     bind:this={dialog}
     on:close={() => {
         showModal = false;
@@ -43,7 +43,7 @@
     <div class="bg-white p-5">
         <div class="flex">
             <button
-                class="absolute top-0 right-0 p-1 m-2 bg-white hover:bg-gray-200 rounded-full transition-all duration-150"
+                class="absolute top-0 right-0 p-1 m-2 hover:bg-gray-200 rounded-full transition-all duration-150"
                 on:click={() => {
                     dialog.close();
                 }}
@@ -80,10 +80,6 @@
         scrollbar-gutter: stable;
     }
 
-    dialog::backdrop {
-        animation: fade 0.2s ease-out;
-    }
-
     @keyframes fade {
         from {
             opacity: 0;
@@ -91,5 +87,9 @@
         to {
             opacity: 1;
         }
+    }
+
+    dialog::backdrop {
+        animation: fade 0.2s ease-out;
     }
 </style>

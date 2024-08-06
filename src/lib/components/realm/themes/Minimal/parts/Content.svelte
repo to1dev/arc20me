@@ -1,7 +1,7 @@
 <script lang="ts">
     import { getBlock } from "../blocks/Registry";
     import { sanitizeContent } from "$lib/utils/sanitize";
-    import blocks from "$lib/fixtures/blocks.json";
+    import data from "$lib/fixtures/blocks.json";
 
     export let text;
 
@@ -17,16 +17,31 @@
         console.error((e as Error).message);
         clean = null;
     }*/
+
+    let date = null;
+    if (data?.metadata?.timestamp) {
+        const timestamp = data.metadata.timestamp;
+        const _date = new Date(timestamp * 1000);
+        date = _date.toDateString();
+    }
 </script>
 
 <div class="mt-2 text-black">
     {#if text}
-        {@html sanitizeContent(text)}
+        <div class="mb-4">
+            {@html sanitizeContent(text)}
+        </div>
     {/if}
 
-    {#each blocks.blocks as block}
+    {#each data.blocks as block}
         <svelte:component this={getBlock(block.type)} {block} />
     {/each}
+
+    {#if date}
+        <div class="my-4 py-4 italic border-t">
+            Last updated: {date}
+        </div>
+    {/if}
 </div>
 
 <style lang="postcss">

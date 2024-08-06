@@ -3,7 +3,18 @@
     "name": "Beginner's Guide to Bitcoin",
     "image": "https://s1.to1.dev/bitcoin.svg",
     "metadata": {
-        "author": ["Proton Wallet", "to1dev"]
+        "author": [
+            {
+                "name": "Proton Wallet",
+                "avatar": "https://res.cloudinary.com/dbulfrlrz/image/upload/v1693233221/static/logos/proton-logo-p_kftwpv.svg"
+            },
+            {
+                "name": "to1dev",
+                "avatar": ""
+            }
+        ],
+        "theme": "Minimal",
+        "timestamp": 1722891625
     },
     "blocks": [
         {

@@ -28,7 +28,7 @@
 
 <!-- svelte-ignore a11y-click-events-have-key-events a11y-no-noninteractive-element-interactions -->
 <dialog
-    class="z-[999] shadow-2xl rounded-md ring-2 ring-white focus:outline-none bg-white backdrop:bg-black/25 backdrop:backdrop-blur-sm"
+    class="z-[999] shadow-2xl rounded-md ring-8 ring-black ring-opacity-35 focus:outline-none bg-white backdrop:bg-black/25 backdrop:backdrop-blur-sm"
     bind:this={dialog}
     on:close={() => {
         showModal = false;

@@ -7,8 +7,8 @@
 
 <div class="mb-4">
     {#if block?.title}
-        <div class="my-8 text-5xl text-center">
-            <h2 class="font-bold">{block.title}</h2>
+        <div class="my-8 text-5xl text-start">
+            <h2 class="font-bold mb-2">{block.title}</h2>
         </div>
     {/if}
 
