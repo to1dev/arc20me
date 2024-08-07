@@ -40,7 +40,7 @@
     </div>
     <div class="m-4 flex justify-center items-center">
         <button
-            class="btn text-2xl button duration-150 inline-flex justify-center items-center w-52 gap-x-2 rounded-full bg-success text-white hover:bg-green-700 disabled:opacity-50 disabled:pointer-events-none"
+            class="btn no-animation text-2xl button duration-150 inline-flex justify-center items-center w-52 gap-x-2 rounded-full bg-success text-white hover:bg-green-700 disabled:opacity-50 disabled:pointer-events-none"
         >
             <svg
                 xmlns="http://www.w3.org/2000/svg"
