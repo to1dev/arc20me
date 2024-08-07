@@ -19,7 +19,7 @@
 
 <style>
     .title {
-        font-family: milk-script-alternate, "LXGW WenKai TC", sans-serif;
+        font-family: var(--primary-title-font);
         font-weight: 400;
         font-style: normal;
     }

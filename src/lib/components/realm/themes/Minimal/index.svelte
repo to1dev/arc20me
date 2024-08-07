@@ -58,6 +58,12 @@
 </div>
 
 <style>
+    :root {
+        --primary-title-font: milk-script-alternate, "LXGW WenKai TC",
+            sans-serif;
+        --primary-button-font: alexander-quill, "LXGW WenKai TC", sans-serif;
+    }
+
     .-minial {
         font-family: stern-pro, "LXGW WenKai TC", system-ui, sans-serif;
         font-weight: 400;

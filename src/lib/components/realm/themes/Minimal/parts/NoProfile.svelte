@@ -22,7 +22,7 @@
     </div>
     <div class="m-4 flex justify-center items-center">
         <button
-            class="duration-150 py-2 px-3 inline-flex justify-center items-center w-52 gap-x-2 rounded-full bg-blue-500 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
+            class="btn text-2xl button duration-150 inline-flex justify-center items-center w-52 gap-x-2 rounded-full bg-blue-500 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
         >
             <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -32,7 +32,7 @@
                 stroke-width="2"
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                class="w-6 h-6 icon icon-tabler icons-tabler-outline icon-tabler-shovel"
+                class="w-7 h-7 mr-2 icon icon-tabler icons-tabler-outline icon-tabler-shovel"
                 ><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path
                     d="M17 4l3 3"
                 /><path d="M18.5 5.5l-8 8" /><path
@@ -42,3 +42,11 @@
         </button>
     </div>
 {/if}
+
+<style>
+    .button {
+        font-family: var(--primary-button-font);
+        font-weight: 400;
+        font-style: normal;
+    }
+</style>

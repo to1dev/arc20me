@@ -32,7 +32,7 @@
         </div>
     {/if}
 
-    {#if profile.blocks}
+    {#if profile?.blocks}
         {#each profile?.blocks as block}
             <svelte:component this={getBlock(block.type)} {block} />
         {/each}
