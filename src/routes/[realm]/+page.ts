@@ -13,7 +13,7 @@ export const load: PageLoad = async ({ fetch, parent }) => {
         };
 
         let ThemeComponent: ComponentType | null = null;
-        const theme = meta?.theme || query?.theme || "Base";
+        const theme = query?.theme || meta?.theme || "Base";
 
         if (theme && themeMap[theme]) {
             ThemeComponent = (await themeMap[theme]()).default;
