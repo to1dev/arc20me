@@ -2,7 +2,7 @@
     export let meta;
 </script>
 
-{#if meta && meta.id && !meta.pid}
+{#if meta?.id && !meta?.pid}
     <div class="m-4 flex justify-center items-center duration-100 text-info">
         <svg
             xmlns="http://www.w3.org/2000/svg"
