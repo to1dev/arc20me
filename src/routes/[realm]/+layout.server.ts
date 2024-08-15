@@ -89,6 +89,7 @@ export const load: LayoutServerLoad = async ({
     } catch (e) {
         return {
             realm: realm,
+            query,
             meta: null,
             profile: null,
             realmData: { realm },
