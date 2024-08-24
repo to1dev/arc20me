@@ -29,13 +29,18 @@
         uname = toUnicode(realm);
     }
 
+    let title: string | null = null;
+    if (profile) {
+        title = profile?.name;
+    }
+
     let background = meta?.background;
     let vars = `--background-image: url("${background || "/images/background.svg"}")`;
 </script>
 
 <svelte:head>
     <title
-        >{uname ? uname : ""} | Your Personal Gateway on the Bitcoin Blockchain</title
+        >{title || uname || ""} | Your Personal Gateway on the Bitcoin Blockchain</title
     >
 </svelte:head>
 
