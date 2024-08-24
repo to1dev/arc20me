@@ -8,7 +8,7 @@
 <div class="mb-4">
     {#if block?.title}
         <div class="my-8 text-5xl text-start">
-            <h2 class="font-bold mb-2">{block.title}</h2>
+            <h2 class="font-bold mb-2">{@html sanitizeContent(block.title)}</h2>
         </div>
     {/if}
 

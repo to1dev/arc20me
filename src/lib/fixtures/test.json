@@ -1,0 +1,105 @@
+{
+    "v": "1.2",
+    "name": "Atomicals Intro",
+    "image": "https://s1.to1.dev/bitcoin.svg",
+    "metadata": {
+        "theme": "Minimal",
+        "timestamp": 1724406082
+    },
+    "blocks": [
+        {
+            "title": "<span style='color:rgb(37, 99, 235);'>What is Atomicals? Empower every Satoshi with Atomicals</span>",
+            "type": "text",
+            "content": "<strong>Ordinals</strong> was created mainly as an NFT protocol, <strong>BRC20</strong> was created on top of ordinals as a fungible token protocol, and <strong>Atomicals</strong> was created after to combine NFT, FT, digital identity, and smart contracts all in one protocol. It is the only protocol on Bitcoin that has all these things together. Atomicals is often referred to as <strong>Bitcoin 2.0</strong> as it enables smart contracts with Dapps on the Bitcoin blockchain. Atomicals is the most native L1 solution for digital objects on Bitcoin."
+        },
+        {
+            "title": "<span style='color:rgb(37, 99, 235);'>Welcome to Bitcoin 2.0</span>",
+            "type": "text",
+            "content": "<strong>What does Atomicals have as a metaprotocol?</strong>"
+        },
+        {
+            "type": "text",
+            "content": "<ul style='list-style:inside'><li><strong>ARC20</strong> is the fungible token standard on Bitcoin that operates with proof of work. PoW is optional.</li><li><strong>ARC20 tokens</strong> can be created with or without PoW.</li><li>The <strong>Atomicals Virtual Machine (AVM)</strong> allows the creation and execution of smart contracts on Bitcoin, enabling Dapps on the Bitcoin blockchain.</li><li><strong>Realms</strong> is your unique digital identity. It works just like .sats or .btc but with much more functionality. It is a decentralized naming system like domain names on ordinals but with more features like subrealms.</li><li>Partial coloring is a feature of Atomicals that brings colored coins to life.</li></ul>"
+        },
+        {
+            "type": "text",
+            "content": "The functionality of Atomicals far surpasses any other existing protocol on L1 BTC."
+        },
+        {
+            "type": "text",
+            "content": "<strong>What is ARC20? The token standard of Atomicals, every token is backed by a Satoshi</strong>"
+        },
+        {
+            "type": "text",
+            "content": "<strong>ARC20</strong> tokens are backed 1 to 1 by a single Satoshi. This means that no matter how hard a token drops, it will always be worth 1 Satoshi. This ensures value in your tokens and that it's <strong>unruggable</strong>. If a token rugs, simply send those tokens to any BTC address and they will automatically be converted to BTC by the amount of satoshis you have."
+        },
+        {
+            "type": "text",
+            "content": "Since it's backed 1 to 1 by a single Satoshi, indexing doesn't need to be off-chain and can be done on-chain. This makes it more native to Bitcoin than other protocols. This method is more efficient and more secure as it's directly integrated into the BTC blockchain, making it a layer 1 solution."
+        },
+        {
+            "type": "text",
+            "content": "<strong>Empower every Satoshi with Atomicals</strong>, this quote was given to Atomicals from the community due to its programmability and its ability to enable smart contracts on the Bitcoin blockchain."
+        },
+        {
+            "type": "text",
+            "content": "There are two minting methods: <strong>Decentralized</strong> and <strong>Direct</strong>. All decentralized mints are fair and free, with no premine, making tokens much harder to rug unlike other protocols. Direct minting involves creating the entire token supply in a single transaction, requiring the Satoshi commitment upfront."
+        },
+        {
+            "type": "text",
+            "content": "Since Atomicals avoids off-chain indexing and is a simpler solution, it requires one less transaction fee than BRC20 when purchasing fungible tokens."
+        },
+        {
+            "type": "text",
+            "content": "<strong>What is AVM? ETH was just a testnet</strong>"
+        },
+        {
+            "type": "text",
+            "content": "<strong>Atomicals Virtual Machine (AVM)</strong> enables smart contracts on Bitcoin. It supports advanced, programmable smart contracts, expanding Bitcoin's functionality. This means that it will allow complex applications and digital agreements like staking, swapping, and lending your Bitcoin."
+        },
+        {
+            "type": "text",
+            "content": "AVM enables on-chain trading, stablecoins, and bridging tokens from other networks. It will be compatible with existing overlay protocols. Currently, AVM is in its beta testing, but once fully operational, it will enable smart contracts similar to Ethereum staking, lending, and swapping."
+        },
+        {
+            "type": "text",
+            "content": "<strong>What is Realms?</strong>"
+        },
+        {
+            "type": "text",
+            "content": "<strong>Realms</strong> is a decentralized naming system, providing unique and permanent digital identities on the Bitcoin blockchain. Unlike .eth, there's no need to renew your domain. Realms are denoted with a + prefix followed by the name, unlike other domain systems like .sats and .eth."
+        },
+        {
+            "type": "text",
+            "content": "Realms can have subrealms, which can have even more subrealms, allowing for a realms hierarchy. This can be very useful for businesses, recreational purposes, or collaborative projects. It simplifies solutions for dividing profits, costs, and airdrops to community members."
+        },
+        {
+            "type": "text",
+            "content": "<strong>What is Partial Coloring?</strong>"
+        },
+        {
+            "type": "text",
+            "content": "Partial Coloring overcomes Bitcoin's dust limit of 546 Satoshis, which previously made it difficult to send less than 546 tokens of a unit. Since every ARC20 token is backed by 1 Satoshi, Partial Coloring allows users to send 1 unit of a token, making ARC20 the most native L1 solution on Bitcoin."
+        },
+        {
+            "type": "text",
+            "content": "It requires one less transaction fee than BRC20 and runes. Originally, colored coins were a vision that Vitalik Buterin had but couldn't create, leading him to develop Ethereum instead. Atomicals finally fulfills that vision directly on Bitcoin."
+        },
+        {
+            "type": "text",
+            "content": "<strong>Which wallets support ARC20 and Atomicals?</strong>"
+        },
+        {
+            "type": "text",
+            "content": "There are many supported wallets for ARC20; however, <strong>Wizz Wallet</strong> is the main wallet currently up to date with all ARC20 functionality and is actively developing on Atomicals. <strong>Unisat</strong> is also one of the biggest wallets in the Bitcoin ecosystem right now, with support for Atomicals and constant updates."
+        },
+        {
+            "type": "text",
+            "content": "You can also access Atomicals from <strong>OKX</strong> and <strong>Binance Web3</strong> wallets."
+        },
+        {
+            "type": "text",
+            "content": "<div class='text-right'>Credits: <a href='https://x.com/rengoku_sats' target='_blank'>@rengoku_sats</a></div>"
+        }
+    ]
+}

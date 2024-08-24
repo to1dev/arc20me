@@ -311,6 +311,8 @@ const customConfig: IOptions = {
         ...defaultConfig.allowedAttributes,
         div: ["class"],
         a: ["class", "href", "target"],
+        span: ["class", "style"],
+        ul: ["class", "style"],
         h1: ["class"],
         h2: ["class"],
         video: ["class", "src", "autoplay", "muted", "loop", "controls"],

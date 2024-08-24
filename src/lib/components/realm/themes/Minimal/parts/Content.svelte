@@ -2,6 +2,8 @@
     import { getBlock } from "../blocks/Registry";
     import { sanitizeContent } from "$lib/utils/sanitize";
 
+    //import { blocks } from "../../../../../fixtures/test.json";
+
     export let profile;
 
     //let clean: string | Promise<string> | null = null;
