@@ -23,12 +23,17 @@
     if (realm) {
         uname = toUnicode(realm);
     }
+
+    let title: string | null = null;
+    if (profile) {
+        title = profile?.name;
+    }
 </script>
 
 <svelte:head>
     <link rel="stylesheet" href="https://use.typekit.net/fcb2rob.css" />
     <title
-        >{uname ? uname : ""} | Your Personal Gateway on the Bitcoin Blockchain</title
+        >{title || uname || ""} | Your Personal Gateway on the Bitcoin Blockchain</title
     >
 </svelte:head>
 
